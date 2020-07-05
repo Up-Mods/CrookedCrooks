@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:smithing",
+	"base": {
+		"item": "crookedcrooks:wooden_crook"
+	},
+	"addition": {
+		"tag": "minecraft:stone_tool_materials"
+	},
+	"result": {
+		"item": "crookedcrooks:stone_crook"
+	}
+}

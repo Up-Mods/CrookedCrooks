@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:smithing",
+	"base": {
+		"item": "crookedcrooks:wooden_crook"
+	},
+	"addition": {
+		"item": "minecraft:gold_ingot"
+	},
+	"result": {
+		"item": "crookedcrooks:golden_crook"
+	}
+}
