@@ -23,8 +23,14 @@ public class CrookItem extends MiningToolItem {
 		this.pullingPower = pullingPower;
 	}
 
+	@Override
+	public boolean isEffectiveOn(BlockState state) {
+		return state.isIn(CrookedCrooksMod.CROOK_EFFECTIVE);
+	}
+
+	@Override
 	public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
-		if (!state.isIn(CrookedCrooksMod.CROOK_EFFECTIVE)) {
+		if (!this.isEffectiveOn(state)) {
 		   return 1.0F;
 		} else {
 		   return this.miningSpeed;
