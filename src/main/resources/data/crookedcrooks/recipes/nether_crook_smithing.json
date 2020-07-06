@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:smithing",
+	"base": {
+		"item": "crookedcrooks:iron_crook"
+	},
+	"addition": {
+		"item": "minecraft:nether_brick"
+	},
+	"result": {
+		"item": "crookedcrooks:nether_crook"
+	}
+}

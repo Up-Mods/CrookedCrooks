@@ -21,6 +21,7 @@ if (System.env.CI == "true") {
 group = project.maven_group
 
 repositories {
+	maven { url "http://server.bbkr.space:8081/artifactory/libs-release" }
 	mavenCentral()
 }
 
@@ -31,6 +32,8 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	//Required for extra crooks.
+	modImplementation "io.github.cottonmc:LibCD:${project.libcd_version}"
 }
 
 processResources {

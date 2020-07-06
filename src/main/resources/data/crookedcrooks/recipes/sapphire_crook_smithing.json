@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:smithing",
+	"base": {
+		"item": "crookedcrooks:wooden_crook"
+	},
+	"addition": {
+		"item": "techreborn:sapphire_gem"
+	},
+	"result": {
+		"item": "crookedcrooks:sapphire_crook"
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"parent": "crookedcrooks:recipes/root",
+	"rewards": {
+		"recipes": [
+			"crookedcrooks:adamantium_crook"
+		]
+	},
+	"criteria": {
+		"has_adamantium_rod": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "adabraniummod:adamantium_rod"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "crookedcrooks:adamantium_crook"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_adamantium_rod",
+			"has_the_recipe"
+		]
+	]
+}

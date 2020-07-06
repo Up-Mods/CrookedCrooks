@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:smithing",
+	"base": {
+		"item": "crookedcrooks:diamond_crook"
+	},
+	"addition": {
+		"item": "adabraniummod:vibranium_ingot"
+	},
+	"result": {
+		"item": "crookedcrooks:vibranium_crook"
+	}
+}

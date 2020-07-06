@@ -7,7 +7,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import io.github.joaoh1.crookedcrooks.CrookedCrooksMod;
-import io.github.joaoh1.crookedcrooks.item.CrookItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -27,10 +26,10 @@ public abstract class BlockMixin {
 	
 	@Inject(at = @At("TAIL"), method = "afterBreak(Lnet/minecraft/world/World;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/item/ItemStack;)V")
 	public void multiplyDrops(World world, PlayerEntity player, BlockPos pos, BlockState state, BlockEntity blockEntity, ItemStack stack, CallbackInfo info) {
-		if (stack.getItem() instanceof CrookItem) {
+		if (stack.getItem().isIn(CrookedCrooksMod.CROOKS)) {
 			if (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) == 0) {
 				if (state.isIn(CrookedCrooksMod.CROOK_EFFECTIVE)) {
-					for (int i = 0; i < 5; i++) {
+					for (int i = 0; i < 4; i++) {
 						dropStacks(state, world, pos, blockEntity, player, stack);	
 					}
 				}

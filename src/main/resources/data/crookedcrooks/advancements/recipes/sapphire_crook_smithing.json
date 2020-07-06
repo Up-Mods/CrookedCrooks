@@ -1,0 +1,32 @@
+{
+	"parent": "crookedcrooks:recipes/root",
+	"rewards": {
+		"recipes": [
+			"crookedcrooks:sapphire_crook"
+		]
+	},
+	"criteria": {
+		"has_sapphire": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "techreborn:sapphire_gem"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "crookedcrooks:sapphire_crook_smithing"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_sapphire",
+			"has_the_recipe"
+		]
+	]
+}

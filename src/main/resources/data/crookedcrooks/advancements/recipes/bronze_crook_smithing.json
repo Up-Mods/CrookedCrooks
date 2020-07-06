@@ -1,0 +1,32 @@
+{
+	"parent": "crookedcrooks:recipes/root",
+	"rewards": {
+		"recipes": [
+			"crookedcrooks:bronze_crook"
+		]
+	},
+	"criteria": {
+		"has_bronze_ingot": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "techreborn:bronze_ingot"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "crookedcrooks:bronze_crook_smithing"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_bronze_ingot",
+			"has_the_recipe"
+		]
+	]
+}

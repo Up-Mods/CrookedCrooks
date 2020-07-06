@@ -1,0 +1,37 @@
+{
+	"replace": "false",
+	"values": [
+		"crookedcrooks:wooden_crook",
+		"crookedcrooks:stone_crook",
+		"crookedcrooks:iron_crook",
+		"crookedcrooks:diamond_crook",
+		"crookedcrooks:golden_crook",
+		"crookedcrooks:netherite_crook",
+		"minecraft:pink_wool"
+	],
+	"libcd": {
+		"entries": [
+			{
+				"when": [
+					{ "libcd:mod_loaded": "techreborn" }
+				],
+				"values": [
+					"crookedcrooks:bronze_crook",
+					"crookedcrooks:ruby_crook",
+					"crookedcrooks:sapphire_crook",
+					"crookedcrooks:peridot_crook"
+				]
+			},
+			{
+				"when": [
+					{ "libcd:mod_loaded": "adabraniummod" }
+				],
+				"values": [
+					"crookedcrooks:vibranium_crook",
+					"crookedcrooks:adamantium_crook",
+					"crookedcrooks:nether_crook"
+				]
+			}
+		]
+	}
+}

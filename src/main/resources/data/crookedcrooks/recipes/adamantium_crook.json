@@ -1,0 +1,17 @@
+{
+	"type": "crafting_shaped",
+	"pattern": [
+		"ss",
+		" s",
+		" s"
+	],
+	"key": {
+		"s": {
+			"item": "adabraniummod:adamantium_rod"
+		}
+	},
+	"result": {
+		"count": 1,
+		"item": "crookedcrooks:adamantium_crook"
+	}
+}

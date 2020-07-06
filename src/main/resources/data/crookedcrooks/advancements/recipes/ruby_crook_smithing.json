@@ -1,0 +1,32 @@
+{
+	"parent": "crookedcrooks:recipes/root",
+	"rewards": {
+		"recipes": [
+			"crookedcrooks:ruby_crook"
+		]
+	},
+	"criteria": {
+		"has_ruby": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "techreborn:ruby_gem"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "crookedcrooks:ruby_crook_smithing"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_ruby",
+			"has_the_recipe"
+		]
+	]
+}
