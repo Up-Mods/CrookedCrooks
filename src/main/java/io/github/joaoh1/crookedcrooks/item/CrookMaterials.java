@@ -40,6 +40,22 @@ public enum CrookMaterials implements ToolMaterial {
 	}),
 	NETHER(2, 381, 8.0F, 2.0F, 15, () -> {
 		return Ingredient.ofItems(Items.NETHER_BRICK);
+	}),
+	//Astromine Materials.
+	METITE(2, 981, 14.0F, 5.0F, 5, () -> {
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("astromine", "metite_ingot")));
+	}),
+	ASTERITE(5, 2015, 10.0F, 5.0F, 20, () -> {
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("astromine", "asterite")));
+	}),
+	STELLUM(5, 2643, 8.0F, 6.0F, 15, () -> {
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("astromine", "stellum_ingot")));
+	}),
+	GALAXIUM(6, 3072, 11.0F, 5.0F, 18, () -> {
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("astromine", "galaxium")));
+	}),
+	UNIVITE(7, 3918, 12.0F, 6.0F, 22, () -> {
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("astromine", "univite_ingot")));
 	});
 
 	private final int miningLevel;

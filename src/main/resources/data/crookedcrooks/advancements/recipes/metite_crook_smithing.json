@@ -1,0 +1,32 @@
+{
+	"parent": "crookedcrooks:recipes/root",
+	"rewards": {
+		"recipes": [
+			"crookedcrooks:metite_crook_smithing"
+		]
+	},
+	"criteria": {
+		"has_metite_ingot": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "astromine:metite_ingot"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "crookedcrooks:metite_crook_smithing"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_metite_ingot",
+			"has_the_recipe"
+		]
+	]
+}

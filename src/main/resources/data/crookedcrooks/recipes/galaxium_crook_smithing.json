@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:smithing",
+	"base": {
+		"item": "crookedcrooks:wooden_crook"
+	},
+	"addition": {
+		"item": "astromine:galaxium"
+	},
+	"result": {
+		"item": "crookedcrooks:galaxium_crook"
+	}
+}

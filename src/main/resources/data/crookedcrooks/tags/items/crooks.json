@@ -31,6 +31,18 @@
 					"crookedcrooks:adamantium_crook",
 					"crookedcrooks:nether_crook"
 				]
+			},
+			{
+				"when": [
+					{ "libcd:mod_loaded": "astromine" }
+				],
+				"values": [
+					"crookedcrooks:metite_crook",
+					"crookedcrooks:asterite_crook",
+					"crookedcrooks:stellum_crook",
+					"crookedcrooks:galaxium_crook",
+					"crookedcrooks:univite_crook"
+				]
 			}
 		]
 	}

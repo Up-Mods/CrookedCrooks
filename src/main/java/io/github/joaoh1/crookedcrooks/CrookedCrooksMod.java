@@ -37,6 +37,11 @@ public class CrookedCrooksMod implements ModInitializer {
 	public static final Item ADAMANTIUM_CROOK_ITEM = new CrookItem(CrookMaterials.ADAMANTIUM, 0F, -1F, 0.85F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item NETHER_CROOK_ITEM = new CrookItem(CrookMaterials.NETHER, 0F, -1F, 0.5F, new Item.Settings().group(ItemGroup.TOOLS));
 	//TODO - Astromine Crooks.
+	public static final Item METITE_CROOK_ITEM = new CrookItem(CrookMaterials.METITE, 0F, -1F, 0.55F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item ASTERITE_CROOK_ITEM = new CrookItem(CrookMaterials.ASTERITE, 0F, -1F, 0.7F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item STELLUM_CROOK_ITEM = new CrookItem(CrookMaterials.STELLUM, 0F, -1F, 0.75F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item GALAXIUM_CROOK_ITEM = new CrookItem(CrookMaterials.GALAXIUM, 0F, -1F, 0.8F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item UNIVITE_CROOK_ITEM = new CrookItem(CrookMaterials.UNIVITE, 0F, -1F, 0.85F, new Item.Settings().group(ItemGroup.TOOLS));
 
 	@Override
 	public void onInitialize() {
@@ -59,6 +64,13 @@ public class CrookedCrooksMod implements ModInitializer {
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "vibranium_crook"), VIBRANIUM_CROOK_ITEM);
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "adamantium_crook"), ADAMANTIUM_CROOK_ITEM);
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "nether_crook"), NETHER_CROOK_ITEM);
+		}
+		if (fabricLoader.isModLoaded("astromine")) {
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "metite_crook"), METITE_CROOK_ITEM);
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "asterite_crook"), ASTERITE_CROOK_ITEM);
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "stellum_crook"), STELLUM_CROOK_ITEM);
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "galaxium_crook"), GALAXIUM_CROOK_ITEM);
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "univite_crook"), UNIVITE_CROOK_ITEM);
 		}
 
 		//Make Wooden Crooks usable as fuel. More mods should have this.

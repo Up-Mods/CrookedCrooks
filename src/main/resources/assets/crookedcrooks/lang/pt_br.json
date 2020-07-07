@@ -2,8 +2,8 @@
 	"item.crookedcrooks.wooden_crook": "Cajado de madeira",
 	"item.crookedcrooks.stone_crook": "Cajado de pedra",
 	"item.crookedcrooks.iron_crook": "Cajado de ferro",
-	"item.crookedcrooks.golden_crook": "Cajado de ouro",
 	"item.crookedcrooks.diamond_crook": "Cajado de diamante",
+	"item.crookedcrooks.golden_crook": "Cajado de ouro",
 	"item.crookedcrooks.netherite_crook": "Cajado de netherita",
 	"item.crookedcrooks.bronze_crook": "Cajado de bronze",
 	"item.crookedcrooks.ruby_crook": "Cajado de rubi",
@@ -11,5 +11,10 @@
 	"item.crookedcrooks.peridot_crook": "Cajado de peridoto",
 	"item.crookedcrooks.vibranium_crook": "Cajado de vibranium",
 	"item.crookedcrooks.adamantium_crook": "Cajado de adamantium",
-	"item.crookedcrooks.nether_crook": "Cajado do Nether"
+	"item.crookedcrooks.nether_crook": "Cajado do Nether",
+	"item.crookedcrooks.metite_crook": "Cajado de metita",
+	"item.crookedcrooks.asterite_crook": "Cajado de asterita",
+	"item.crookedcrooks.stellum_crook": "Cajado de stellum",
+	"item.crookedcrooks.galaxium_crook": "Cajado de galaxium",
+	"item.crookedcrooks.univite_crook": "Cajado de univita"
 }

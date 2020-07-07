@@ -1,0 +1,32 @@
+{
+	"parent": "crookedcrooks:recipes/root",
+	"rewards": {
+		"recipes": [
+			"crookedcrooks:galaxium_crook_smithing"
+		]
+	},
+	"criteria": {
+		"has_galaxium": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "astromine:galaxium"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "crookedcrooks:galaxium_crook_smithing"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_galaxium",
+			"has_the_recipe"
+		]
+	]
+}

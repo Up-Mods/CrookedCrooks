@@ -1,0 +1,32 @@
+{
+	"parent": "crookedcrooks:recipes/root",
+	"rewards": {
+		"recipes": [
+			"crookedcrooks:asterite_crook_smithing"
+		]
+	},
+	"criteria": {
+		"has_asterite": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "astromine:asterite"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "crookedcrooks:asterite_crook_smithing"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_asterite",
+			"has_the_recipe"
+		]
+	]
+}
