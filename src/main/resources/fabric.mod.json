@@ -26,5 +26,13 @@
     "fabric": ">=0.14.0",
     "libcd": ">=2.5.0",
     "minecraft": ">=1.16.0"
+  },
+  "recommends": {
+    "adabraniummod": "*",
+    "astromine": "*",
+    "techreborn": "*"
+  },
+  "suggests": {
+    "ltr": "*"
   }
 }
