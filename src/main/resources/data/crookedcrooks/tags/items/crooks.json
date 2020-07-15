@@ -1,13 +1,12 @@
 {
-	"replace": "false",
+	"replace": false,
 	"values": [
 		"crookedcrooks:wooden_crook",
 		"crookedcrooks:stone_crook",
 		"crookedcrooks:iron_crook",
 		"crookedcrooks:diamond_crook",
 		"crookedcrooks:golden_crook",
-		"crookedcrooks:netherite_crook",
-		"minecraft:pink_wool"
+		"crookedcrooks:netherite_crook"
 	],
 	"libcd": {
 		"entries": [
