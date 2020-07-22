@@ -1,7 +1,5 @@
 package io.github.joaoh1.crookedcrooks;
 
-import io.github.cottonmc.mcdict.api.Dict;
-import io.github.cottonmc.mcdict.api.DictManager;
 import io.github.joaoh1.crookedcrooks.item.CrookItem;
 import io.github.joaoh1.crookedcrooks.item.CrookMaterials;
 import net.fabricmc.api.ModInitializer;
@@ -17,7 +15,7 @@ import net.minecraft.util.registry.Registry;
 
 public class CrookedCrooksMod implements ModInitializer {
 	//The crook_effective tag, used for blocks which should have its drops multiplied by crooks.
-	public static final Dict<Block, Integer> CROOK_EFFECTIVE = DictManager.DATA_PACK.registerBlockDict(new Identifier("crookedcrooks", "crook_effective"), Integer.class);
+	public static final Tag<Block> CROOK_EFFECTIVE = TagRegistry.block(new Identifier("crookedcrooks", "crook_effective"));
 	//The crooks tag, used to list all the crooks and to apply the multiplier.
 	public static final Tag<Item> CROOKS = TagRegistry.item(new Identifier("crookedcrooks", "crooks"));
 	
@@ -38,7 +36,7 @@ public class CrookedCrooksMod implements ModInitializer {
 	public static final Item VIBRANIUM_CROOK_ITEM = new CrookItem(CrookMaterials.VIBRANIUM, 0F, -1F, 0.75F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item ADAMANTIUM_CROOK_ITEM = new CrookItem(CrookMaterials.ADAMANTIUM, 0F, -1F, 0.85F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item NETHER_CROOK_ITEM = new CrookItem(CrookMaterials.NETHER, 0F, -1F, 0.5F, new Item.Settings().group(ItemGroup.TOOLS));
-	//Astromine Crooks.
+	//TODO - Astromine Crooks.
 	public static final Item METITE_CROOK_ITEM = new CrookItem(CrookMaterials.METITE, 0F, -1F, 0.55F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item ASTERITE_CROOK_ITEM = new CrookItem(CrookMaterials.ASTERITE, 0F, -1F, 0.7F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item STELLUM_CROOK_ITEM = new CrookItem(CrookMaterials.STELLUM, 0F, -1F, 0.75F, new Item.Settings().group(ItemGroup.TOOLS));

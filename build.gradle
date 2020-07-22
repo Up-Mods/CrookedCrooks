@@ -18,7 +18,6 @@ group = project.maven_group
 
 repositories {
 	maven { url "http://server.bbkr.space:8081/artifactory/libs-release" }
-	maven { url "https://jitpack.io" }
 	mavenCentral()
 }
 
@@ -29,17 +28,8 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-	//Temporarily adopted while Jitpack is used.
-	modRuntime ("com.github.SuperCoder7979:databreaker:ca256383f1c320ef3e230fdb0b6a2df5a79b3387") {
-		exclude module : "fabric-loader"
-	}
 	//Required for extra crooks.
 	modImplementation "io.github.cottonmc:LibCD:${project.libcd_version}"
-	//Required for extra configurability.
-	//TODO - Use CottonMC's MCDict instead of a fork.
-	modImplementation "com.github.joaoh1:MCDict:${project.mcdict_version}"
-	include "com.github.joaoh1:MCDict:${project.mcdict_version}"
 }
 
 processResources {

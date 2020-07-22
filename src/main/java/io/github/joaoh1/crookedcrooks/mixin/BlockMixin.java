@@ -24,20 +24,12 @@ public abstract class BlockMixin {
 	@Shadow
 	public static void dropStacks(BlockState state, World world, BlockPos pos, BlockEntity blockEntity, Entity entity, ItemStack stack) {}
 	
-	@Inject(
-		at = @At(value = "INVOKE", target = "net/minecraft/block/Block.dropStacks(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)V"),
-		method = "afterBreak(Lnet/minecraft/world/World;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/item/ItemStack;)V",
-		cancellable = true
-	)
+	@Inject(at = @At("TAIL"), method = "afterBreak(Lnet/minecraft/world/World;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/item/ItemStack;)V")
 	public void multiplyDrops(World world, PlayerEntity player, BlockPos pos, BlockState state, BlockEntity blockEntity, ItemStack stack, CallbackInfo info) {
 		if (stack.getItem().isIn(CrookedCrooksMod.CROOKS)) {
 			if (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) == 0) {
-				if (CrookedCrooksMod.CROOK_EFFECTIVE.contains(state.getBlock())) {
-					int multiplier = CrookedCrooksMod.CROOK_EFFECTIVE.get(state.getBlock()).intValue() - 1;
-					if (multiplier <= -1) {
-						info.cancel();
-					}
-					for (int i = 0; i < multiplier; i++) {
+				if (state.isIn(CrookedCrooksMod.CROOK_EFFECTIVE)) {
+					for (int i = 0; i < 4; i++) {
 						dropStacks(state, world, pos, blockEntity, player, stack);	
 					}
 				}

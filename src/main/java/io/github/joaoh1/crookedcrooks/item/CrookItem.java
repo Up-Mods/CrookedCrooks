@@ -20,13 +20,12 @@ public class CrookItem extends MiningToolItem {
 
 	public CrookItem(ToolMaterial material, float attackDamage, float attackSpeed, float pullingPower, Item.Settings settings) {
 		super(attackDamage, attackSpeed, material, null, settings);
-		//TODO - Move the pulling power registry to MCDict's dicts.
 		this.pullingPower = pullingPower;
 	}
 
 	@Override
 	public boolean isEffectiveOn(BlockState state) {
-		return CrookedCrooksMod.CROOK_EFFECTIVE.contains(state.getBlock());
+		return state.isIn(CrookedCrooksMod.CROOK_EFFECTIVE);
 	}
 
 	@Override
@@ -40,7 +39,7 @@ public class CrookItem extends MiningToolItem {
 
 	@Override
 	public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
-		if (!world.isClient && CrookedCrooksMod.CROOK_EFFECTIVE.contains(state.getBlock())) {
+		if (!world.isClient && state.isIn(CrookedCrooksMod.CROOK_EFFECTIVE)) {
 			stack.damage(1, miner, e -> {
 				e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND);
 			});
