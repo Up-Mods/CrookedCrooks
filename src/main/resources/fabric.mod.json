@@ -18,9 +18,6 @@
       "io.github.joaoh1.crookedcrooks.CrookedCrooksMod"
     ]
   },
-  "mixins": [
-    "crookedcrooks.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=0.8.8",
     "fabric": ">=0.14.0",

@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.4-SNAPSHOT'
+	id 'fabric-loom' version '0.5-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -31,15 +31,17 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	//Temporarily adopted while Jitpack is used.
-	modRuntime ("com.github.SuperCoder7979:databreaker:ca256383f1c320ef3e230fdb0b6a2df5a79b3387") {
+	modRuntime ("com.github.SuperCoder7979:databreaker:f072a81fbd26e4978b687414a21f1ea4a0077c15") {
 		exclude module : "fabric-loader"
 	}
 	//Required for extra crooks.
 	modImplementation "io.github.cottonmc:LibCD:${project.libcd_version}"
 	//Required for extra configurability.
-	//TODO - Use CottonMC's MCDict instead of a fork.
 	modImplementation "com.github.joaoh1:MCDict:${project.mcdict_version}"
 	include "com.github.joaoh1:MCDict:${project.mcdict_version}"
+	//Required for static data.
+	modImplementation "io.github.cottonmc:StaticData:${project.staticdata_version}"
+	include "io.github.cottonmc:StaticData:${project.staticdata_version}"
 }
 
 processResources {

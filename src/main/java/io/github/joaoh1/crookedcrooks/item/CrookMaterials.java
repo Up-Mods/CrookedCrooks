@@ -2,6 +2,7 @@ package io.github.joaoh1.crookedcrooks.item;
 
 import java.util.function.Supplier;
 
+import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.ToolMaterials;
@@ -19,17 +20,17 @@ public enum CrookMaterials implements ToolMaterial {
 	GOLD(ToolMaterials.GOLD),
 	NETHERITE(ToolMaterials.NETHERITE),
 	//Tech Reborn Materials.
-	BRONZE(2, 375, 7.0F, 2.25F, 12, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("techreborn", "bronze_ingot")));
+	TECH_REBORN_BRONZE(2, 375, 7.0F, 2.25F, 12, () -> {
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "bronze_ingots")));
 	}),
 	RUBY(2, 1651, 6.0F, 4.7F, 10, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("techreborn", "ruby_gem")));
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "rubies")));
 	}),
 	SAPPHIRE(3, 1651, 14.0F, 1.8F, 8, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("techreborn", "sapphire_gem")));
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "sapphires")));
 	}),
 	PERIDOT(2, 573, 7.0F, 2.4F, 24, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("techreborn", "peridot_gem")));
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "peridot_gems")));
 	}),
 	//Adabranium Materials.
 	VIBRANIUM(3, 2990, 20F, 10.0F, 12, () -> {
@@ -43,19 +44,34 @@ public enum CrookMaterials implements ToolMaterial {
 	}),
 	//Astromine Materials.
 	METITE(2, 981, 14.0F, 5.0F, 5, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("astromine", "metite_ingot")));
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "metite_ingots")));
 	}),
 	ASTERITE(5, 2015, 10.0F, 5.0F, 20, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("astromine", "asterite")));
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "asterites")));
 	}),
 	STELLUM(5, 2643, 8.0F, 6.0F, 15, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("astromine", "stellum_ingot")));
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "stellum_ingots")));
 	}),
 	GALAXIUM(6, 3072, 11.0F, 5.0F, 18, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("astromine", "galaxium")));
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "galaxiums")));
 	}),
 	UNIVITE(7, 3918, 12.0F, 6.0F, 22, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("astromine", "univite_ingot")));
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "univite_ingots")));
+	}),
+	COPPER(1, 200, 4.0F, 1.5F, 10, () -> {
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c", "copper_ingots")));
+	}),
+	TIN(1, 200, 5F, 1.0F, 10, () -> {
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c", "tin_ingots")));
+	}),
+	SILVER(2, 462, 6.5F, 2.0F, 20, () -> {
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c", "silver_ingots")));
+	}),
+	LEAD(2, 496, 4.5F, 1.5F, 5, () -> {
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c", "tin_ingots")));
+	}),
+	ASTROMINE_BRONZE(2, 539, 7.0F, 2.5F, 18, () -> {
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "lead_ingots")));
 	});
 
 	private final int miningLevel;
