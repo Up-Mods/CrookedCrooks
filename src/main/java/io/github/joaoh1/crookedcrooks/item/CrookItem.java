@@ -20,7 +20,7 @@ public class CrookItem extends MiningToolItem {
 
 	public CrookItem(ToolMaterial material, float attackDamage, float attackSpeed, float pullingPower, Item.Settings settings) {
 		super(attackDamage, attackSpeed, material, null, settings);
-		//TODO - Move the pulling power registry to MCDict's dicts.
+		//TODO - Move the pulling power registry to a data-driven system.
 		this.pullingPower = pullingPower;
 	}
 
