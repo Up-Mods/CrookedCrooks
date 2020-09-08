@@ -12,66 +12,73 @@ import net.minecraft.util.Lazy;
 import net.minecraft.util.registry.Registry;
 
 public enum CrookMaterials implements ToolMaterial {
-	//Vanilla Materials.
+	//Vanilla Materials
 	WOOD(ToolMaterials.WOOD),
 	STONE(ToolMaterials.STONE),
 	IRON(ToolMaterials.IRON),
 	DIAMOND(ToolMaterials.DIAMOND),
 	GOLD(ToolMaterials.GOLD),
 	NETHERITE(ToolMaterials.NETHERITE),
-	//Tech Reborn Materials.
+	//Tech Reborn Materials
 	TECH_REBORN_BRONZE(2, 375, 7.0F, 2.25F, 12, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "bronze_ingots")));
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:bronze_ingots")));
 	}),
 	RUBY(2, 1651, 6.0F, 4.7F, 10, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "rubies")));
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:rubies")));
 	}),
 	SAPPHIRE(3, 1651, 14.0F, 1.8F, 8, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "sapphires")));
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:sapphires")));
 	}),
 	PERIDOT(2, 573, 7.0F, 2.4F, 24, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "peridot_gems")));
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:peridot_gems")));
 	}),
-	//Adabranium Materials.
+	//Adabranium Materials
 	VIBRANIUM(3, 2990, 20F, 10.0F, 12, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("adabraniummod", "vibranium_ingot")));
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("adabraniummod:vibranium_ingot")));
 	}),
 	ADAMANTIUM(4, 4280, 35.0F, 16.0F, 10, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("adabraniummod", "adamantium_ingot")));
+		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("adabraniummod:adamantium_ingot")));
 	}),
 	NETHER(2, 381, 8.0F, 2.0F, 15, () -> {
 		return Ingredient.ofItems(Items.NETHER_BRICK);
 	}),
-	//Astromine Materials.
+	//Astromine Materials
 	METITE(2, 981, 14.0F, 5.0F, 5, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "metite_ingots")));
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:metite_ingots")));
 	}),
 	ASTERITE(5, 2015, 10.0F, 5.0F, 20, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "asterites")));
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:asterites")));
 	}),
 	STELLUM(5, 2643, 8.0F, 6.0F, 15, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "stellum_ingots")));
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:stellum_ingots")));
 	}),
 	GALAXIUM(6, 3072, 11.0F, 5.0F, 18, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "galaxiums")));
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:galaxiums")));
 	}),
 	UNIVITE(7, 3918, 12.0F, 6.0F, 22, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "univite_ingots")));
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:univite_ingots")));
+	}),
+	LUNUM(4, 1382, 7f, 4.5f, 18, () -> {
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:lunum_ingots")));
 	}),
 	COPPER(1, 200, 4.0F, 1.5F, 10, () -> {
-		return Ingredient.fromTag(TagRegistry.item(new Identifier("c", "copper_ingots")));
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:copper_ingots")));
 	}),
 	TIN(1, 200, 5F, 1.0F, 10, () -> {
-		return Ingredient.fromTag(TagRegistry.item(new Identifier("c", "tin_ingots")));
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:tin_ingots")));
 	}),
 	SILVER(2, 462, 6.5F, 2.0F, 20, () -> {
-		return Ingredient.fromTag(TagRegistry.item(new Identifier("c", "silver_ingots")));
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:silver_ingots")));
 	}),
 	LEAD(2, 496, 4.5F, 1.5F, 5, () -> {
-		return Ingredient.fromTag(TagRegistry.item(new Identifier("c", "tin_ingots")));
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:tin_ingots")));
 	}),
 	ASTROMINE_BRONZE(2, 539, 7.0F, 2.5F, 18, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("c", "lead_ingots")));
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:lead_ingots")));
+	}),
+	//Applied Energistics 2 Materials
+	CERTUS_QUARTZ(ToolMaterials.IRON.getMiningLevel(), ToolMaterials.IRON.getDurability(), ToolMaterials.IRON.getMiningLevel(), ToolMaterials.IRON.getAttackDamage(), ToolMaterials.IRON.getEnchantability(), () -> {
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("appliedenergistics2:crystals/certus_quartz")));
 	});
 
 	private final int miningLevel;

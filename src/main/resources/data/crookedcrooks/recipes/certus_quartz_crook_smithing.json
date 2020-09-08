@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:smithing",
+	"base": {
+		"item": "crookedcrooks:wooden_crook"
+	},
+	"addition": {
+		"tag": "appliedenergistics2:crystals/certus_quartz"
+	},
+	"result": {
+		"item": "crookedcrooks:certus_quartz_crook"
+	}
+}

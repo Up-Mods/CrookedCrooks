@@ -1,0 +1,32 @@
+{
+	"parent": "crookedcrooks:recipes/root",
+	"rewards": {
+		"recipes": [
+			"crookedcrooks:lunum_crook_smithing"
+		]
+	},
+	"criteria": {
+		"has_lunum_ingot": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"tag": "c:lunum_ingots"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "crookedcrooks:lunum_crook_smithing"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_lunum_ingot",
+			"has_the_recipe"
+		]
+	]
+}

@@ -1,6 +1,0 @@
-{
-	"parent": "item/handheld",
-	"textures": {
-		"layer0": "crookedcrooks:item/astromine_bronze_crook"
-	}
-}

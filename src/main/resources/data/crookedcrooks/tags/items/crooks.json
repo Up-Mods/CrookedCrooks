@@ -6,43 +6,62 @@
 		"crookedcrooks:iron_crook",
 		"crookedcrooks:diamond_crook",
 		"crookedcrooks:golden_crook",
-		"crookedcrooks:netherite_crook"
-	],
-	"libcd": {
-		"entries": [
-			{
-				"when": [
-					{ "libcd:mod_loaded": "techreborn" }
-				],
-				"values": [
-					"crookedcrooks:bronze_crook",
-					"crookedcrooks:ruby_crook",
-					"crookedcrooks:sapphire_crook",
-					"crookedcrooks:peridot_crook"
-				]
-			},
-			{
-				"when": [
-					{ "libcd:mod_loaded": "adabraniummod" }
-				],
-				"values": [
-					"crookedcrooks:vibranium_crook",
-					"crookedcrooks:adamantium_crook",
-					"crookedcrooks:nether_crook"
-				]
-			},
-			{
-				"when": [
-					{ "libcd:mod_loaded": "astromine" }
-				],
-				"values": [
-					"crookedcrooks:metite_crook",
-					"crookedcrooks:asterite_crook",
-					"crookedcrooks:stellum_crook",
-					"crookedcrooks:galaxium_crook",
-					"crookedcrooks:univite_crook"
-				]
-			}
-		]
-	}
+		"crookedcrooks:netherite_crook",
+		{
+			"id": "crookedcrooks:bronze_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:ruby_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:sapphire_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:peridot_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:vibranium_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:adamantium_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:nether_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:metite_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:asterite_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:stellum_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:galaxium_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:univite_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:lunum_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:certus_quartz_crook",
+			"required": false
+		}
+	]
 }
