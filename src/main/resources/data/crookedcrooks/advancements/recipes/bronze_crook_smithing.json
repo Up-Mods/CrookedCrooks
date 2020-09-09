@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "techreborn:bronze_ingot"
+						"tag": "c:bronze_ingot"
 					}
 				]
 			}

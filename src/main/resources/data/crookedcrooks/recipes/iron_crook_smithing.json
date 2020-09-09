@@ -4,7 +4,7 @@
 		"item": "crookedcrooks:wooden_crook"
 	},
 	"addition": {
-		"item": "minecraft:iron_ingot"
+		"tag": "c:iron_ingots"
 	},
 	"result": {
 		"item": "crookedcrooks:iron_crook"

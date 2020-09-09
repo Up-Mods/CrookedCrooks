@@ -4,7 +4,7 @@
 		"item": "crookedcrooks:wooden_crook"
 	},
 	"addition": {
-		"item": "astromine:asterite"
+		"tag": "c:asterites"
 	},
 	"result": {
 		"item": "crookedcrooks:asterite_crook"

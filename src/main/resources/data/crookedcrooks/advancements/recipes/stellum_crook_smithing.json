@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "astromine:stellum_ingot"
+						"tag": "c:stellum_ingots"
 					}
 				]
 			}

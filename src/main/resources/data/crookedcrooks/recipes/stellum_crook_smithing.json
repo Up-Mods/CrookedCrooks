@@ -4,7 +4,7 @@
 		"item": "crookedcrooks:wooden_crook"
 	},
 	"addition": {
-		"item": "astromine:stellum_ingot"
+		"tag": "c:stellum_ingots"
 	},
 	"result": {
 		"item": "crookedcrooks:stellum_crook"

@@ -4,7 +4,7 @@
 		"item": "crookedcrooks:wooden_crook"
 	},
 	"addition": {
-		"item": "techreborn:bronze_ingot"
+		"tag": "c:bronze_ingots"
 	},
 	"result": {
 		"item": "crookedcrooks:bronze_crook"

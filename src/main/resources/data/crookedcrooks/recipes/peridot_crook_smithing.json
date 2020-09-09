@@ -4,7 +4,7 @@
 		"item": "crookedcrooks:wooden_crook"
 	},
 	"addition": {
-		"item": "techreborn:peridot_gem"
+		"tag": "c:peridots"
 	},
 	"result": {
 		"item": "crookedcrooks:peridot_crook"

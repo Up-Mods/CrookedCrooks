@@ -4,7 +4,7 @@
 		"item": "crookedcrooks:wooden_crook"
 	},
 	"addition": {
-		"item": "techreborn:ruby_gem"
+		"tag": "c:rubies"
 	},
 	"result": {
 		"item": "crookedcrooks:ruby_crook"

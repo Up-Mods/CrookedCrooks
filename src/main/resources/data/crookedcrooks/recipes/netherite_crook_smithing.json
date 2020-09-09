@@ -4,7 +4,7 @@
 		"item": "crookedcrooks:diamond_crook"
 	},
 	"addition": {
-		"item": "minecraft:netherite_ingot"
+		"tag": "c:netherite_ingots"
 	},
 	"result": {
 		"item": "crookedcrooks:netherite_crook"

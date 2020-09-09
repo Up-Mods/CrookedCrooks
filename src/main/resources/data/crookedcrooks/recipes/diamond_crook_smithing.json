@@ -4,7 +4,7 @@
 		"item": "crookedcrooks:wooden_crook"
 	},
 	"addition": {
-		"item": "minecraft:diamond"
+		"tag": "c:diamonds"
 	},
 	"result": {
 		"item": "crookedcrooks:diamond_crook"

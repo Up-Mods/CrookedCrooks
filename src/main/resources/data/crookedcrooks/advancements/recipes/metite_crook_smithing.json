@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "astromine:metite_ingot"
+						"item": "c:metite_ingots"
 					}
 				]
 			}

@@ -1,11 +1,6 @@
 {
 	"replace": false,
 	"values": [
-		"crookedcrooks:golden_crook",
-		{
-            "id": "crookedcrooks:rose_gold_crook",
-            "required": false
-        },
 		{
             "id": "crookedcrooks:fools_gold_crook",
             "required": false
