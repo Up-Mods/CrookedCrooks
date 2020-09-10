@@ -1,5 +1,5 @@
 {
 	"when": [
-		{ "libcd:mod_loaded": "astromine" }
+		{ "libcd:mod_loaded": "astromine-discoveries" }
 	]
 }

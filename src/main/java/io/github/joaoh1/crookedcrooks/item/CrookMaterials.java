@@ -94,6 +94,9 @@ public enum CrookMaterials implements ToolMaterial {
 	//Applied Energistics 2 Materials
 	CERTUS_QUARTZ(ToolMaterials.IRON.getMiningLevel(), ToolMaterials.IRON.getDurability(), ToolMaterials.IRON.getMiningLevel(), ToolMaterials.IRON.getAttackDamage(), ToolMaterials.IRON.getEnchantability(), () -> {
 		return Ingredient.fromTag(TagRegistry.item(new Identifier("appliedenergistics2:crystals/certus_quartz")));
+	}),
+	NETHER_QUARTZ(ToolMaterials.IRON.getMiningLevel(), ToolMaterials.IRON.getDurability(), ToolMaterials.IRON.getMiningLevel(), ToolMaterials.IRON.getAttackDamage(), ToolMaterials.IRON.getEnchantability(), () -> {
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:quartz")));
 	});
 
 	private final int miningLevel;

@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "c:metite_ingots"
+						"tag": "c:metite_ingots"
 					}
 				]
 			}

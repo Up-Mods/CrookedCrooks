@@ -2,7 +2,7 @@
 	"parent": "crookedcrooks:recipes/root",
 	"rewards": {
 		"recipes": [
-			"crookedcrooks:peridot_crook"
+			"crookedcrooks:peridot_crook_smithing"
 		]
 	},
 	"criteria": {
@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "c:peridot_gems"
+						"tag": "c:peridots"
 					}
 				]
 			}

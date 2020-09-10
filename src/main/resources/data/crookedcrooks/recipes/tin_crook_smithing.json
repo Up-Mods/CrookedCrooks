@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:smithing",
+	"base": {
+		"item": "crookedcrooks:wooden_crook"
+	},
+	"addition": {
+		"tag": "c:tin_ingots"
+	},
+	"result": {
+		"item": "crookedcrooks:tin_crook"
+	}
+}

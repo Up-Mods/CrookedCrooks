@@ -1,5 +1,10 @@
 {
 	"when": [
-		{ "libcd:mod_loaded": "techreborn" }
+		{
+			"libcd:or": [
+				{ "libcd:mod_loaded": "astromine" },
+				{ "libcd:mod_loaded": "techreborn" }
+			]
+		}
 	]
 }

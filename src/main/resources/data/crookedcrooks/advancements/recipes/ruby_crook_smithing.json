@@ -2,7 +2,7 @@
 	"parent": "crookedcrooks:recipes/root",
 	"rewards": {
 		"recipes": [
-			"crookedcrooks:ruby_crook"
+			"crookedcrooks:ruby_crook_smithing"
 		]
 	},
 	"criteria": {

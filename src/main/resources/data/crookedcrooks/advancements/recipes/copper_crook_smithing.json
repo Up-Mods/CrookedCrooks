@@ -2,16 +2,16 @@
 	"parent": "crookedcrooks:recipes/root",
 	"rewards": {
 		"recipes": [
-			"crookedcrooks:netherite_crook_smithing"
+			"crookedcrooks:copper_crook_smithing"
 		]
 	},
 	"criteria": {
-		"has_netherite_ingot": {
+		"has_copper_ingot": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [
 					{
-						"tag": "c:netherite_ingots"
+						"tag": "c:copper_ingots"
 					}
 				]
 			}
@@ -19,13 +19,13 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "crookedcrooks:netherite_crook_smithing"
+				"recipe": "crookedcrooks:copper_crook_smithing"
 			}
 		}
 	},
 	"requirements": [
 		[
-			"has_netherite_ingot",
+			"has_copper_ingot",
 			"has_the_recipe"
 		]
 	]

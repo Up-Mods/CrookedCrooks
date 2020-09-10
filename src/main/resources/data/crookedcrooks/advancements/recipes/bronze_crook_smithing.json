@@ -2,7 +2,7 @@
 	"parent": "crookedcrooks:recipes/root",
 	"rewards": {
 		"recipes": [
-			"crookedcrooks:bronze_crook"
+			"crookedcrooks:bronze_crook_smithing"
 		]
 	},
 	"criteria": {
@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "c:bronze_ingot"
+						"tag": "c:bronze_ingots"
 					}
 				]
 			}

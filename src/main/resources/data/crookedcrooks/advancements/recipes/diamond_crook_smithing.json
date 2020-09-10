@@ -2,7 +2,7 @@
 	"parent": "crookedcrooks:recipes/root",
 	"rewards": {
 		"recipes": [
-			"crookedcrooks:diamond_crook"
+			"crookedcrooks:diamond_crook_smithing"
 		]
 	},
 	"criteria": {

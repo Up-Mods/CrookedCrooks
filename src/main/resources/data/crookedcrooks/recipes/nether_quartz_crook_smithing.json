@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:smithing",
+	"base": {
+		"item": "crookedcrooks:wooden_crook"
+	},
+	"addition": {
+		"tag": "c:quartz"
+	},
+	"result": {
+		"item": "crookedcrooks:nether_quartz_crook"
+	}
+}

@@ -60,7 +60,47 @@
 			"required": false
 		},
 		{
+			"id": "crookedcrooks:copper_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:tin_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:silver_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:lead_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:steel_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:electrum_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:rose_gold_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:sterling_silver_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:fools_gold_crook",
+			"required": false
+		},
+		{
 			"id": "crookedcrooks:certus_quartz_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:nether_quartz_crook",
 			"required": false
 		}
 	]
