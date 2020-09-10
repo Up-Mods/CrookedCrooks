@@ -21,10 +21,10 @@
   "depends": {
     "fabricloader": ">=0.8.8",
     "fabric": ">=0.18.0",
+    "minecraft": ">=1.16.2",
     "libcd": ">=2.5.0"
   },
   "recommends": {
-    "minecraft": ">=1.16.2",
     "libcd": ">=3.0.0"
   },
   "suggests": {
