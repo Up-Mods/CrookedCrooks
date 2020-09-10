@@ -2,7 +2,7 @@
 
 # Crooked Crooks
 
-Crooked Crooks is a mod that adds crooks, a tool which can pull mobs and multiply the drops from leaves and grass, currently has crooks for all vanilla materials and materials added by [Tech Reborn](https://www.curseforge.com/minecraft/mc-mods/techreborn), [Adabranium](https://www.curseforge.com/minecraft/mc-mods/adabranium) and [Astromine](https://www.curseforge.com/minecraft/mc-mods/astromine-fabric). If [Lil Tater Reloaded](https://www.curseforge.com/minecraft/mc-mods/lil-tater-reloaded) is detected, crooked Lil Taters (which are similar to the mod's icon) are also added. Inspired by the crook from the Ex Nihilo mod family. Depends on the [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api) and on [LibCD](https://www.curseforge.com/minecraft/mc-mods/libcd).
+Crooked Crooks is a mod that adds crooks, a tool which can pull mobs and multiply the drops from leaves and grasses, currently has crooks for all vanilla materials and materials added by [Tech Reborn](https://www.curseforge.com/minecraft/mc-mods/techreborn), [Adabranium](https://www.curseforge.com/minecraft/mc-mods/adabranium), [Astromine](https://www.curseforge.com/minecraft/mc-mods/astromine-fabric) and [Applied Energistics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2), with bonus compatibility with [Lil Tater Reloaded](https://www.curseforge.com/minecraft/mc-mods/lil-tater-reloaded). Inspired by the crook from the Ex Nihilo mod family. Depends on the [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api), [LibCD](https://www.curseforge.com/minecraft/mc-mods/libcd) and a port of [MCDict](https://github.com/joaoh1/MCDict/tree/1.16) is bundled in the JAR file.
 
 ## Download
 

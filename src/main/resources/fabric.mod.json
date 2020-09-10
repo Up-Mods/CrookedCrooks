@@ -3,7 +3,7 @@
   "id": "crookedcrooks",
   "version": "${version}",
   "name": "Crooked Crooks",
-  "description": "Adds crooks for all the vanilla materials. They multiply drops from leaves and grass and they pull mobs!",
+  "description": "Adds crooks for all the vanilla materials. They multiply drops from leaves and grasses and they pull mobs!",
   "authors": ["joaoh1"],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/crooked-crooks",
@@ -20,12 +20,16 @@
   },
   "depends": {
     "fabricloader": ">=0.8.8",
-    "fabric": ">=0.14.0",
-    "libcd": ">=2.5.0",
-    "minecraft": ">=1.16.0"
+    "fabric": ">=0.18.0",
+    "libcd": ">=2.5.0"
+  },
+  "recommends": {
+    "minecraft": ">=1.16.2",
+    "libcd": ">=3.0.0"
   },
   "suggests": {
     "adabraniummod": "*",
+    "appliedenergistics2": "*",
     "astromine-foundations": "*",
     "ltr": "*",
     "techreborn": "*"
