@@ -60,6 +60,10 @@
 			"required": false
 		},
 		{
+			"id": "crookedcrooks:meteoric_steel_crook",
+			"required": false
+		},
+		{
 			"id": "crookedcrooks:copper_crook",
 			"required": false
 		},

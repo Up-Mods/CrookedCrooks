@@ -48,6 +48,7 @@ public class CrookedCrooksMod implements ModInitializer {
 	public static final Item GALAXIUM_CROOK_ITEM = new CrookItem(CrookMaterials.GALAXIUM, 0F, -3F, 0.8F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item UNIVITE_CROOK_ITEM = new CrookItem(CrookMaterials.UNIVITE, 0F, -3F, 0.85F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item LUNUM_CROOK_ITEM = new CrookItem(CrookMaterials.LUNUM, 0F, -3F, 0.65F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item METEORIC_STEEL_CROOK_ITEM = new CrookItem(CrookMaterials.METEORIC_STEEL, 0F, -3F, 0.625F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item COPPER_CROOK_ITEM = new CrookItem(CrookMaterials.COPPER, 0F, -3F, 0.25F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item TIN_CROOK_ITEM = new CrookItem(CrookMaterials.TIN, 0F, -3F, 0.275F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item SILVER_CROOK_ITEM = new CrookItem(CrookMaterials.SILVER, 0F, -3F, 0.5F, new Item.Settings().group(ItemGroup.TOOLS));
@@ -76,9 +77,9 @@ public class CrookedCrooksMod implements ModInitializer {
 
 		//Choose between Astromine and Tech Reborn's bronze stats.
 		if (fabricLoader.isModLoaded("astromine")) {
-			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "bronze_crook"), TECH_REBORN_BRONZE_CROOK_ITEM);
-		} else if (fabricLoader.isModLoaded("techreborn")) {
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "bronze_crook"), ASTROMINE_BRONZE_CROOK_ITEM);
+		} else if (fabricLoader.isModLoaded("techreborn")) {
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "bronze_crook"), TECH_REBORN_BRONZE_CROOK_ITEM);
 		}
 
 		if (fabricLoader.isModLoaded("techreborn")) {
@@ -98,6 +99,7 @@ public class CrookedCrooksMod implements ModInitializer {
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "galaxium_crook"), GALAXIUM_CROOK_ITEM);
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "univite_crook"), UNIVITE_CROOK_ITEM);
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "lunum_crook"), LUNUM_CROOK_ITEM);
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "meteoric_steel_crook"), METEORIC_STEEL_CROOK_ITEM);
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "copper_crook"), COPPER_CROOK_ITEM);
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "tin_crook"), TIN_CROOK_ITEM);
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "silver_crook"), SILVER_CROOK_ITEM);

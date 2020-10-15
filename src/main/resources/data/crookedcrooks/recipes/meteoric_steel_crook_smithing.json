@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:smithing",
+	"base": {
+		"item": "crookedcrooks:wooden_crook"
+	},
+	"addition": {
+		"tag": "c:meteoric_steel_ingots"
+	},
+	"result": {
+		"item": "crookedcrooks:meteoric_steel_crook"
+	}
+}

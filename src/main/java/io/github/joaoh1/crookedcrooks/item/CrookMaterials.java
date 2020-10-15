@@ -61,6 +61,9 @@ public enum CrookMaterials implements ToolMaterial {
 	LUNUM(4, 1382, 7.0F, 4.5F, 18, () -> {
 		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:lunum_ingots")));
 	}),
+	METEORIC_STEEL(3, 949, 10.5F, 3.5F, 10, () -> {
+		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:meteoric_steel_ingots")));
+	}),
 	COPPER(1, 200, 4.0F, 1.5F, 10, () -> {
 		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:copper_ingots")));
 	}),

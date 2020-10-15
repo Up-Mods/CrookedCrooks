@@ -1,0 +1,32 @@
+{
+	"parent": "crookedcrooks:recipes/root",
+	"rewards": {
+		"recipes": [
+			"crookedcrooks:meteoric_steel_crook_smithing"
+		]
+	},
+	"criteria": {
+		"has_meteoric_steel_ingot": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"tag": "c:meteoric_steel_ingots"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "crookedcrooks:meteoric_steel_crook_smithing"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_meteoric_steel_ingot",
+			"has_the_recipe"
+		]
+	]
+}
