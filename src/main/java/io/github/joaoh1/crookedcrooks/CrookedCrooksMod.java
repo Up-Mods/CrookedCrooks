@@ -31,7 +31,7 @@ public class CrookedCrooksMod implements ModInitializer {
 	public static final Item IRON_CROOK_ITEM = new CrookItem(CrookMaterials.IRON, 0F, -3F, 0.5F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item DIAMOND_CROOK_ITEM = new CrookItem(CrookMaterials.DIAMOND, 0F, -3F, 0.625F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item GOLDEN_CROOK_ITEM = new CrookItem(CrookMaterials.GOLD, 0F, -3F, 0.2F, new Item.Settings().group(ItemGroup.TOOLS));
-	public static final Item NETHERITE_CROOK_ITEM = new CrookItem(CrookMaterials.NETHERITE, 0F, -3F, 0.75F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item NETHERITE_CROOK_ITEM = new CrookItem(CrookMaterials.NETHERITE, 0F, -3F, 0.75F, new Item.Settings().group(ItemGroup.TOOLS).fireproof());
 	//Tech Reborn Crooks
 	public static final Item TECH_REBORN_BRONZE_CROOK_ITEM = new CrookItem(CrookMaterials.TECH_REBORN_BRONZE, 0F, -1F, 0.55F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item RUBY_CROOK_ITEM = new CrookItem(CrookMaterials.RUBY, 0F, -3F, 0.6F, new Item.Settings().group(ItemGroup.TOOLS));
@@ -44,9 +44,9 @@ public class CrookedCrooksMod implements ModInitializer {
 	//Astromine Crooks
 	public static final Item METITE_CROOK_ITEM = new CrookItem(CrookMaterials.METITE, 0F, -3F, 0.3F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item ASTERITE_CROOK_ITEM = new CrookItem(CrookMaterials.ASTERITE, 0F, -3F, 0.7F, new Item.Settings().group(ItemGroup.TOOLS));
-	public static final Item STELLUM_CROOK_ITEM = new CrookItem(CrookMaterials.STELLUM, 0F, -3F, 0.75F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item STELLUM_CROOK_ITEM = new CrookItem(CrookMaterials.STELLUM, 0F, -3F, 0.75F, new Item.Settings().group(ItemGroup.TOOLS).fireproof());
 	public static final Item GALAXIUM_CROOK_ITEM = new CrookItem(CrookMaterials.GALAXIUM, 0F, -3F, 0.8F, new Item.Settings().group(ItemGroup.TOOLS));
-	public static final Item UNIVITE_CROOK_ITEM = new CrookItem(CrookMaterials.UNIVITE, 0F, -3F, 0.85F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item UNIVITE_CROOK_ITEM = new CrookItem(CrookMaterials.UNIVITE, 0F, -3F, 0.85F, new Item.Settings().group(ItemGroup.TOOLS).fireproof());
 	public static final Item LUNUM_CROOK_ITEM = new CrookItem(CrookMaterials.LUNUM, 0F, -3F, 0.65F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item METEORIC_STEEL_CROOK_ITEM = new CrookItem(CrookMaterials.METEORIC_STEEL, 0F, -3F, 0.625F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item COPPER_CROOK_ITEM = new CrookItem(CrookMaterials.COPPER, 0F, -3F, 0.25F, new Item.Settings().group(ItemGroup.TOOLS));

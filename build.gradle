@@ -40,9 +40,6 @@ dependencies {
 	//Required for extra configurability.
 	modImplementation "com.github.joaoh1:MCDict:${project.mcdict_version}"
 	include "com.github.joaoh1:MCDict:${project.mcdict_version}"
-	//Required to make MCDict work. TODO: Remove the dependency on Jankson.
-	modImplementation "io.github.cottonmc:Jankson-Fabric:3.0.0+j1.2.0"
-	include "io.github.cottonmc:Jankson-Fabric:3.0.0+j1.2.0"
 	//Required in the future for static data. Currently included in order to make MCDict work.
 	modImplementation "io.github.cottonmc:StaticData:${project.staticdata_version}"
 	include "io.github.cottonmc:StaticData:${project.staticdata_version}"
