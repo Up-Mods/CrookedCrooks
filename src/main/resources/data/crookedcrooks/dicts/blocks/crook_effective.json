@@ -2,7 +2,7 @@
 	"replace": false,
 	"override": false,
 	"values": {
-		"#minecraft:leaves": 5
+		"#minecraft:leaves": 5,
 		"minecraft:grass": 3,
 		"minecraft:tall_grass": 3,
 		"minecraft:fern": 3

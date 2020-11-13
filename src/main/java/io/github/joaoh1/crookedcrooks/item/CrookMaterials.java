@@ -20,16 +20,16 @@ public enum CrookMaterials implements ToolMaterial {
 	GOLD(ToolMaterials.GOLD),
 	NETHERITE(ToolMaterials.NETHERITE),
 	//Tech Reborn Materials
-	TECH_REBORN_BRONZE(2, 375, 7.0F, 2.25F, 12, () -> {
+	TECH_REBORN_BRONZE(2, 375, 7.0F, 2.25F, 6, () -> {
 		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:bronze_ingots")));
 	}),
-	RUBY(2, 1651, 6.0F, 4.7F, 10, () -> {
+	RUBY(2, 750, 6.0F, 1.5F, 10, () -> {
 		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:rubies")));
 	}),
-	SAPPHIRE(3, 1651, 14.0F, 1.8F, 8, () -> {
+	SAPPHIRE(3, 1000, 7.0F, 1.5F, 12, () -> {
 		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:sapphires")));
 	}),
-	PERIDOT(2, 573, 7.0F, 2.4F, 24, () -> {
+	PERIDOT(2, 750, 7.0F, 1.5F, 12, () -> {
 		return Ingredient.fromTag(TagRegistry.item(new Identifier("c:peridot_gems")));
 	}),
 	//Adabranium Materials

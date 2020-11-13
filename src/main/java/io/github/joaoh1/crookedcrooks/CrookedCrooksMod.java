@@ -117,6 +117,7 @@ public class CrookedCrooksMod implements ModInitializer {
 
 		//TODO - Move this to another class
 		PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, entity) -> {
+			if (player.isCreative()) return;
 			if (player.inventory.getMainHandStack().getItem().isIn(CrookedCrooksMod.CROOKS)) {
 				if (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, player.inventory.getMainHandStack()) == 0) {
 					if (CrookedCrooksMod.CROOK_EFFECTIVE.contains(state.getBlock())) {
