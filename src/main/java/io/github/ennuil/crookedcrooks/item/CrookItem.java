@@ -1,6 +1,6 @@
-package io.github.joaoh1.crookedcrooks.item;
+package io.github.ennuil.crookedcrooks.item;
 
-import io.github.joaoh1.crookedcrooks.CrookedCrooksMod;
+import io.github.ennuil.crookedcrooks.CrookedCrooksMod;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -20,18 +20,19 @@ public class CrookItem extends MiningToolItem {
 
 	public CrookItem(ToolMaterial material, float attackDamage, float attackSpeed, float pullingPower, Item.Settings settings) {
 		super(attackDamage, attackSpeed, material, null, settings);
-		//TODO - Move the pulling power registry to a data-driven system.
+		// TODO - Move the pulling power registry to a data-driven system.
 		this.pullingPower = pullingPower;
 	}
 
+	// TODO - Actually update this to 1.17 
 	@Override
-	public boolean isEffectiveOn(BlockState state) {
+	public boolean isSuitableFor(BlockState state) {
 		return CrookedCrooksMod.CROOK_EFFECTIVE.contains(state.getBlock());
 	}
 
 	@Override
 	public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
-		if (!this.isEffectiveOn(state)) {
+		if (!this.isSuitableFor(state)) {
 		   return 1.0F;
 		} else {
 		   return this.miningSpeed;

@@ -4,18 +4,18 @@
   "version": "${version}",
   "name": "Crooked Crooks",
   "description": "Adds crooks for all the vanilla materials. They multiply drops from leaves and grasses and they pull mobs!",
-  "authors": ["joaoh1"],
+  "authors": ["EnnuiL"],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/crooked-crooks",
-    "issues": "https://github.com/joaoh1/CrookedCrooks/issues",
-    "sources": "https://github.com/joaoh1/CrookedCrooks"
+    "issues": "https://github.com/EnnuiL/CrookedCrooks/issues",
+    "sources": "https://github.com/EnnuiL/CrookedCrooks"
   },
   "license": "MIT",
   "icon": "assets/crookedcrooks/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.joaoh1.crookedcrooks.CrookedCrooksMod"
+      "io.github.ennuil.crookedcrooks.CrookedCrooksMod"
     ]
   },
   "depends": {

@@ -1,44 +1,43 @@
 plugins {
-	id 'fabric-loom' version '0.5-SNAPSHOT'
+	id 'fabric-loom' version '0.9-SNAPSHOT'
+	id 'io.github.juuxel.loom-quiltflower' version '1.3.0'
 	id 'maven-publish'
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+// Visual Studio Code completely ignores options.release.
+// So, we still have those two.
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16
 
 archivesBaseName = project.archives_base_name
+version = System.env.GITHUB_ACTIONS == "true"
+	? "${project.mod_version}.github.${System.env.GITHUB_RUN_NUMBER}"
+	: project.mod_version
 group = project.maven_group
 
-if (System.env.GITHUB_ACTIONS == "true") {
-	version = "${project.mod_version}-github.${System.env.GITHUB_RUN_NUMBER}"
-} else {
-	version = project.mod_version
-}
-
 repositories {
+	maven { url "https://maven.quiltmc.org/repository/release" }
 	maven { url "https://server.bbkr.space/artifactory/libs-release" }
 	maven { url "https://jitpack.io" }
 	mavenCentral()
 }
 
 dependencies {
-	//to change the versions, see the gradle.properties file
+	// To change the versions, see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	mappings "org.quiltmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-	//Will be used as long as Jitpack is used.
-	modRuntime ("com.github.SuperCoder7979:databreaker:f072a81fbd26e4978b687414a21f1ea4a0077c15") {
-		exclude module : "fabric-loader"
-	}
+	
 	//Required for extra crooks.
 	modImplementation "io.github.cottonmc:LibCD:${project.libcd_version}"
 	include "io.github.cottonmc:LibCD:${project.libcd_version}"
+
 	//Required for extra configurability.
-	modImplementation "com.github.joaoh1:MCDict:${project.mcdict_version}"
-	include "com.github.joaoh1:MCDict:${project.mcdict_version}"
+	modImplementation "com.github.EnnuiL:MCDict:${project.mcdict_version}"
+	include "com.github.EnnuiL:MCDict:${project.mcdict_version}"
+
 	//Required in the future for static data.
 	//modImplementation "io.github.cottonmc:StaticData:${project.staticdata_version}"
 	//include "io.github.cottonmc:StaticData:${project.staticdata_version}"
@@ -59,13 +58,8 @@ tasks.withType(JavaCompile).configureEach {
 	// If Javadoc is generated, this must be specified in that task too.
 	it.options.encoding = "UTF-8"
 
-	// The Minecraft launcher currently installs Java 8 for users, so your mod probably wants to target Java 8 too
-	// JDK 9 introduced a new way of specifying this that will make sure no newer classes or methods are used.
-	// We'll use that if it's available, but otherwise we'll use the older option.
-	def targetVersion = 8
-	if (JavaVersion.current().isJava9Compatible()) {
-		 it.options.release = targetVersion
-	}
+	// Minecraft 1.17 (21w19a) upwards uses Java 16.
+	it.options.release = 16
 }
 
 java {

@@ -1,19 +1,21 @@
-package io.github.joaoh1.crookedcrooks;
+package io.github.ennuil.crookedcrooks;
 
 import io.github.cottonmc.mcdict.api.Dict;
 import io.github.cottonmc.mcdict.api.DictManager;
-import io.github.joaoh1.crookedcrooks.item.CrookItem;
-import io.github.joaoh1.crookedcrooks.item.CrookMaterials;
+import io.github.ennuil.crookedcrooks.item.CrookItem;
+import io.github.ennuil.crookedcrooks.item.CrookMaterials;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
-import net.fabricmc.fabric.api.tag.TagRegistry;
+import net.fabricmc.fabric.api.tag.TagFactory;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -22,7 +24,7 @@ public class CrookedCrooksMod implements ModInitializer {
 	//The crook_effective tag, used for blocks which should have its drops multiplied by crooks.
 	public static final Dict<Block, Integer> CROOK_EFFECTIVE = DictManager.DATA_PACK.registerBlockDict(new Identifier("crookedcrooks", "crook_effective"), Integer.class);
 	//The crooks tag, used to list all the crooks and to apply the multiplier.
-	public static final Tag<Item> CROOKS = TagRegistry.item(new Identifier("crookedcrooks", "crooks"));
+	public static final Tag<Item> CROOKS = TagFactory.ITEM.create(new Identifier("crookedcrooks", "crooks"));
 	
 	//The crook items, which will be registered.
 	//Vanilla Crooks
@@ -118,13 +120,14 @@ public class CrookedCrooksMod implements ModInitializer {
 		//TODO - Move this to another class
 		PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, entity) -> {
 			if (player.isCreative()) return;
-			if (player.inventory.getMainHandStack().getItem().isIn(CrookedCrooksMod.CROOKS)) {
-				if (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, player.inventory.getMainHandStack()) == 0) {
+			ItemStack equippedStack = player.getEquippedStack(EquipmentSlot.MAINHAND);
+			if (equippedStack.isIn(CrookedCrooksMod.CROOKS)) {
+				if (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, equippedStack) == 0) {
 					if (CrookedCrooksMod.CROOK_EFFECTIVE.contains(state.getBlock())) {
 						int multiplier = CrookedCrooksMod.CROOK_EFFECTIVE.get(state.getBlock()).intValue() - 1;
 						if (multiplier >= 0) {
 							for (int i = 0; i < multiplier; i++) {
-								Block.dropStacks(state, world, pos, entity, player, player.inventory.getMainHandStack());	
+								Block.dropStacks(state, world, pos, entity, player, equippedStack);	
 							}
 						}
 					}
