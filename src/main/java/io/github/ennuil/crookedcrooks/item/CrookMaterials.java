@@ -3,13 +3,11 @@ package io.github.ennuil.crookedcrooks.item;
 import java.util.function.Supplier;
 
 import net.fabricmc.fabric.api.tag.TagFactory;
-import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Lazy;
-import net.minecraft.util.registry.Registry;
 
 public enum CrookMaterials implements ToolMaterial {
 	//Vanilla Materials
@@ -31,68 +29,6 @@ public enum CrookMaterials implements ToolMaterial {
 	}),
 	PERIDOT(2, 750, 7.0F, 1.5F, 12, () -> {
 		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:peridot_gems")));
-	}),
-	//Adabranium Materials
-	VIBRANIUM(3, 2990, 20F, 10.0F, 12, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("adabraniummod:vibranium_ingot")));
-	}),
-	ADAMANTIUM(4, 4280, 35.0F, 16.0F, 10, () -> {
-		return Ingredient.ofItems(Registry.ITEM.get(new Identifier("adabraniummod:adamantium_ingot")));
-	}),
-	NETHER(2, 381, 8.0F, 2.0F, 15, () -> {
-		return Ingredient.ofItems(Items.NETHER_BRICK);
-	}),
-	//Astromine Materials
-	METITE(1, 853, 13.0F, 4.0F, 5, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:metite_ingots")));
-	}),
-	ASTERITE(5, 2015, 10.0F, 5.0F, 20, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:asterites")));
-	}),
-	STELLUM(5, 2643, 8.0F, 6.0F, 15, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:stellum_ingots")));
-	}),
-	GALAXIUM(6, 3072, 11.0F, 5.0F, 18, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:galaxiums")));
-	}),
-	UNIVITE(7, 3918, 12.0F, 6.0F, 22, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:univite_ingots")));
-	}),
-	LUNUM(4, 1382, 7.0F, 4.5F, 18, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:lunum_ingots")));
-	}),
-	METEORIC_STEEL(3, 949, 10.5F, 3.5F, 10, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:meteoric_steel_ingots")));
-	}),
-	COPPER(1, 200, 4.0F, 1.5F, 10, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:copper_ingots")));
-	}),
-	TIN(1, 200, 5F, 1.0F, 10, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:tin_ingots")));
-	}),
-	SILVER(2, 462, 6.5F, 2.0F, 20, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:silver_ingots")));
-	}),
-	LEAD(2, 496, 4.5F, 1.5F, 5, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:lead_ingots")));
-	}),
-	ASTROMINE_BRONZE(2, 539, 7.0F, 2.5F, 18, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:bronze_ingots")));
-	}),
-	STEEL(3, 1043, 7.5F, 3.0F, 16, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:steel_ingots")));
-	}),
-	ELECTRUM(2, 185, 11.0F, 1.0F, 21, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:electrum_ingots")));
-	}),
-	ROSE_GOLD(1, 64, 10.0F, 0.5F, 24, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:rose_gold_ingots")));
-	}),
-	STERLING_SILVER(2, 697, 7.0F, 2.5F, 20, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:sterling_silver_ingots")));
-	}),
-	FOOLS_GOLD(2, 250, 6.5F, 2.0F, 16, () -> {
-		return Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:fools_gold_ingots")));
 	}),
 	//Applied Energistics 2 Materials
 	CERTUS_QUARTZ(ToolMaterials.IRON.getMiningLevel(), ToolMaterials.IRON.getDurability(), ToolMaterials.IRON.getMiningLevel(), ToolMaterials.IRON.getAttackDamage(), ToolMaterials.IRON.getEnchantability(), () -> {

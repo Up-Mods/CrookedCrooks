@@ -10,9 +10,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.stat.Stats;
+import net.minecraft.text.LiteralText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class CrookItem extends MiningToolItem {
@@ -20,7 +22,7 @@ public class CrookItem extends MiningToolItem {
 
 	public CrookItem(ToolMaterial material, float attackDamage, float attackSpeed, float pullingPower, Item.Settings settings) {
 		super(attackDamage, attackSpeed, material, null, settings);
-		// TODO - Move the pulling power registry to a data-driven system.
+		// TODO - Move the pulling power registry to a data-driven system
 		this.pullingPower = pullingPower;
 	}
 
@@ -50,31 +52,37 @@ public class CrookItem extends MiningToolItem {
 		return super.postMine(stack, world, state, pos, miner);
 	}
 
-	//Handles the pulling of mobs with a crook.
+	//Handles the pulling of mobs with a crook
 	@Override
 	public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
 		//Restrict the pulling through a cooldown.
 		if (!user.getItemCooldownManager().isCoolingDown(this)) {
-			int toolDamage = 1;
-			double appliedPullingPower = pullingPower;
-			//Make size and distance to the mob affect the pull.
-			appliedPullingPower /= entity.getBoundingBox().getAverageSideLength();
-			appliedPullingPower /= entity.distanceTo(user);
-			//If sneaking, raise the mob vertically in cost of additional damage.
-			if (user.isSneaking()) {
-				entity.addVelocity(0.0, appliedPullingPower, 0.0);
-				toolDamage++;
-			}
-			//Finally, pull the mob.
-			entity.takeKnockback(pullingPower, entity.getX() - user.getX(), entity.getZ() - user.getZ());
+			// This calculates the weight of the pull. If it's 1.0D, it means that it's a full power pull
+			float crookStrength = this.pullingPower;
+			double mobWeight = entity.getBoundingBox().getAverageSideLength();
+			double weight = (crookStrength / mobWeight) <= 1.0D ? crookStrength / mobWeight : 1.0D;
+			user.sendMessage(new LiteralText("" + crookStrength / mobWeight + " (" + mobWeight + " ₢" + crookStrength + ")"), true);
+
+			// Calculates the vector used to pull the mob
+			Vec3d pos = user.getPos().subtract(entity.getPos());
+			pos = pos.subtract(user.getRotationVector());
+			// This makes sure that the mob isn't simply flinged
+			pos = pos.multiply(0.275);
+			pos = pos.multiply(weight);
+
+			// With everything in order, pull the mob! (and set fall distance to 0 so crooking isn't lethal)
+			entity.setVelocity(pos);
+			entity.fallDistance = 0.0F;
+
 			//Damage the crook.
-			stack.damage(toolDamage, user, e -> {
-				e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND);
-			});
-			//Increment the statistics.
+			stack.damage(1, user, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+
+			//Increment the statistics
 			user.incrementStat(Stats.USED.getOrCreateStat(this));
-			//Sets a cooldown on the crook for balance purposes.
-			user.getItemCooldownManager().set(this, 5);
+
+			//Sets a cooldown on the crook for balance purposes
+			user.getItemCooldownManager().set(this, 6);
+
 			return ActionResult.SUCCESS;
 		}
 		return ActionResult.PASS;
