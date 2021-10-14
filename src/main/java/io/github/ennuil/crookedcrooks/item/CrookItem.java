@@ -18,12 +18,12 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class CrookItem extends MiningToolItem {
-	public float pullingPower;
+	public float crookStrength;
 
-	public CrookItem(ToolMaterial material, float attackDamage, float attackSpeed, float pullingPower, Item.Settings settings) {
+	public CrookItem(ToolMaterial material, float attackDamage, float attackSpeed, float crookStrength, Item.Settings settings) {
 		super(attackDamage, attackSpeed, material, null, settings);
 		// TODO - Move the pulling power registry to a data-driven system
-		this.pullingPower = pullingPower;
+		this.crookStrength = crookStrength;
 	}
 
 	// TODO - Actually update this to 1.17 
@@ -44,9 +44,7 @@ public class CrookItem extends MiningToolItem {
 	@Override
 	public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
 		if (!world.isClient && CrookedCrooksMod.CROOK_EFFECTIVE.contains(state.getBlock())) {
-			stack.damage(1, miner, e -> {
-				e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND);
-			});
+			stack.damage(1, miner, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
 			return true;
 		}
 		return super.postMine(stack, world, state, pos, miner);
@@ -58,7 +56,7 @@ public class CrookItem extends MiningToolItem {
 		//Restrict the pulling through a cooldown.
 		if (!user.getItemCooldownManager().isCoolingDown(this)) {
 			// This calculates the weight of the pull. If it's 1.0D, it means that it's a full power pull
-			float crookStrength = this.pullingPower;
+			float crookStrength = this.crookStrength;
 			double mobWeight = entity.getBoundingBox().getAverageSideLength();
 			double weight = (crookStrength / mobWeight) <= 1.0D ? crookStrength / mobWeight : 1.0D;
 			user.sendMessage(new LiteralText("" + crookStrength / mobWeight + " (" + mobWeight + " ₢" + crookStrength + ")"), true);
