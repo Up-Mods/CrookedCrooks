@@ -31,7 +31,7 @@ public class CrookedCrooksMod implements ModInitializer {
 	public static final Item GOLDEN_CROOK_ITEM = new CrookItem(CrookMaterials.GOLD, 0F, -3F, 0.4F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item NETHERITE_CROOK_ITEM = new CrookItem(CrookMaterials.NETHERITE, 0F, -3F, 1.2F, new Item.Settings().group(ItemGroup.TOOLS).fireproof());
 	//Tech Reborn Crooks
-	public static final Item TECH_REBORN_BRONZE_CROOK_ITEM = new CrookItem(CrookMaterials.TECH_REBORN_BRONZE, 0F, -1F, 0.85F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item TECH_REBORN_BRONZE_CROOK_ITEM = new CrookItem(CrookMaterials.TECH_REBORN_BRONZE, 0F, -3F, 0.85F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item RUBY_CROOK_ITEM = new CrookItem(CrookMaterials.RUBY, 0F, -3F, 0.9F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item SAPPHIRE_CROOK_ITEM = new CrookItem(CrookMaterials.SAPPHIRE, 0F, -3F, 1.0F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item PERIDOT_CROOK_ITEM = new CrookItem(CrookMaterials.PERIDOT, 0F, -3F, 0.875F, new Item.Settings().group(ItemGroup.TOOLS));
