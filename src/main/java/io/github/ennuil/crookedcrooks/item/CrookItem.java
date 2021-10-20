@@ -2,8 +2,11 @@ package io.github.ennuil.crookedcrooks.item;
 
 import io.github.ennuil.crookedcrooks.CrookedCrooksMod;
 import net.minecraft.block.BlockState;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -71,6 +74,14 @@ public class CrookItem extends MiningToolItem {
 			// With everything in order, pull the mob! (and set fall distance to 0 so crooking isn't lethal)
 			entity.setVelocity(pos);
 			entity.fallDistance = 0.0F;
+
+			// If cursed with the Curse of Thorns, deal a heart of damage to the mob
+			if (EnchantmentHelper.getLevel(CrookedCrooksMod.THORNS_CURSE_ENCHANTMENT, stack) > 0) {
+				entity.setAttacker(user);
+				entity.setAttacking(user);
+				entity.damage(DamageSource.GENERIC, (this.getAttackDamage() * 0.5F) * user.getAttackCooldownProgress(0.5F));
+				user.resetLastAttackedTicks();
+			}
 
 			//Damage the crook.
 			stack.damage(1, user, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
