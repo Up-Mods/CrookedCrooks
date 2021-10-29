@@ -17,5 +17,6 @@
 	"item.crookedcrooks.lead_crook": "Cajado de chumbo",
 	"item.crookedcrooks.ir_bronze_crook": "Cajado de bronze",
 	"item.crookedcrooks.silver_crook": "Cajado de prata",
-	"enchantment.crookedcrooks.thorns_curse": "Maldição da perfuração"
+	"enchantment.crookedcrooks.thorns_curse": "Maldição da perfuração",
+	"enchantment.crookedcrooks.thorns_curse.desc": "Faz com que o cajado cause dano ao puxar uma criatura."
 }

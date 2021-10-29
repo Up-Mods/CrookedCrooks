@@ -1,7 +1,7 @@
 {
-    "crook_id": "ir_bronze_crook",
-    "mod_id": "indrev",
+    "crookId": "ir_bronze_crook",
+    "modId": "indrev",
     "ingredient": "#c:bronze_ingots",
-    "criteria_name": "has_bronze",
-    "mod_condition": "bronze_preference"
+    "criteriaName": "has_bronze",
+    "modCondition": "bronze_preference"
 }

@@ -1,0 +1,6 @@
+{
+    "crookId": "aeternium_crook",
+    "modId": "betterend",
+    "ingredient": "betterend:aeternium_ingot",
+    "criteriaName": "has_aeternium"
+}

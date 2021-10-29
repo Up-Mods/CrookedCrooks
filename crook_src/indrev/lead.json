@@ -1,6 +1,6 @@
 {
-    "crook_id": "lead_crook",
-    "mod_id": "indrev",
+    "crookId": "lead_crook",
+    "modId": "indrev",
     "ingredient": "#c:lead_ingots",
-    "criteria_name": "has_lead"
+    "criteriaName": "has_lead"
 }

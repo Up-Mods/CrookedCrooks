@@ -1,7 +1,7 @@
 {
-    "crook_id": "tr_bronze_crook",
-    "mod_id": "techreborn",
+    "crookId": "tr_bronze_crook",
+    "modId": "techreborn",
     "ingredient": "#c:bronze_ingots",
-    "criteria_name": "has_bronze",
-    "mod_condition": "bronze_preference"
+    "criteriaName": "has_bronze",
+    "modCondition": "bronze_preference"
 }

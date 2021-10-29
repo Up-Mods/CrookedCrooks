@@ -1,6 +1,6 @@
 {
-    "crook_id": "silver_crook",
-    "mod_id": "indrev",
+    "crookId": "silver_crook",
+    "modId": "indrev",
     "ingredient": "#c:silver_ingots",
-    "criteria_name": "has_silver"
+    "criteriaName": "has_silver"
 }

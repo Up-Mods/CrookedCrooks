@@ -1,0 +1,32 @@
+{
+  "parent": "crookedcrooks:recipes/root",
+  "rewards": {
+    "recipes": [
+      "crookedcrooks:terminite_crook_smithing"
+    ]
+  },
+  "criteria": {
+    "has_terminite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betterend:terminite_ingot"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "crookedcrooks:terminite_crook_smithing"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_terminite",
+      "has_the_recipe"
+    ]
+  ]
+}

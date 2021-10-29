@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "crookedcrooks:wooden_crook"
+  },
+  "addition": {
+    "item": "betterend:thallasium_ingot"
+  },
+  "result": {
+    "item": "crookedcrooks:thallasium_crook"
+  }
+}

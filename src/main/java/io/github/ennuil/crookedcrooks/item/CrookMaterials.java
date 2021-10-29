@@ -9,6 +9,7 @@ import net.minecraft.item.ToolMaterials;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Lazy;
+import net.minecraft.util.registry.Registry;
 
 public enum CrookMaterials implements ToolMaterial {
 	// Vanilla Materials
@@ -32,7 +33,12 @@ public enum CrookMaterials implements ToolMaterial {
 	STEEL(MiningLevels.DIAMOND, 600, 4.5F, 2.0F, 14, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:steel_ingots")))),
 	LEAD(MiningLevels.IRON, 900, 3.0F, 2.0F, 8, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:lead_ingots")))),
 	INDREV_BRONZE(MiningLevels.IRON, 500, 3.5F, 2.5F, 12, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:bronze_ingots")))),
-	SILVER(MiningLevels.IRON, 500, 5.0F, 1.0F, 24, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:lead_ingots"))));
+	SILVER(MiningLevels.IRON, 500, 5.0F, 1.0F, 24, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:lead_ingots")))),
+	// Better End Materials
+	THALLASIUM(MiningLevels.IRON, 320, 7.0F, 1.5F, 12, () -> Ingredient.ofItems(Registry.ITEM.get(new Identifier("betterend:thallasium_ingot")))),
+	TERMINITE(MiningLevels.DIAMOND, 1230, 8.5F, 3.0F, 14, () -> Ingredient.ofItems(Registry.ITEM.get(new Identifier("betterend:terminite_ingot")))),
+	// Why must you cause pain and suffering for me ;-;
+	AETERNIUM(5, 2196, 10.0F, 4.5F, 18, () -> Ingredient.ofItems(Registry.ITEM.get(new Identifier("betterend:aeternium_ingot"))));
 
 	private final int miningLevel;
 	private final int itemDurability;

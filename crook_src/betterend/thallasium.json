@@ -1,0 +1,6 @@
+{
+    "crookId": "thallasium_crook",
+    "modId": "betterend",
+    "ingredient": "betterend:thallasium_ingot",
+    "criteriaName": "has_thallasium"
+}

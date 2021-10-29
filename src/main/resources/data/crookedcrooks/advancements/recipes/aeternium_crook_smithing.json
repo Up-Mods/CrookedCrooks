@@ -1,0 +1,32 @@
+{
+  "parent": "crookedcrooks:recipes/root",
+  "rewards": {
+    "recipes": [
+      "crookedcrooks:aeternium_crook_smithing"
+    ]
+  },
+  "criteria": {
+    "has_aeternium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "betterend:aeternium_ingot"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "crookedcrooks:aeternium_crook_smithing"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_aeternium",
+      "has_the_recipe"
+    ]
+  ]
+}

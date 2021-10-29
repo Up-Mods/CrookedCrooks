@@ -1,6 +1,6 @@
 {
-    "crook_id": "ruby_crook",
-    "mod_id": "techreborn",
+    "crookId": "ruby_crook",
+    "modId": "techreborn",
     "ingredient": "#c:rubies",
-    "criteria_name": "has_ruby"
+    "criteriaName": "has_ruby"
 }

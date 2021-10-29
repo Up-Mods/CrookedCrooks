@@ -74,11 +74,11 @@ public class CrookItem extends MiningToolItem {
 			entity.velocityModified = true;
 			entity.fallDistance = 0.0F;
 
-			// If cursed with the Curse of Thorns, deal a heart of damage to the mob
+			// If cursed with the Curse of Thorns, deal damage to the mob
 			if (EnchantmentHelper.getLevel(CrookedCrooksMod.THORNS_CURSE_ENCHANTMENT, stack) > 0) {
 				entity.setAttacker(user);
 				entity.setAttacking(user);
-				entity.damage(DamageSource.GENERIC, (this.getAttackDamage() * 0.5F) * user.getAttackCooldownProgress(0.5F));
+				entity.damage(DamageSource.GENERIC, this.getAttackDamage() * user.getAttackCooldownProgress(0.5F));
 				user.resetLastAttackedTicks();
 			}
 
