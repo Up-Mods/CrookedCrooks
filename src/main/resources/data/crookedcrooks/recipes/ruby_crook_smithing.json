@@ -1,12 +1,12 @@
 {
-	"type": "minecraft:smithing",
-	"base": {
-		"item": "crookedcrooks:wooden_crook"
-	},
-	"addition": {
-		"tag": "c:rubies"
-	},
-	"result": {
-		"item": "crookedcrooks:ruby_crook"
-	}
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "crookedcrooks:wooden_crook"
+  },
+  "addition": {
+    "tag": "c:rubies"
+  },
+  "result": {
+    "item": "crookedcrooks:ruby_crook"
+  }
 }

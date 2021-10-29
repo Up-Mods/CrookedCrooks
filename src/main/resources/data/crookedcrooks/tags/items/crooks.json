@@ -8,7 +8,7 @@
 		"crookedcrooks:golden_crook",
 		"crookedcrooks:netherite_crook",
 		{
-			"id": "crookedcrooks:bronze_crook",
+			"id": "crookedcrooks:tr_bronze_crook",
 			"required": false
 		},
 		{
@@ -29,6 +29,30 @@
 		},
 		{
 			"id": "crookedcrooks:nether_quartz_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:tin_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:copper_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:steel_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:lead_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:ir_bronze_crook",
+			"required": false
+		},
+		{
+			"id": "crookedcrooks:silver_crook",
 			"required": false
 		}
 	]

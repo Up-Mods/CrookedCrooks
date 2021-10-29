@@ -1,32 +1,32 @@
 {
-	"parent": "crookedcrooks:recipes/root",
-	"rewards": {
-		"recipes": [
-			"crookedcrooks:lead_crook_smithing"
-		]
-	},
-	"criteria": {
-		"has_lead_ingot": {
-			"trigger": "minecraft:inventory_changed",
-			"conditions": {
-				"items": [
-					{
-						"tag": "c:lead_ingots"
-					}
-				]
-			}
-		},
-		"has_the_recipe": {
-			"trigger": "minecraft:recipe_unlocked",
-			"conditions": {
-				"recipe": "crookedcrooks:lead_crook_smithing"
-			}
-		}
-	},
-	"requirements": [
-		[
-			"has_lead_ingot",
-			"has_the_recipe"
-		]
-	]
+  "parent": "crookedcrooks:recipes/root",
+  "rewards": {
+    "recipes": [
+      "crookedcrooks:lead_crook_smithing"
+    ]
+  },
+  "criteria": {
+    "has_lead": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:lead_ingots"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "crookedcrooks:lead_crook_smithing"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lead",
+      "has_the_recipe"
+    ]
+  ]
 }

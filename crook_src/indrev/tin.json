@@ -1,0 +1,6 @@
+{
+    "crook_id": "tin_crook",
+    "mod_id": "indrev",
+    "ingredient": "#c:tin_ingots",
+    "criteria_name": "has_tin"
+}

@@ -11,21 +11,28 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Lazy;
 
 public enum CrookMaterials implements ToolMaterial {
-	//Vanilla Materials
+	// Vanilla Materials
 	WOOD(ToolMaterials.WOOD),
 	STONE(ToolMaterials.STONE),
 	IRON(ToolMaterials.IRON),
 	DIAMOND(ToolMaterials.DIAMOND),
 	GOLD(ToolMaterials.GOLD),
 	NETHERITE(ToolMaterials.NETHERITE),
-	//Tech Reborn Materials
+	// Tech Reborn Materials
 	TECH_REBORN_BRONZE(MiningLevels.IRON, 375, 7.0F, 2.25F, 6, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:bronze_ingots")))),
 	RUBY(MiningLevels.IRON, 750, 6.0F, 1.5F, 10, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:rubies")))),
 	SAPPHIRE(MiningLevels.DIAMOND, 1000, 7.0F, 1.5F, 12, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:sapphires")))),
 	PERIDOT(MiningLevels.IRON, 750, 7.0F, 1.5F, 12, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:peridot_gems")))),
-	//Applied Energistics 2 Materials
+	// Applied Energistics 2 Materials
 	CERTUS_QUARTZ(ToolMaterials.IRON, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("appliedenergistics2:crystals/certus_quartz")))),
-	NETHER_QUARTZ(ToolMaterials.IRON, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:quartz"))));
+	NETHER_QUARTZ(ToolMaterials.IRON, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:quartz")))),
+	// Industrial Revolution Materials
+	TIN(MiningLevels.STONE, 200, 4.0F, 1.0F, 14, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:tin_ingots")))),
+	COPPER(MiningLevels.IRON, 300, 4.5F, 1.0F, 14, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:copper_ingots")))),
+	STEEL(MiningLevels.DIAMOND, 600, 4.5F, 2.0F, 14, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:steel_ingots")))),
+	LEAD(MiningLevels.IRON, 900, 3.0F, 2.0F, 8, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:lead_ingots")))),
+	INDREV_BRONZE(MiningLevels.IRON, 500, 3.5F, 2.5F, 12, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:bronze_ingots")))),
+	SILVER(MiningLevels.IRON, 500, 5.0F, 1.0F, 24, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:lead_ingots"))));
 
 	private final int miningLevel;
 	private final int itemDurability;

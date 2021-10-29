@@ -1,12 +1,12 @@
 {
-	"type": "minecraft:smithing",
-	"base": {
-		"item": "crookedcrooks:wooden_crook"
-	},
-	"addition": {
-		"tag": "c:sapphires"
-	},
-	"result": {
-		"item": "crookedcrooks:sapphire_crook"
-	}
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "crookedcrooks:wooden_crook"
+  },
+  "addition": {
+    "tag": "c:sapphires"
+  },
+  "result": {
+    "item": "crookedcrooks:sapphire_crook"
+  }
 }

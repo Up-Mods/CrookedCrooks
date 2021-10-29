@@ -1,0 +1,6 @@
+{
+    "crook_id": "sapphire_crook",
+    "mod_id": "techreborn",
+    "ingredient": "#c:sapphires",
+    "criteria_name": "has_sapphire"
+}

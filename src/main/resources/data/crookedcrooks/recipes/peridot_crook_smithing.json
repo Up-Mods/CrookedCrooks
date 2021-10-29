@@ -1,12 +1,12 @@
 {
-	"type": "minecraft:smithing",
-	"base": {
-		"item": "crookedcrooks:wooden_crook"
-	},
-	"addition": {
-		"tag": "c:peridots"
-	},
-	"result": {
-		"item": "crookedcrooks:peridot_crook"
-	}
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "crookedcrooks:wooden_crook"
+  },
+  "addition": {
+    "tag": "c:peridots"
+  },
+  "result": {
+    "item": "crookedcrooks:peridot_crook"
+  }
 }

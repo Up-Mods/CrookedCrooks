@@ -12,7 +12,6 @@ import net.fabricmc.fabric.api.tag.TagFactory;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -42,6 +41,13 @@ public class CrookedCrooksMod implements ModInitializer {
 	// Applied Energistics 2 Crooks
 	public static final Item CERTUS_QUARTZ_CROOK_ITEM = new CrookItem(CrookMaterials.IRON, 0F, -3F, 0.8F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item NETHER_QUARTZ_CROOK_ITEM = new CrookItem(CrookMaterials.NETHER_QUARTZ, 0F, -3F, 0.8F, new Item.Settings().group(ItemGroup.TOOLS));
+	// Industrial Revolution Crooks
+	public static final Item TIN_CROOK_ITEM = new CrookItem(CrookMaterials.TIN, 0F, -3F, 0.5F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item COPPER_CROOK_ITEM = new CrookItem(CrookMaterials.COPPER, 0F, -3F, 0.8F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item STEEL_CROOK_ITEM = new CrookItem(CrookMaterials.STEEL, 0F, -3F, 0.9F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item LEAD_CROOK_ITEM = new CrookItem(CrookMaterials.LEAD, 0F, -3F, 0.75F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item INDREV_BRONZE_CROOK_ITEM = new CrookItem(CrookMaterials.INDREV_BRONZE, 0F, -3F, 0.85F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item SILVER_CROOK_ITEM = new CrookItem(CrookMaterials.SILVER, 0F, -3F, 0.8F, new Item.Settings().group(ItemGroup.TOOLS));
 
 	// The crook enchantments
 	public static final Enchantment THORNS_CURSE_ENCHANTMENT = new ThornsCurseEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND);
@@ -62,12 +68,21 @@ public class CrookedCrooksMod implements ModInitializer {
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "ruby_crook"), RUBY_CROOK_ITEM);
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "sapphire_crook"), SAPPHIRE_CROOK_ITEM);
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "peridot_crook"), PERIDOT_CROOK_ITEM);
-			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "bronze_crook"), TECH_REBORN_BRONZE_CROOK_ITEM);
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "tr_bronze_crook"), TECH_REBORN_BRONZE_CROOK_ITEM);
 		}
 		
 		if (fabricLoader.isModLoaded("appliedenergistics2")) {
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "certus_quartz_crook"), CERTUS_QUARTZ_CROOK_ITEM);
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "nether_quartz_crook"), NETHER_QUARTZ_CROOK_ITEM);
+		}
+
+		if (fabricLoader.isModLoaded("indrev")) {
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "tin_crook"), TIN_CROOK_ITEM);
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "copper_crook"), COPPER_CROOK_ITEM);
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "steel_crook"), STEEL_CROOK_ITEM);
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "lead_crook"), LEAD_CROOK_ITEM);
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "ir_bronze_crook"), INDREV_BRONZE_CROOK_ITEM);
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "silver_crook"), SILVER_CROOK_ITEM);
 		}
 
 		// Register enchantments

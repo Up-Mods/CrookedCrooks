@@ -1,5 +1,7 @@
 {
-	"when": [
-		{ "libcd:mod_loaded": "astromine-discoveries" }
-	]
+  "when": [
+    {
+      "libcd:mod_loaded": "indrev"
+    }
+  ]
 }

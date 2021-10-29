@@ -1,32 +1,32 @@
 {
-	"parent": "crookedcrooks:recipes/root",
-	"rewards": {
-		"recipes": [
-			"crookedcrooks:silver_crook_smithing"
-		]
-	},
-	"criteria": {
-		"has_silver_ingot": {
-			"trigger": "minecraft:inventory_changed",
-			"conditions": {
-				"items": [
-					{
-						"tag": "c:silver_ingots"
-					}
-				]
-			}
-		},
-		"has_the_recipe": {
-			"trigger": "minecraft:recipe_unlocked",
-			"conditions": {
-				"recipe": "crookedcrooks:silver_crook_smithing"
-			}
-		}
-	},
-	"requirements": [
-		[
-			"has_silver_ingot",
-			"has_the_recipe"
-		]
-	]
+  "parent": "crookedcrooks:recipes/root",
+  "rewards": {
+    "recipes": [
+      "crookedcrooks:silver_crook_smithing"
+    ]
+  },
+  "criteria": {
+    "has_silver": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:silver_ingots"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "crookedcrooks:silver_crook_smithing"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_silver",
+      "has_the_recipe"
+    ]
+  ]
 }

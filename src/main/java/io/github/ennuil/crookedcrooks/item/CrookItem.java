@@ -5,7 +5,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -13,7 +12,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.stat.Stats;
-import net.minecraft.text.LiteralText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -62,7 +60,7 @@ public class CrookItem extends MiningToolItem {
 			float crookStrength = this.crookStrength;
 			double mobWeight = entity.getBoundingBox().getAverageSideLength();
 			double weight = (crookStrength / mobWeight) <= 1.0D ? crookStrength / mobWeight : 1.0D;
-			user.sendMessage(new LiteralText("" + crookStrength / mobWeight + " (" + mobWeight + " ₢" + crookStrength + ")"), true);
+			//user.sendMessage(new LiteralText("" + crookStrength / mobWeight + " (" + mobWeight + " ₢" + crookStrength + ")"), true);
 
 			// Calculates the vector used to pull the mob
 			Vec3d pos = user.getPos().subtract(entity.getPos());
@@ -73,6 +71,7 @@ public class CrookItem extends MiningToolItem {
 
 			// With everything in order, pull the mob! (and set fall distance to 0 so crooking isn't lethal)
 			entity.setVelocity(pos);
+			entity.velocityModified = true;
 			entity.fallDistance = 0.0F;
 
 			// If cursed with the Curse of Thorns, deal a heart of damage to the mob

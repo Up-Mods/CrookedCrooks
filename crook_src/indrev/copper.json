@@ -1,0 +1,6 @@
+{
+    "crook_id": "copper_crook",
+    "mod_id": "indrev",
+    "ingredient": "#c:copper_ingots",
+    "criteria_name": "has_copper"
+}
