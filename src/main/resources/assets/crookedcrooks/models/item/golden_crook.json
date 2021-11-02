@@ -1,6 +1,6 @@
 {
-	"parent": "item/handheld",
-	"textures": {
-		"layer0": "crookedcrooks:item/golden_crook"
-	}
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "crookedcrooks:item/golden_crook"
+  }
 }

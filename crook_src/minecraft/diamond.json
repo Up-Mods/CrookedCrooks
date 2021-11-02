@@ -1,0 +1,6 @@
+{
+    "crookId": "diamond_crook",
+    "modId": "minecraft",
+    "ingredient": "#c:diamonds",
+    "criteriaName": "has_diamond"
+}

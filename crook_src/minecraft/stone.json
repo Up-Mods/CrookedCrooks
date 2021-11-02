@@ -1,0 +1,6 @@
+{
+    "crookId": "stone_crook",
+    "modId": "minecraft",
+    "ingredient": "#minecraft:stone_tool_materials",
+    "criteriaName": "has_stone"
+}

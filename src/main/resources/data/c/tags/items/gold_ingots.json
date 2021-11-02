@@ -1,6 +1,6 @@
 {
-	"replace": false,
-	"values": [
-		"minecraft:gold_ingot"
-	]
+  "replace": false,
+  "values": [
+    "minecraft:gold_ingot"
+  ]
 }

@@ -1,0 +1,7 @@
+{
+    "crookId": "wooden_crook",
+    "modId": "minecraft",
+    "ingredient": "minecraft:stick",
+    "criteriaName": "has_stick",
+    "craftingMethod": "crafting_shaped"
+}

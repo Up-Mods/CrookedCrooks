@@ -1,12 +1,12 @@
 {
-	"type": "minecraft:smithing",
-	"base": {
-		"item": "crookedcrooks:wooden_crook"
-	},
-	"addition": {
-		"tag": "c:diamonds"
-	},
-	"result": {
-		"item": "crookedcrooks:diamond_crook"
-	}
+  "type": "smithing",
+  "base": {
+    "item": "crookedcrooks:wooden_crook"
+  },
+  "addition": {
+    "tag": "c:diamonds"
+  },
+  "result": {
+    "item": "crookedcrooks:diamond_crook"
+  }
 }

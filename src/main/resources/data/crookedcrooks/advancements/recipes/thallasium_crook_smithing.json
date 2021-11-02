@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "item": "betterend:thallasium_ingot"
+            "items": [
+              "betterend:thallasium_ingot"
+            ]
           }
         ]
       }

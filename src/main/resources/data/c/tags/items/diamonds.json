@@ -1,6 +1,6 @@
 {
-	"replace": false,
-	"values": [
-		"minecraft:diamond"
-	]
+  "replace": false,
+  "values": [
+    "minecraft:diamond"
+  ]
 }

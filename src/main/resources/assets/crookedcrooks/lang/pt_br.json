@@ -17,6 +17,11 @@
 	"item.crookedcrooks.lead_crook": "Cajado de chumbo",
 	"item.crookedcrooks.ir_bronze_crook": "Cajado de bronze",
 	"item.crookedcrooks.silver_crook": "Cajado de prata",
+	"item.crookedcrooks.thallasium_crook": "Cajado de thallasio",
+	"item.crookedcrooks.terminite_crook": "Cajado de terminita",
+	"item.crookedcrooks.aeternium_crook": "Cajado de aeternio",
+	"item.crookedcrooks.rose_gold_crook": "Cajado de ouro rosa",
+	"item.crookedcrooks.gilded_netherite_crook": "Cajado de netherita dourada",
 	"enchantment.crookedcrooks.thorns_curse": "Maldição da perfuração",
-	"enchantment.crookedcrooks.thorns_curse.desc": "Faz com que o cajado cause dano ao puxar uma criatura."
+	"enchantment.crookedcrooks.thorns_curse.desc": "Faz com que o cajado cause dano ao puxar um mob."
 }

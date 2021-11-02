@@ -1,0 +1,7 @@
+{
+    "crookId": "rose_gold_crook",
+    "modId": "additionaladditions",
+    "baseItem": "crookedcrooks:golden_crook",
+    "ingredient": "#c:copper_ingots",
+    "criteriaName": "has_copper_ingot"
+}

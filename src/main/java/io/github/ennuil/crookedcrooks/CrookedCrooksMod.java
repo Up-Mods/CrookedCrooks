@@ -48,10 +48,15 @@ public class CrookedCrooksMod implements ModInitializer {
 	public static final Item LEAD_CROOK_ITEM = new CrookItem(CrookMaterials.LEAD, 0F, -3F, 0.75F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item INDREV_BRONZE_CROOK_ITEM = new CrookItem(CrookMaterials.INDREV_BRONZE, 0F, -3F, 0.85F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item SILVER_CROOK_ITEM = new CrookItem(CrookMaterials.SILVER, 0F, -3F, 0.8F, new Item.Settings().group(ItemGroup.TOOLS));
+	/*
 	// Better End Crooks
 	public static final Item THALLASIUM_CROOK_ITEM = new CrookItem(CrookMaterials.THALLASIUM, 0F, -3F, 0.8F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item TERMINITE_CROOK_ITEM = new CrookItem(CrookMaterials.TERMINITE, 0F, -3F, 1.0F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item AETERNIUM_CROOK_ITEM = new CrookItem(CrookMaterials.AETERNIUM, 0F, -3F, 1.3F, new Item.Settings().group(ItemGroup.TOOLS));
+	*/
+	// Additional Additions Crooks
+	public static final Item ROSE_GOLD_CROOK_ITEM = new CrookItem(CrookMaterials.ROSE_GOLD, 0F, -3F, 1.3F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item GILDED_NETHERITE_CROOK_ITEM = new CrookItem(CrookMaterials.GILDED_NETHERITE, 0F, -3F, 1.3F, new Item.Settings().group(ItemGroup.TOOLS));
 
 	// The crook enchantments
 	public static final Enchantment THORNS_CURSE_ENCHANTMENT = new ThornsCurseEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND);
@@ -89,10 +94,17 @@ public class CrookedCrooksMod implements ModInitializer {
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "silver_crook"), SILVER_CROOK_ITEM);
 		}
 
+		/*
 		if (fabricLoader.isModLoaded("betterend")) {
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "thallasium_crook"), THALLASIUM_CROOK_ITEM);
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "terminite_crook"), TERMINITE_CROOK_ITEM);
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "aeternium_crook"), AETERNIUM_CROOK_ITEM);
+		}
+		*/
+
+		if (fabricLoader.isModLoaded("additionaladditions")) {
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "rose_gold_crook"), ROSE_GOLD_CROOK_ITEM);
+			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "gilded_netherite_crook"), GILDED_NETHERITE_CROOK_ITEM);
 		}
 
 		// Register enchantments

@@ -1,5 +1,7 @@
 {
-	"when": [
-		{ "libcd:mod_loaded": "appliedenergistics2" }
-	]
+  "when": [
+    {
+      "libcd:mod_loaded": "appliedenergistics2"
+    }
+  ]
 }

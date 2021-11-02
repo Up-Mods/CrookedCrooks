@@ -1,59 +1,79 @@
 {
-	"replace": false,
-	"values": [
-		"crookedcrooks:wooden_crook",
-		"crookedcrooks:stone_crook",
-		"crookedcrooks:iron_crook",
-		"crookedcrooks:diamond_crook",
-		"crookedcrooks:golden_crook",
-		"crookedcrooks:netherite_crook",
-		{
-			"id": "crookedcrooks:tr_bronze_crook",
-			"required": false
-		},
-		{
-			"id": "crookedcrooks:ruby_crook",
-			"required": false
-		},
-		{
-			"id": "crookedcrooks:sapphire_crook",
-			"required": false
-		},
-		{
-			"id": "crookedcrooks:peridot_crook",
-			"required": false
-		},
-		{
-			"id": "crookedcrooks:certus_quartz_crook",
-			"required": false
-		},
-		{
-			"id": "crookedcrooks:nether_quartz_crook",
-			"required": false
-		},
-		{
-			"id": "crookedcrooks:tin_crook",
-			"required": false
-		},
-		{
-			"id": "crookedcrooks:copper_crook",
-			"required": false
-		},
-		{
-			"id": "crookedcrooks:steel_crook",
-			"required": false
-		},
-		{
-			"id": "crookedcrooks:lead_crook",
-			"required": false
-		},
-		{
-			"id": "crookedcrooks:ir_bronze_crook",
-			"required": false
-		},
-		{
-			"id": "crookedcrooks:silver_crook",
-			"required": false
-		}
-	]
+  "replace": false,
+  "values": [
+    "crookedcrooks:wooden_crook",
+    "crookedcrooks:stone_crook",
+    "crookedcrooks:iron_crook",
+    "crookedcrooks:diamond_crook",
+    "crookedcrooks:golden_crook",
+    "crookedcrooks:netherite_crook",
+    {
+      "id": "crookedcrooks:tr_bronze_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:ruby_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:sapphire_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:peridot_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:certus_quartz_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:nether_quartz_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:tin_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:copper_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:steel_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:lead_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:ir_bronze_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:silver_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:aeternium_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:terminite_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:thallasium_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:rose_gold_crook",
+      "required": false
+    },
+    {
+      "id": "crookedcrooks:gilded_netherite_crook",
+      "required": false
+    }
+  ]
 }

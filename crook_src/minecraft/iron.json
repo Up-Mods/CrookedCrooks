@@ -1,0 +1,6 @@
+{
+    "crookId": "iron_crook",
+    "modId": "minecraft",
+    "ingredient": "#c:iron_ingots",
+    "criteriaName": "has_iron_ingot"
+}

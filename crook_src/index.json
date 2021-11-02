@@ -1,0 +1,27 @@
+{
+    "crooks": [
+        "minecraft/wooden",
+        "minecraft/stone",
+        "minecraft/iron",
+        "minecraft/diamond",
+        "minecraft/golden",
+        "minecraft/netherite",
+        "techreborn/bronze",
+        "techreborn/ruby",
+        "techreborn/sapphire",
+        "techreborn/peridot",
+        "appliedenergistics2/certus_quartz",
+        "appliedenergistics2/nether_quartz",
+        "indrev/tin",
+        "indrev/copper",
+        "indrev/steel",
+        "indrev/lead",
+        "indrev/bronze",
+        "indrev/silver",
+        "betterend/aeternium",
+        "betterend/terminite",
+        "betterend/thallasium",
+        "additionaladditions/rose_gold",
+        "additionaladditions/gilded_netherite"
+    ]
+}

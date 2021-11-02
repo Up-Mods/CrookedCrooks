@@ -1,12 +1,12 @@
 {
-	"type": "minecraft:smithing",
-	"base": {
-		"item": "crookedcrooks:diamond_crook"
-	},
-	"addition": {
-		"tag": "c:netherite_ingots"
-	},
-	"result": {
-		"item": "crookedcrooks:netherite_crook"
-	}
+  "type": "smithing",
+  "base": {
+    "item": "crookedcrooks:diamond_crook"
+  },
+  "addition": {
+    "tag": "c:netherite_ingots"
+  },
+  "result": {
+    "item": "crookedcrooks:netherite_crook"
+  }
 }

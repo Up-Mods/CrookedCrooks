@@ -1,0 +1,6 @@
+{
+    "crookId": "golden_crook",
+    "modId": "minecraft",
+    "ingredient": "#c:gold_ingots",
+    "criteriaName": "has_gold_ingot"
+}
