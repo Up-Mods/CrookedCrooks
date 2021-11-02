@@ -56,18 +56,6 @@
       "required": false
     },
     {
-      "id": "crookedcrooks:aeternium_crook",
-      "required": false
-    },
-    {
-      "id": "crookedcrooks:terminite_crook",
-      "required": false
-    },
-    {
-      "id": "crookedcrooks:thallasium_crook",
-      "required": false
-    },
-    {
       "id": "crookedcrooks:rose_gold_crook",
       "required": false
     },
