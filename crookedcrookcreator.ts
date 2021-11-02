@@ -19,7 +19,12 @@ interface CrookIndex {
 
 interface Tag {
     replace: boolean;
-    values: (string | object)[]
+    values: (string | OptionalTagEntry)[];
+}
+
+interface OptionalTagEntry {
+    id: string;
+    required: boolean;
 }
 
 if (Deno.args.length >= 1) {
