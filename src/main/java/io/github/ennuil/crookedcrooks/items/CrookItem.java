@@ -48,11 +48,6 @@ public class CrookItem extends MiningToolItem {
 		return this.isSuitableFor(state) ? this.miningSpeed : 1.0F;
 	}
 
-	@Override
-	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-		super.appendTooltip(stack, world, tooltip, context);
-	}
-
 	//Handles the pulling of mobs with a crook
 	@Override
 	public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
