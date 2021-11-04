@@ -2,6 +2,6 @@
     "crookId": "gilded_netherite_crook",
     "modId": "additionaladditions",
     "baseItem": "crookedcrooks:netherite_crook",
-    "ingredient": "#c:netherite_ingots",
-    "criteriaName": "has_netherite_ingot"
+    "ingredient": "#c:gold_ingots",
+    "criteriaName": "has_gold_ingot"
 }

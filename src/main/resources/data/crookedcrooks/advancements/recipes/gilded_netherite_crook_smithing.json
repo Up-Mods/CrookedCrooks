@@ -6,12 +6,12 @@
     ]
   },
   "criteria": {
-    "has_netherite_ingot": {
+    "has_gold_ingot": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "c:netherite_ingots"
+            "tag": "c:gold_ingots"
           }
         ]
       }
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "has_netherite_ingot",
+      "has_gold_ingot",
       "has_the_recipe"
     ]
   ]

@@ -58,7 +58,7 @@ public class CrookedCrooksMod implements ModInitializer {
 	*/
 	// Additional Additions Crooks
 	public static final Item ROSE_GOLD_CROOK_ITEM = new CrookItem(CrookMaterials.ROSE_GOLD, 0F, -3F, 1.3F, new Item.Settings().group(ItemGroup.TOOLS));
-	public static final Item GILDED_NETHERITE_CROOK_ITEM = new CrookItem(CrookMaterials.GILDED_NETHERITE, 0F, -3F, 1.3F, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item GILDED_NETHERITE_CROOK_ITEM = new CrookItem(CrookMaterials.GILDED_NETHERITE, 0F, -3F, 1.3F, new Item.Settings().group(ItemGroup.TOOLS).fireproof());
 
 	// The crook enchantments
 	public static final Enchantment THORNS_CURSE_ENCHANTMENT = new ThornsCurseEnchantment(Enchantment.Rarity.VERY_RARE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND);
