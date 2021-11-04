@@ -25,7 +25,7 @@ public class EnchantedBookItemMixin {
     @Inject(
         at = @At(
             value = "FIELD",
-            target = "net/minecraft/enchantment/Enchantment.type"
+            target = "net/minecraft/enchantment/Enchantment.type:Lnet/minecraft/enchantment/EnchantmentTarget;"
         ),
         method = "appendStacks(Lnet/minecraft/item/ItemGroup;Lnet/minecraft/util/collection/DefaultedList;)V",
         locals = LocalCapture.CAPTURE_FAILHARD
