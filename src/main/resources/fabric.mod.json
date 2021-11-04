@@ -15,7 +15,7 @@
   "environment": "*",
   "entrypoints": {
     "main": ["io.github.ennuil.crookedcrooks.CrookedCrooksMod"],
-    "libcd": ["io.github.ennuil.crookedcrooks.CrookedCrooksConditions"]
+    "libcd:conditions": ["io.github.ennuil.crookedcrooks.CrookedCrooksConditions"]
   },
   "mixins": [
     "crookedcrooks.mixins.json"

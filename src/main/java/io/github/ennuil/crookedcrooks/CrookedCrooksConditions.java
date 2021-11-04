@@ -9,14 +9,13 @@ import net.minecraft.util.Identifier;
 public class CrookedCrooksConditions implements LibCDInitializer {
     @Override
     public void initConditions(ConditionManager manager) {
-        manager.registerCondition(new Identifier("crookedcrooks:bronze_preference"), value -> {
+        manager.registerCondition(new Identifier("crookedcrooks", "bronze_preference"), value -> {
             if (value instanceof String valueString) {
                 if (FabricLoader.getInstance().isModLoaded(valueString)) {
-                    if (valueString == "indrev") {
-                        return true;
-                    } else {
+                    if (!valueString.contentEquals("indrev") && FabricLoader.getInstance().isModLoaded("indrev")) {
                         return false;
                     }
+                    return true;
                 } else {
                     return false;
                 }

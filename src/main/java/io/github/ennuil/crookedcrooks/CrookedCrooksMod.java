@@ -8,6 +8,8 @@ import io.github.ennuil.crookedcrooks.items.CrookItem;
 import io.github.ennuil.crookedcrooks.items.CrookMaterials;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.fabric.api.tag.TagFactory;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
@@ -78,6 +80,10 @@ public class CrookedCrooksMod implements ModInitializer {
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "sapphire_crook"), SAPPHIRE_CROOK_ITEM);
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "peridot_crook"), PERIDOT_CROOK_ITEM);
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "tr_bronze_crook"), TECH_REBORN_BRONZE_CROOK_ITEM);
+			
+			if (fabricLoader.isModLoaded("indrev")) {
+				ResourceManagerHelper.registerBuiltinResourcePack(new Identifier("crookedcrooks", "use_tr_bronze_crooks"), fabricLoader.getModContainer("crookedcrooks").get(), ResourcePackActivationType.NORMAL);
+			}
 		}
 		
 		if (fabricLoader.isModLoaded("appliedenergistics2")) {

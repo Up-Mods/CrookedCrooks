@@ -41,8 +41,8 @@ public enum CrookMaterials implements ToolMaterial {
 	AETERNIUM(5, 2196, 10.0F, 4.5F, 18, () -> Ingredient.ofItems(Registry.ITEM.get(new Identifier("betterend:aeternium_ingot")))),
 	*/
 	// Additional Additions Materials
-	ROSE_GOLD(MiningLevels.IRON, 900, 9.0F, 2.0F, 17, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:copper_ingots")))),
-	GILDED_NETHERITE(MiningLevels.NETHERITE, 2000, 9.0F, 2.0F, 24, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:netherite_ingots"))));
+	ROSE_GOLD(MiningLevels.IRON, 900, 9.0F, 3.0F, 17, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:copper_ingots")))),
+	GILDED_NETHERITE(MiningLevels.NETHERITE, 2000, 9.0F, 4.0F, 24, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:netherite_ingots"))));
 
 	private final int miningLevel;
 	private final int itemDurability;
@@ -54,7 +54,7 @@ public enum CrookMaterials implements ToolMaterial {
 	private CrookMaterials(ToolMaterial material) {
 		this.miningLevel = material.getMiningLevel();
 		this.itemDurability = material.getDurability();
-		this.miningSpeed = material.getMiningLevel();
+		this.miningSpeed = material.getMiningSpeedMultiplier();
 		this.attackDamage = material.getAttackDamage();
 		this.enchantability = material.getEnchantability();
 		this.repairIngredient = new Lazy<Ingredient>(() -> material.getRepairIngredient());
@@ -63,7 +63,7 @@ public enum CrookMaterials implements ToolMaterial {
 	private CrookMaterials(ToolMaterial material, Supplier<Ingredient> repairIngredient) {
 		this.miningLevel = material.getMiningLevel();
 		this.itemDurability = material.getDurability();
-		this.miningSpeed = material.getMiningLevel();
+		this.miningSpeed = material.getMiningSpeedMultiplier();
 		this.attackDamage = material.getAttackDamage();
 		this.enchantability = material.getEnchantability();
 		this.repairIngredient = new Lazy<Ingredient>(repairIngredient);
