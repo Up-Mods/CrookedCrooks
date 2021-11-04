@@ -16,7 +16,7 @@ public class MultiplyDropsEvent {
 			ItemStack equippedStack = player.getStackInHand(Hand.MAIN_HAND);
 			if (equippedStack.isIn(CrookedCrooksMod.CROOKS)) {
 				if (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, equippedStack) == 0) {
-					if (CrookedCrooksMod.CROOK_EFFECTIVE.contains(state.getBlock())) {
+					if (equippedStack.isSuitableFor(state)) {
 						int multiplier = CrookedCrooksMod.CROOK_EFFECTIVE.get(state.getBlock()).intValue() - 1;
 						for (int i = 0; i < multiplier; i++) {
 							Block.dropStacks(state, world, pos, entity, player, equippedStack);	

@@ -1,11 +1,9 @@
 package io.github.ennuil.crookedcrooks.items;
 
-import java.util.List;
 
 import io.github.ennuil.crookedcrooks.CrookedCrooksMod;
 import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -17,11 +15,9 @@ import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.stat.Stats;
 import net.minecraft.tag.BlockTags;
-import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.World;
 
 public class CrookItem extends MiningToolItem {
 	public float crookStrength;
