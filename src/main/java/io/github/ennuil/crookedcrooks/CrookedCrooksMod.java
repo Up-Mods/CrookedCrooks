@@ -4,8 +4,8 @@ import io.github.cottonmc.mcdict.api.Dict;
 import io.github.cottonmc.mcdict.api.DictManager;
 import io.github.ennuil.crookedcrooks.enchantments.ThornsCurseEnchantment;
 import io.github.ennuil.crookedcrooks.events.MultiplyDropsEvent;
-import io.github.ennuil.crookedcrooks.item.CrookItem;
-import io.github.ennuil.crookedcrooks.item.CrookMaterials;
+import io.github.ennuil.crookedcrooks.items.CrookItem;
+import io.github.ennuil.crookedcrooks.items.CrookMaterials;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.tag.TagFactory;
@@ -59,7 +59,7 @@ public class CrookedCrooksMod implements ModInitializer {
 	public static final Item GILDED_NETHERITE_CROOK_ITEM = new CrookItem(CrookMaterials.GILDED_NETHERITE, 0F, -3F, 1.3F, new Item.Settings().group(ItemGroup.TOOLS));
 
 	// The crook enchantments
-	public static final Enchantment THORNS_CURSE_ENCHANTMENT = new ThornsCurseEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND);
+	public static final Enchantment THORNS_CURSE_ENCHANTMENT = new ThornsCurseEnchantment(Enchantment.Rarity.VERY_RARE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND);
 
 	@Override
 	public void onInitialize() {

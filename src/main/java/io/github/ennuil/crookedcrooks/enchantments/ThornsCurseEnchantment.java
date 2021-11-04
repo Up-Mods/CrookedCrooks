@@ -1,13 +1,20 @@
 package io.github.ennuil.crookedcrooks.enchantments;
 
-import io.github.ennuil.crookedcrooks.item.CrookItem;
+import io.github.ennuil.crookedcrooks.items.CrookItem;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
 
 public class ThornsCurseEnchantment extends Enchantment {
+    private boolean npeLock;
+    
     public ThornsCurseEnchantment(Rarity weight, EquipmentSlot... slotTypes) {
         super(weight, null, slotTypes);
+        this.npeLock = false;
+    }
+
+    public void avoidNPE() {
+        this.npeLock = true;
     }
 
     @Override
@@ -38,5 +45,15 @@ public class ThornsCurseEnchantment extends Enchantment {
     @Override
     public boolean isCursed() {
         return true;
+    }
+
+    @Override
+    public boolean isAvailableForRandomSelection() {
+        if (this.npeLock) {
+            this.npeLock = false;
+            return false;
+        }
+        
+        return super.isAvailableForRandomSelection();
     }
 }

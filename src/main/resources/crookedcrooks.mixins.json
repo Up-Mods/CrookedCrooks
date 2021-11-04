@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "io.github.ennuil.crookedcrooks.mixins",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "EnchantedBookItemMixin",
+    "EnchantmentHelperMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

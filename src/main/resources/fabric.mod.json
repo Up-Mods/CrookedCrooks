@@ -17,6 +17,9 @@
     "main": ["io.github.ennuil.crookedcrooks.CrookedCrooksMod"],
     "libcd": ["io.github.ennuil.crookedcrooks.CrookedCrooksConditions"]
   },
+  "mixins": [
+    "crookedcrooks.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=0.8.8",
     "fabric": ">=0.18.0",

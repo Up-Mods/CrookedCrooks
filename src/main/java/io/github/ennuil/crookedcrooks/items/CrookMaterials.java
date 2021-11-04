@@ -1,4 +1,4 @@
-package io.github.ennuil.crookedcrooks.item;
+package io.github.ennuil.crookedcrooks.items;
 
 import java.util.function.Supplier;
 

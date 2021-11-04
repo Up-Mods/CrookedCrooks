@@ -1,7 +1,11 @@
-package io.github.ennuil.crookedcrooks.item;
+package io.github.ennuil.crookedcrooks.items;
+
+import java.util.List;
 
 import io.github.ennuil.crookedcrooks.CrookedCrooksMod;
+import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -12,9 +16,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.stat.Stats;
+import net.minecraft.tag.BlockTags;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
@@ -23,32 +28,29 @@ public class CrookItem extends MiningToolItem {
 
 	public CrookItem(ToolMaterial material, float attackDamage, float attackSpeed, float crookStrength, Item.Settings settings) {
 		super(attackDamage, attackSpeed, material, null, settings);
-		// TODO - Move the pulling power registry to a data-driven system
 		this.crookStrength = crookStrength;
 	}
-
-	// TODO - Actually update this to 1.17 
+	
 	@Override
 	public boolean isSuitableFor(BlockState state) {
-		return CrookedCrooksMod.CROOK_EFFECTIVE.contains(state.getBlock());
+		int i = this.getMaterial().getMiningLevel();
+		if (i < MiningLevels.DIAMOND && state.isIn(BlockTags.NEEDS_DIAMOND_TOOL)) {
+			return false;
+		} else if (i < MiningLevels.IRON && state.isIn(BlockTags.NEEDS_IRON_TOOL)) {
+			return false;
+		} else {
+			return i < MiningLevels.STONE && state.isIn(BlockTags.NEEDS_STONE_TOOL) ? false : CrookedCrooksMod.CROOK_EFFECTIVE.contains(state.getBlock());
+		}
 	}
 
 	@Override
 	public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
-		if (!this.isSuitableFor(state)) {
-		   return 1.0F;
-		} else {
-		   return this.miningSpeed;
-		}
+		return this.isSuitableFor(state) ? this.miningSpeed : 1.0F;
 	}
 
 	@Override
-	public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
-		if (!world.isClient && CrookedCrooksMod.CROOK_EFFECTIVE.contains(state.getBlock())) {
-			stack.damage(1, miner, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
-			return true;
-		}
-		return super.postMine(stack, world, state, pos, miner);
+	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
+		super.appendTooltip(stack, world, tooltip, context);
 	}
 
 	//Handles the pulling of mobs with a crook
