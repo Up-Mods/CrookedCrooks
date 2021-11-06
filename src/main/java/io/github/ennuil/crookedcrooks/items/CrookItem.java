@@ -17,7 +17,9 @@ import net.minecraft.stat.Stats;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public class CrookItem extends MiningToolItem {
 	public float crookStrength;
@@ -42,6 +44,15 @@ public class CrookItem extends MiningToolItem {
 	@Override
 	public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
 		return this.isSuitableFor(state) ? this.miningSpeed : 1.0F;
+	}
+
+	@Override
+	public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
+		if (!world.isClient && (state.getHardness(world, pos) != 0.0F || this.isSuitableFor(state))) {
+			stack.damage(1, miner, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+		}
+
+		return true;
 	}
 
 	//Handles the pulling of mobs with a crook
