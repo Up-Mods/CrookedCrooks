@@ -1,7 +1,7 @@
 {
   "when": [
     {
-      "libcd:mod_loaded": "additionaladditions"
+      "libcd:item_exists": "crookedcrooks:rose_gold_crook"
     }
   ]
 }

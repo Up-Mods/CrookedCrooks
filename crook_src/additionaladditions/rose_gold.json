@@ -3,5 +3,6 @@
     "modId": "additionaladditions",
     "baseItem": "crookedcrooks:golden_crook",
     "ingredient": "#c:copper_ingots",
-    "criteriaName": "has_copper_ingot"
+    "criteriaName": "has_copper_ingot",
+    "dependsOnItem": true
 }

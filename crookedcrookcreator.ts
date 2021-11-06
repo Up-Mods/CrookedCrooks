@@ -10,6 +10,7 @@ interface CrookDefinition {
     ingredient: string;
     criteriaName: string;
     modCondition?: string;
+    dependsOnItem?: boolean;
     craftingMethod?: string;
 }
 
@@ -244,6 +245,11 @@ async function createMCDictMcmetas(crookDef: CrookDefinition) {
     if (crookDef.modCondition !== undefined) {
         Object.defineProperty(condition, `crookedcrooks:${crookDef.modCondition}`, {
             value: crookDef.modId,
+            enumerable: true
+        });
+    } else if (crookDef.dependsOnItem === true) {
+        Object.defineProperty(condition, "libcd:item_exists", {
+            value: `crookedcrooks:${crookDef.crookId}`,
             enumerable: true
         });
     } else {

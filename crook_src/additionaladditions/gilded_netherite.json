@@ -3,5 +3,6 @@
     "modId": "additionaladditions",
     "baseItem": "crookedcrooks:netherite_crook",
     "ingredient": "#c:gold_ingots",
-    "criteriaName": "has_gold_ingot"
+    "criteriaName": "has_gold_ingot",
+    "dependsOnItem": true
 }

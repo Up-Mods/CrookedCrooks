@@ -108,9 +108,15 @@ public class CrookedCrooksMod implements ModInitializer {
 		}
 		*/
 
+		// Additional Additions has config options for disabling certain items
+		// Currently, the tools aren't affected by them, but future-proofing is a good idea
 		if (fabricLoader.isModLoaded("additionaladditions")) {
-			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "rose_gold_crook"), ROSE_GOLD_CROOK_ITEM);
-			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "gilded_netherite_crook"), GILDED_NETHERITE_CROOK_ITEM);
+			if (Registry.ITEM.containsId(new Identifier("additionaladditions", "rose_gold_shovel"))) {
+				Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "rose_gold_crook"), ROSE_GOLD_CROOK_ITEM);
+			}
+			if (Registry.ITEM.containsId(new Identifier("additionaladditions", "gilded_netherite_shovel"))) {
+				Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "gilded_netherite_crook"), GILDED_NETHERITE_CROOK_ITEM);
+			}
 		}
 
 		// Register enchantments
