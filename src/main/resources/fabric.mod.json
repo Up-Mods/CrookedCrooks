@@ -30,8 +30,10 @@
     "libcd": ">=3.0.0"
   },
   "suggests": {
+    "additionaladditions": "*",
     "appliedenergistics2": "*",
     "indrev": "*",
+    "promenade": "*",
     "techreborn": "*"
   }
 }

@@ -2,13 +2,14 @@
 
 # Crooked Crooks
 
-Crooked Crooks is a mod that adds crooks, a tool which can pull mobs and multiply the drops from leaves and grasses, currently has crooks for all vanilla materials and materials added by [Tech Reborn](https://www.curseforge.com/minecraft/mc-mods/techreborn) and [Applied Energistics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2). Inspired by the crook from the Ex Nihilo mod family. Depends on the [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api). [LibCD](https://www.curseforge.com/minecraft/mc-mods/libcd) and a port of [MCDict](https://github.com/EnnuiL/MCDict/tree/crooked) is bundled in the JAR file.
+Crooked Crooks is a mod that adds crooks, a tool which can pull mobs and multiply the drops from leaves and grasses, currently has crooks for all vanilla materials and materials added by [Tech Reborn](https://www.curseforge.com/minecraft/mc-mods/techreborn), [Applied Energistics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2), [Industrial Revolution](https://www.curseforge.com/minecraft/mc-mods/industrial-revolution) and [Additional Additions](https://www.curseforge.com/minecraft/mc-mods/additional-additions). Inspired by the crook from the Ex Nihilo mod family. Depends on the [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api). [LibCD](https://www.curseforge.com/minecraft/mc-mods/libcd) and a port of [MCDict](https://github.com/EnnuiL/MCDict/tree/crooked) is bundled in the JAR file.
 
 ## Download
 
 This mod is available for download on the following services:
 
-- [CurseForge (recommended)](https://www.curseforge.com/minecraft/mc-mods/crooked-crooks)
+- [Modrinth (recommended)](https://modrinth.com/mod/crooked-crooks)
+- [CurseForge (alternative)](https://www.curseforge.com/minecraft/mc-mods/crooked-crooks)
 - [GitHub Releases (alternative)](https://github.com/EnnuiL/CrookedCrooks/releases)
 
 ## License
