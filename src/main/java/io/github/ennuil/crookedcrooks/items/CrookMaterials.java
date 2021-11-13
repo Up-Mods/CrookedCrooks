@@ -24,7 +24,7 @@ public enum CrookMaterials implements ToolMaterial {
 	SAPPHIRE(MiningLevels.DIAMOND, 1000, 7.0F, 1.5F, 12, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:sapphires")))),
 	PERIDOT(MiningLevels.IRON, 750, 7.0F, 1.5F, 12, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:peridot_gems")))),
 	// Applied Energistics 2 Materials
-	CERTUS_QUARTZ(ToolMaterials.IRON, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("appliedenergistics2:crystals/certus_quartz")))),
+	CERTUS_QUARTZ(ToolMaterials.IRON, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:certus_quartz")))),
 	NETHER_QUARTZ(ToolMaterials.IRON, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:quartz")))),
 	// Industrial Revolution Materials
 	TIN(MiningLevels.STONE, 200, 4.0F, 1.0F, 14, () -> Ingredient.fromTag(TagFactory.ITEM.create(new Identifier("c:tin_ingots")))),

@@ -14,6 +14,7 @@ import net.fabricmc.fabric.api.tag.TagFactory;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -22,8 +23,10 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class CrookedCrooksMod implements ModInitializer {
-	// The crook_effective tag, used for blocks which should have its drops multiplied by crooks
+	// The crook_effective dict, used for blocks which should have its drops multiplied by crooks
 	public static final Dict<Block, Integer> CROOK_EFFECTIVE = DictManager.DATA_PACK.registerBlockDict(new Identifier("crookedcrooks", "crook_effective"), Integer.class);
+	// The mob_weight dict, used to override the automatically calculated weights for each mob.
+	public static final Dict<EntityType<?>, Double> ENTITY_WEIGHT = DictManager.DATA_PACK.registerEntityTypeDict(new Identifier("crookedcrooks", "entity_weight"), Double.class);
 	// The crooks tag, used to list all the crooks and to apply the multiplier
 	public static final Tag<Item> CROOKS = TagFactory.ITEM.create(new Identifier("crookedcrooks", "crooks"));
 	

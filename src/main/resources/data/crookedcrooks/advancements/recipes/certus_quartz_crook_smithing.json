@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "appliedenergistics2:crystals/certus_quartz"
+            "tag": "c:certus_quartz"
           }
         ]
       }

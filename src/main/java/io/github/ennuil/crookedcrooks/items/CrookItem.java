@@ -63,8 +63,11 @@ public class CrookItem extends MiningToolItem {
 			// This calculates the weight of the pull. If it's 1.0D, it means that it's a full power pull
 			float crookStrength = this.crookStrength;
 			double mobWeight = entity.getBoundingBox().getAverageSideLength();
+			if (CrookedCrooksMod.ENTITY_WEIGHT.contains(entity.getType())) {
+				mobWeight = CrookedCrooksMod.ENTITY_WEIGHT.get(entity.getType());
+			}
 			double weight = (crookStrength / mobWeight) <= 1.0D ? crookStrength / mobWeight : 1.0D;
-			//user.sendMessage(new LiteralText("" + crookStrength / mobWeight + " (" + mobWeight + " ₢" + crookStrength + ")"), true);
+			// user.sendMessage(new LiteralText("" + crookStrength / mobWeight + " (" + mobWeight + " ₢" + crookStrength + ")"), true);
 
 			// Calculates the vector used to pull the mob
 			Vec3d pos = user.getPos().subtract(entity.getPos());
