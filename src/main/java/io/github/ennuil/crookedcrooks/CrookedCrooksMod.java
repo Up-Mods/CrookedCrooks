@@ -89,7 +89,7 @@ public class CrookedCrooksMod implements ModInitializer {
 			}
 		}
 		
-		if (fabricLoader.isModLoaded("appliedenergistics2")) {
+		if (fabricLoader.isModLoaded("ae2")) {
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "certus_quartz_crook"), CERTUS_QUARTZ_CROOK_ITEM);
 			Registry.register(Registry.ITEM, new Identifier("crookedcrooks", "nether_quartz_crook"), NETHER_QUARTZ_CROOK_ITEM);
 		}

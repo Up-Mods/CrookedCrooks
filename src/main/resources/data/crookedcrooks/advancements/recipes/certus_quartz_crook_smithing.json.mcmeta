@@ -1,7 +1,7 @@
 {
   "when": [
     {
-      "libcd:mod_loaded": "appliedenergistics2"
+      "libcd:mod_loaded": "ae2"
     }
   ]
 }

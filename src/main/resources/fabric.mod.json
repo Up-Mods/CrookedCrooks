@@ -6,7 +6,7 @@
   "description": "Adds crooks for all the vanilla materials (and some modded ones). They multiply drops from leaves and grasses and they pull mobs!",
   "authors": ["EnnuiL"],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/crooked-crooks",
+    "homepage": "https://modrinth.com/mod/crooked-crooks",
     "issues": "https://github.com/EnnuiL/CrookedCrooks/issues",
     "sources": "https://github.com/EnnuiL/CrookedCrooks"
   },
@@ -23,7 +23,7 @@
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": ">=0.38.0",
-    "minecraft": ">=1.17.0",
+    "minecraft": ">=1.18.0",
     "libcd": ">=2.5.0"
   },
   "recommends": {
@@ -31,7 +31,7 @@
   },
   "suggests": {
     "additionaladditions": "*",
-    "appliedenergistics2": "*",
+    "ae2": "*",
     "indrev": "*",
     "promenade": "*",
     "techreborn": "*"

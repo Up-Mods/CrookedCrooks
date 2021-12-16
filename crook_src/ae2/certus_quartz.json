@@ -1,6 +1,6 @@
 {
     "crookId": "certus_quartz_crook",
-    "modId": "appliedenergistics2",
+    "modId": "ae2",
     "ingredient": "#c:certus_quartz",
     "criteriaName": "has_nether_quartz"
 }
