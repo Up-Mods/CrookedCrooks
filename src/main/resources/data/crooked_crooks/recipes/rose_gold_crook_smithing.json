@@ -1,0 +1,12 @@
+{
+  "type": "smithing",
+  "base": {
+    "item": "crooked_crooks:golden_crook"
+  },
+  "addition": {
+    "tag": "c:copper_ingots"
+  },
+  "result": {
+    "item": "crooked_crooks:rose_gold_crook"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "smithing",
+  "base": {
+    "item": "crooked_crooks:wooden_crook"
+  },
+  "addition": {
+    "tag": "c:certus_quartz"
+  },
+  "result": {
+    "item": "crooked_crooks:certus_quartz_crook"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "crooked_crooks:recipes/root",
+  "rewards": {
+    "recipes": [
+      "crooked_crooks:tin_crook_smithing"
+    ]
+  },
+  "criteria": {
+    "has_tin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:tin_ingots"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "crooked_crooks:tin_crook_smithing"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tin",
+      "has_the_recipe"
+    ]
+  ]
+}

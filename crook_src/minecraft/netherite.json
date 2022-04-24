@@ -1,7 +1,7 @@
 {
     "crookId": "netherite_crook",
     "modId": "minecraft",
-    "baseItem": "crookedcrooks:diamond_crook",
+    "baseItem": "crooked_crooks:diamond_crook",
     "ingredient": "#c:netherite_ingots",
     "criteriaName": "has_netherite_ingot"
 }

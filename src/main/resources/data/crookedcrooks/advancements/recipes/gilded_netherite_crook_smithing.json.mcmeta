@@ -1,7 +1,0 @@
-{
-  "when": [
-    {
-      "libcd:item_exists": "crookedcrooks:gilded_netherite_crook"
-    }
-  ]
-}

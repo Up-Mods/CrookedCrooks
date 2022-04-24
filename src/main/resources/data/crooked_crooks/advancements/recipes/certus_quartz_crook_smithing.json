@@ -1,0 +1,32 @@
+{
+  "parent": "crooked_crooks:recipes/root",
+  "rewards": {
+    "recipes": [
+      "crooked_crooks:certus_quartz_crook_smithing"
+    ]
+  },
+  "criteria": {
+    "has_nether_quartz": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:certus_quartz"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "crooked_crooks:certus_quartz_crook_smithing"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_nether_quartz",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "smithing",
+  "base": {
+    "item": "crooked_crooks:netherite_crook"
+  },
+  "addition": {
+    "tag": "c:gold_ingots"
+  },
+  "result": {
+    "item": "crooked_crooks:gilded_netherite_crook"
+  }
+}

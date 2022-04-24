@@ -1,0 +1,7 @@
+{
+  "when": [
+    {
+      "crooked_crooks:bronze_preference": "techreborn"
+    }
+  ]
+}

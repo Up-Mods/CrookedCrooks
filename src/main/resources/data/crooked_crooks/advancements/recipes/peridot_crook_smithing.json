@@ -1,0 +1,32 @@
+{
+  "parent": "crooked_crooks:recipes/root",
+  "rewards": {
+    "recipes": [
+      "crooked_crooks:peridot_crook_smithing"
+    ]
+  },
+  "criteria": {
+    "has_peridot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:peridots"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "crooked_crooks:peridot_crook_smithing"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_peridot",
+      "has_the_recipe"
+    ]
+  ]
+}

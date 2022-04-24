@@ -1,4 +1,4 @@
-<img src="./src/main/resources/assets/crookedcrooks/icon.png" align="right" width="128px"/>
+<img src="./src/main/resources/assets/crooked_crooks/icon.png" align="right" width="128px"/>
 
 # Crooked Crooks
 
