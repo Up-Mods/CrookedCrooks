@@ -15,7 +15,7 @@
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
 			"init": "io.github.ennuil.crooked_crooks.CrookedCrooksMod",
-			"libcd:conditions": "io.github.ennuil.crookedcrooks.CrookedCrooksConditions"
+			"libcd:conditions": "io.github.ennuil.crooked_crooks.CrookedCrooksConditions"
 		},
 		"depends": [
 			{

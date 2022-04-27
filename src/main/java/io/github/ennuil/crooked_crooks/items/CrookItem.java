@@ -2,6 +2,7 @@ package io.github.ennuil.crooked_crooks.items;
 
 
 import io.github.ennuil.crooked_crooks.CrookedCrooksMod;
+import net.fabricmc.fabric.api.mininglevel.v1.MiningLevelManager;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;
@@ -13,7 +14,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.stat.Stats;
-import net.minecraft.tag.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -30,14 +30,12 @@ public class CrookItem extends MiningToolItem {
 
 	@Override
 	public boolean isSuitableFor(BlockState state) {
-		int i = this.getMaterial().getMiningLevel();
-		if (i < 3 && state.isIn(BlockTags.NEEDS_DIAMOND_TOOL)) {
-			return false;
-		} else if (i < 2 && state.isIn(BlockTags.NEEDS_IRON_TOOL)) {
-			return false;
-		} else {
-			return i < 1 && state.isIn(BlockTags.NEEDS_STONE_TOOL) ? false : CrookedCrooksMod.CROOK_EFFECTIVE.getValue(state.getBlock()).isPresent();
+		int miningLevel = this.getMaterial().getMiningLevel();
+		if (miningLevel >= MiningLevelManager.getRequiredMiningLevel(state)) {
+			return CrookedCrooksMod.CROOK_EFFECTIVE.getValue(state.getBlock()).isPresent();
 		}
+
+		return false;
 	}
 
 	@Override

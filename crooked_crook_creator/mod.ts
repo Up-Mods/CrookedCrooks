@@ -54,7 +54,7 @@ if (Deno.args.length >= 1) {
             createCrook(crookDef);
         }
 
-        await Deno.writeTextFile(crookTagPath, JSON.stringify(crookTag, null, 2));
+        await Deno.writeTextFile(crookTagPath, JSON.stringify(crookTag, null, 2)  + "\n");
     } else if (Deno.args[0] === "create_from") {
         if (Deno.args.length >= 2) {
             const jsonData = await Deno.readTextFile(filepath.resolve("crook_src/", ...Deno.args[1].concat(".json").split("/"),));
@@ -137,7 +137,7 @@ async function createRecipe(crookDef: CrookDefinition) {
             }
         };
 
-        await Deno.writeTextFile(recipePath, JSON.stringify(recipeJson, null, 2));
+        await Deno.writeTextFile(recipePath, JSON.stringify(recipeJson, null, 2) + "\n");
     } else {
         const recipePath = filepath.resolve(`src/main/resources/data/crooked_crooks/recipes/${crookDef.crookId}_smithing.json`);
         const recipeBase = crookDef.baseItem !== undefined ? crookDef.baseItem : "crooked_crooks:wooden_crook";
@@ -159,7 +159,7 @@ async function createRecipe(crookDef: CrookDefinition) {
             }
         };
 
-        await Deno.writeTextFile(recipePath, JSON.stringify(recipeJson, null, 2));
+        await Deno.writeTextFile(recipePath, JSON.stringify(recipeJson, null, 2) + "\n");
     }
 }
 
@@ -228,7 +228,7 @@ async function createRecipeAdvancement(crookDef: CrookDefinition) {
             ]
         ]
     };
-    await Deno.writeTextFile(advancementPath, JSON.stringify(advancementJson, null, 2));
+    await Deno.writeTextFile(advancementPath, JSON.stringify(advancementJson, null, 2) + "\n");
 }
 
 async function createMCDictMcmetas(crookDef: CrookDefinition) {
@@ -265,7 +265,7 @@ async function createMCDictMcmetas(crookDef: CrookDefinition) {
         ]
     };
 
-    const mcmetaJson = JSON.stringify(mcmetaObject, null, 2);
+    const mcmetaJson = JSON.stringify(mcmetaObject, null, 2) + "\n";
 
     await Promise.allSettled([
         Deno.writeTextFile(recipeMcmetaPath, mcmetaJson),
@@ -290,5 +290,5 @@ async function createItemModels(crookDef: CrookDefinition) {
         }
     }
 
-    await Deno.writeTextFile(itemModelPath, JSON.stringify(itemModelJson, null, 2));
+    await Deno.writeTextFile(itemModelPath, JSON.stringify(itemModelJson, null, 2)  + "\n");
 }
