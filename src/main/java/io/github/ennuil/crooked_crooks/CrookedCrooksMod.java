@@ -55,14 +55,6 @@ public class CrookedCrooksMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("crooked_crooks", "golden_crook"), GOLDEN_CROOK_ITEM);
 		Registry.register(Registry.ITEM, new Identifier("crooked_crooks", "netherite_crook"), NETHERITE_CROOK_ITEM);
 
-		if (QuiltLoader.isModLoaded("indrev")) {
-			ResourceLoader.registerBuiltinResourcePack(
-				new Identifier("crooked_crooks", "use_tr_bronze_crooks"),
-				mod,
-				ResourcePackActivationType.NORMAL,
-				new TranslatableText("resource_pack.use_tr_bronze_crooks"));
-		}
-
 		if (QuiltLoader.isModLoaded("techreborn")) {
 			Registry.register(
 				Registry.ITEM, new Identifier("crooked_crooks", "ruby_crook"),
