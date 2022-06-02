@@ -1,8 +1,11 @@
 {
   "replace": false,
   "values": {
+    "#minecraft:leaves": 5,
     "minecraft:grass": 3,
     "minecraft:tall_grass": 3,
-    "minecraft:fern": 3
+    "minecraft:fern": 3,
+    "minecraft:large_fern": 3,
+    "#promenade:leaf_piles": 5
   }
 }
