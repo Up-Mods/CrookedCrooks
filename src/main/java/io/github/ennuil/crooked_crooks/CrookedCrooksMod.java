@@ -3,6 +3,7 @@ package io.github.ennuil.crooked_crooks;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.loader.api.QuiltLoader;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
+import org.quiltmc.qsl.registry.api.event.RegistryEvents;
 import org.quiltmc.qsl.registry.attachment.api.RegistryEntryAttachment;
 import org.quiltmc.qsl.resource.loader.api.ResourceLoader;
 import org.quiltmc.qsl.resource.loader.api.ResourcePackActivationType;
@@ -41,6 +42,10 @@ public class CrookedCrooksMod implements ModInitializer {
 	public static final Item DIAMOND_CROOK_ITEM = new CrookItem(CrookMaterials.DIAMOND, 0F, -3F, 1.0F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item GOLDEN_CROOK_ITEM = new CrookItem(CrookMaterials.GOLD, 0F, -3F, 0.4F, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item NETHERITE_CROOK_ITEM = new CrookItem(CrookMaterials.NETHERITE, 0F, -3F, 1.2F, new Item.Settings().group(ItemGroup.TOOLS).fireproof());
+
+	// The modded items to be used as a point of reference by Crooked Crooks
+	private static final Identifier ROSE_GOLD_HOE_ITEM = new Identifier("additionaladditions", "rose_gold_hoe");
+	private static final Identifier GILDED_NETHERITE_HOE_ITEM = new Identifier("additionaladditions", "gilded_netherite_hoe");
 
 	// The crook enchantments
 	public static final Enchantment THORNS_CURSE_ENCHANTMENT = new ThornsCurseEnchantment(Enchantment.Rarity.VERY_RARE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND);
@@ -125,16 +130,15 @@ public class CrookedCrooksMod implements ModInitializer {
 		// Additional Additions has config options for disabling certain items
 		// Currently, the tools aren't affected by them, but future-proofing is a good idea
 		if (QuiltLoader.isModLoaded("additionaladditions")) {
-			if (Registry.ITEM.containsId(new Identifier("additionaladditions", "rose_gold_shovel"))) {
-				Registry.register(
-					Registry.ITEM, new Identifier("crooked_crooks", "rose_gold_crook"),
-					new CrookItem(CrookMaterials.ROSE_GOLD, 0F, -3F, 1.3F, new Item.Settings().group(ItemGroup.TOOLS)));
-			}
-			if (Registry.ITEM.containsId(new Identifier("additionaladditions", "gilded_netherite_shovel"))) {
-				Registry.register(
-					Registry.ITEM, new Identifier("crooked_crooks", "gilded_netherite_crook"),
-					new CrookItem(CrookMaterials.GILDED_NETHERITE, 0F, -3F, 1.3F, new Item.Settings().group(ItemGroup.TOOLS).fireproof()));
-			}
+			RegistryEvents.getEntryAddEvent(Registry.ITEM).register(ctx -> {
+				if (ctx.id().equals(ROSE_GOLD_HOE_ITEM)) {
+					ctx.register(new Identifier("crooked_crooks", "rose_gold_crook"),
+						new CrookItem(CrookMaterials.ROSE_GOLD, 0F, -3F, 1.3F, new Item.Settings().group(ItemGroup.TOOLS)));
+				} else if (ctx.id().equals(GILDED_NETHERITE_HOE_ITEM)) {
+					ctx.register(new Identifier("crooked_crooks", "gilded_netherite_crook"),
+						new CrookItem(CrookMaterials.GILDED_NETHERITE, 0F, -3F, 1.3F, new Item.Settings().group(ItemGroup.TOOLS).fireproof()));
+				}
+			});
 		}
 
 		// Register enchantments
