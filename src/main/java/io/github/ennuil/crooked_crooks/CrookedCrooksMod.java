@@ -20,7 +20,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.tag.TagKey;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -79,7 +79,7 @@ public class CrookedCrooksMod implements ModInitializer {
 					new Identifier("crooked_crooks", "use_tr_bronze_crooks"),
 					mod,
 					ResourcePackActivationType.NORMAL,
-					new TranslatableText("resource_pack.use_tr_bronze_crooks"));
+					Text.translatable("resource_pack.use_tr_bronze_crooks"));
 			}
 		}
 
