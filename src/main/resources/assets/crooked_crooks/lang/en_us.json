@@ -20,7 +20,9 @@
 	"item.crooked_crooks.rose_gold_crook": "Rose Gold Crook",
 	"item.crooked_crooks.gilded_netherite_crook": "Gilded Netherite Crook",
   "tag.crooked_crooks.crooks": "Crooks",
+  "tag.c.peridots": "Peridots",
 	"enchantment.crooked_crooks.thorns_curse": "Curse of Thorns",
 	"enchantment.crooked_crooks.thorns_curse.desc": "Makes the crook deal damage when pulling a mob.",
-  "resource_pack.use_tr_bronze_crooks": "Use TR Bronze Crooks"
+  "resource_pack.use_tr_bronze_crooks": "Use TR Bronze Crooks",
+  "emi.category.crooked_crooks.emi_recipe_category": "Crook Efficiency"
 }
