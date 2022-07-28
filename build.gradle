@@ -9,6 +9,7 @@ version = project.version
 group = project.maven_group
 
 repositories {
+	maven { url "https://maven.terraformersmc.com/releases/" }
 	maven { url "https://jitpack.io" }
 }
 
@@ -25,6 +26,7 @@ dependencies {
 	// Quilted Fabric API will automatically pull in the correct QSL version.
 	modImplementation libs.quilted.fabric.api
 	modImplementation libs.libcd
+	modImplementation libs.emi
 
 	include libs.libcd
 }

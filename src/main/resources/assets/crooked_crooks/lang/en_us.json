@@ -19,6 +19,7 @@
 	"item.crooked_crooks.silver_crook": "Silver Crook",
 	"item.crooked_crooks.rose_gold_crook": "Rose Gold Crook",
 	"item.crooked_crooks.gilded_netherite_crook": "Gilded Netherite Crook",
+  "tag.crooked_crooks.crooks": "Crooks",
 	"enchantment.crooked_crooks.thorns_curse": "Curse of Thorns",
 	"enchantment.crooked_crooks.thorns_curse.desc": "Makes the crook deal damage when pulling a mob.",
   "resource_pack.use_tr_bronze_crooks": "Use TR Bronze Crooks"
