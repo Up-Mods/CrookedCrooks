@@ -33,6 +33,16 @@ public class CrookedCrooksEmiPlugin implements EmiPlugin {
 
 		SortedMap<Integer, List<Block>> reverseMap = new Int2ReferenceAVLTreeMap<>();
 
+		CrookedCrooksMod.CROOK_EFFECTIVE.entryIterator().forEachRemaining(entry -> {
+			if (reverseMap.containsKey(entry.value())) {
+				reverseMap.get(entry.value()).add(entry.entry());
+			} else {
+				List<Block> list = new ArrayList<>();
+				list.add(entry.entry());
+				reverseMap.put(entry.value(), list);
+			}
+		});
+
 		CrookedCrooksMod.CROOK_EFFECTIVE.tagEntryIterator().forEachRemaining(entry -> {
 			for (Holder<Block> holder : TagRegistry.getTag(entry.tag())) {
 				if (holder.getKey().isPresent()) {
@@ -46,16 +56,6 @@ public class CrookedCrooksEmiPlugin implements EmiPlugin {
 						reverseMap.put(entry.value(), list);
 					}
 				}
-			}
-		});
-
-		CrookedCrooksMod.CROOK_EFFECTIVE.entryIterator().forEachRemaining(entry -> {
-			if (reverseMap.containsKey(entry.value())) {
-				reverseMap.get(entry.value()).add(entry.entry());
-			} else {
-				List<Block> list = new ArrayList<>();
-				list.add(entry.entry());
-				reverseMap.put(entry.value(), list);
 			}
 		});
 

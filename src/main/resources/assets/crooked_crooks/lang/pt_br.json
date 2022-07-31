@@ -23,5 +23,6 @@
 	"enchantment.crooked_crooks.thorns_curse": "Maldição da perfuração",
 	"enchantment.crooked_crooks.thorns_curse.desc": "Faz com que o cajado cause dano ao puxar um mob.",
   "resource_pack.use_tr_bronze_crooks": "Usar cajados de bronze do TR",
-  "emi.category.crooked_crooks.emi_recipe_category": "Eficiência do cajado"
+  "emi.category.crooked_crooks.emi_recipe_category": "Eficiência de drops do cajado",
+  "emi.recipe.crooked_crooks.crook_efficiency.drop_multiplier": "Multiplicador de drops: %sx"
 }
