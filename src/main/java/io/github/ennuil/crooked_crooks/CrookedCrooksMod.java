@@ -12,7 +12,6 @@ import io.github.ennuil.crooked_crooks.enchantments.ThornsCurseEnchantment;
 import io.github.ennuil.crooked_crooks.events.MultiplyDropsEvent;
 import io.github.ennuil.crooked_crooks.items.CrookItem;
 import io.github.ennuil.crooked_crooks.items.CrookMaterials;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EntityType;
