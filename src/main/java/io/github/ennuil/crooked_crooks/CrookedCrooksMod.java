@@ -146,9 +146,5 @@ public class CrookedCrooksMod implements ModInitializer {
 
 		// Register the drop-multiplying event
 		MultiplyDropsEvent.registerEvent();
-
-		// TODO - Once Quilt Item API releases, add to its attachment!
-		// Make Wooden Crooks usable as fuel. More mods should have this
-		FuelRegistry.INSTANCE.add(WOODEN_CROOK_ITEM, 200);
 	}
 }

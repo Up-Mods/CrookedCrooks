@@ -2,6 +2,7 @@ package io.github.ennuil.crooked_crooks.emi;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -12,6 +13,7 @@ import dev.emi.emi.api.stack.EmiStack;
 import dev.emi.emi.api.widget.WidgetHolder;
 import io.github.ennuil.crooked_crooks.CrookedCrooksMod;
 import net.minecraft.block.Block;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
@@ -36,15 +38,20 @@ public class CrookEmiRecipe implements EmiRecipe {
 		return new Identifier("emi", "crooked_crooks/crook_multiplier/" + multiplier);
 	}
 
-	// TODO - Sneak in the block list there
+	// TODO - Simplify this
 	@Override
 	public List<EmiIngredient> getInputs() {
-		return List.of(EmiIngredient.of(CrookedCrooksMod.CROOKS));
+		return this.stackList.stream().map(stack -> EmiIngredient.of(Ingredient.ofStacks(stack.getItemStack()))).toList();
 	}
 
 	@Override
 	public List<EmiStack> getOutputs() {
 		return List.of();
+	}
+
+	@Override
+	public boolean supportsRecipeTree() {
+		return false;
 	}
 
 	@Override
@@ -57,6 +64,7 @@ public class CrookEmiRecipe implements EmiRecipe {
 		return 16 * (1 + MathHelper.ceil(stackList.size() / 6)) + 2;
 	}
 
+	// TODO - Implement pages; That's how EMI handles massive lists
 	@Override
 	public void addWidgets(WidgetHolder widgets) {
 		int i = 0;

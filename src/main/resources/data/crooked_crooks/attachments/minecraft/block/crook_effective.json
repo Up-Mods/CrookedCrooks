@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": {
+    "#minecraft:mineable/axe": 10,
     "#minecraft:leaves": 5,
     "minecraft:grass": 3,
     "minecraft:tall_grass": 3,
