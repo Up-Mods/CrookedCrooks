@@ -61,7 +61,7 @@ public class CrookedCrooksEmiPlugin implements EmiPlugin {
 
 		reverseMap.forEach((multiplier, blocks) -> {
 			System.out.println(multiplier);
-			registry.addRecipe(new CrookEmiRecipe(multiplier, blocks));
+			registry.addRecipe(new CrookDropEfficiencyEmiRecipe(multiplier, blocks));
 		});
 	}
 }
