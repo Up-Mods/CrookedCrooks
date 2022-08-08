@@ -34,6 +34,7 @@ public class CrookedCrooksEmiPlugin implements EmiPlugin {
 		SortedMap<Integer, List<Block>> reverseMap = new Int2ReferenceAVLTreeMap<>();
 
 		CrookedCrooksMod.CROOK_EFFECTIVE.entryIterator().forEachRemaining(entry -> {
+			System.out.println(entry.entry());
 			if (reverseMap.containsKey(entry.value())) {
 				reverseMap.get(entry.value()).add(entry.entry());
 			} else {
@@ -47,6 +48,7 @@ public class CrookedCrooksEmiPlugin implements EmiPlugin {
 			for (Holder<Block> holder : TagRegistry.getTag(entry.tag())) {
 				if (holder.getKey().isPresent()) {
 					var block = Registry.BLOCK.get(holder.getKey().get());
+					System.out.println(block);
 
 					if (reverseMap.containsKey(entry.value())) {
 						reverseMap.get(entry.value()).add(block);
