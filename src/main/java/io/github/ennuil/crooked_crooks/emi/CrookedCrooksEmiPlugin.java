@@ -1,13 +1,8 @@
 package io.github.ennuil.crooked_crooks.emi;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.SortedMap;
-import java.util.TreeMap;
-
-import org.quiltmc.qsl.tag.api.TagRegistry;
 
 import dev.emi.emi.api.EmiPlugin;
 import dev.emi.emi.api.EmiRegistry;
@@ -17,9 +12,8 @@ import dev.emi.emi.api.stack.EmiStack;
 import io.github.ennuil.crooked_crooks.CrookedCrooksMod;
 import it.unimi.dsi.fastutil.ints.Int2ReferenceAVLTreeMap;
 import net.minecraft.block.Block;
-import net.minecraft.util.Holder;
+import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 // FIXME - what the heck? Investigate why the REA is not being updated before the EMI plugin
 public class CrookedCrooksEmiPlugin implements EmiPlugin {
@@ -33,36 +27,19 @@ public class CrookedCrooksEmiPlugin implements EmiPlugin {
 
 		SortedMap<Integer, List<Block>> reverseMap = new Int2ReferenceAVLTreeMap<>();
 
-		CrookedCrooksMod.CROOK_EFFECTIVE.entryIterator().forEachRemaining(entry -> {
-			System.out.println(entry.entry());
-			if (reverseMap.containsKey(entry.value())) {
-				reverseMap.get(entry.value()).add(entry.entry());
-			} else {
-				List<Block> list = new ArrayList<>();
-				list.add(entry.entry());
-				reverseMap.put(entry.value(), list);
-			}
-		});
-
-		CrookedCrooksMod.CROOK_EFFECTIVE.tagEntryIterator().forEachRemaining(entry -> {
-			for (Holder<Block> holder : TagRegistry.getTag(entry.tag())) {
-				if (holder.getKey().isPresent()) {
-					var block = Registry.BLOCK.get(holder.getKey().get());
-					System.out.println(block);
-
-					if (reverseMap.containsKey(entry.value())) {
-						reverseMap.get(entry.value()).add(block);
-					} else {
-						List<Block> list = new ArrayList<>();
-						list.add(block);
-						reverseMap.put(entry.value(), list);
-					}
+		for (var entry : CrookedCrooksMod.CROOK_EFFECTIVE) {
+			if (entry.entry().asItem() != Items.AIR) {
+				if (reverseMap.containsKey(entry.value())) {
+					reverseMap.get(entry.value()).add(entry.entry());
+				} else {
+					List<Block> list = new ArrayList<>();
+					list.add(entry.entry());
+					reverseMap.put(entry.value(), list);
 				}
 			}
-		});
+		}
 
 		reverseMap.forEach((multiplier, blocks) -> {
-			System.out.println(multiplier);
 			registry.addRecipe(new CrookDropEfficiencyEmiRecipe(multiplier, blocks));
 		});
 	}
