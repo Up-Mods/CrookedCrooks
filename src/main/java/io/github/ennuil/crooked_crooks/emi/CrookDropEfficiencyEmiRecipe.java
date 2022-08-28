@@ -102,7 +102,7 @@ public class CrookDropEfficiencyEmiRecipe implements EmiRecipe {
 
 	private void recalculateSlotOffset(int newMaxRowCount, int totalRows) {
 		this.rowOffset = MathHelper.floorDiv(this.rowOffset, this.maxRowCount) * newMaxRowCount;
-		int ceiling = MathHelper.ceilDiv(totalRows, newMaxRowCount) * newMaxRowCount;
+		int ceiling = MathHelper.floorDiv(totalRows, newMaxRowCount) * newMaxRowCount;
 		this.rowOffset = Math.min(this.rowOffset, ceiling);
 		System.out.println(this.rowOffset);
 		this.maxRowCount = newMaxRowCount;
