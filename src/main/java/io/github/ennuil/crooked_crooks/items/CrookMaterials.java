@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Lazy;
 import net.minecraft.util.registry.Registry;
 
+// TODO - This system sucks when mods add their own functionality and such; We need separate modules
 @SuppressWarnings("deprecation")
 public enum CrookMaterials implements ToolMaterial {
 	// Vanilla Materials
@@ -27,6 +28,14 @@ public enum CrookMaterials implements ToolMaterial {
 	// Applied Energistics 2 Materials
 	CERTUS_QUARTZ(ToolMaterials.IRON, () -> Ingredient.ofTag(TagKey.of(Registry.ITEM_KEY, new Identifier("c:certus_quartz")))),
 	NETHER_QUARTZ(ToolMaterials.IRON, () -> Ingredient.ofTag(TagKey.of(Registry.ITEM_KEY, new Identifier("c:quartz")))),
+	FLUIX(
+		ToolMaterials.IRON.getMiningLevel(),
+		ToolMaterials.IRON.getDurability() * 3,
+		ToolMaterials.IRON.getMiningSpeedMultiplier() * 1.2F,
+		ToolMaterials.IRON.getAttackDamage() * 1.2F,
+		ToolMaterials.IRON.getEnchantability(),
+		() -> Ingredient.ofTag(TagKey.of(Registry.ITEM_KEY, new Identifier("c:fluix")))
+	),
 	// Industrial Revolution Materials
 	TIN(1, 200, 4.0F, 1.0F, 14, () -> Ingredient.ofTag(TagKey.of(Registry.ITEM_KEY, new Identifier("c:tin_ingots")))),
 	COPPER(2, 300, 4.5F, 1.0F, 14, () -> Ingredient.ofTag(TagKey.of(Registry.ITEM_KEY, new Identifier("c:copper_ingots")))),

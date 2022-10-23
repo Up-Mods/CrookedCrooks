@@ -1,0 +1,7 @@
+{
+  "when": [
+    {
+      "libcd:item_exists": "crooked_crooks:fluix_crook"
+    }
+  ]
+}

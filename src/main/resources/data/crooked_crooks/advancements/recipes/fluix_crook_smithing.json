@@ -2,16 +2,16 @@
   "parent": "crooked_crooks:recipes/root",
   "rewards": {
     "recipes": [
-      "crooked_crooks:certus_quartz_crook_smithing"
+      "crooked_crooks:fluix_crook_smithing"
     ]
   },
   "criteria": {
-    "has_certus_quartz": {
+    "has_fluix": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "c:certus_quartz"
+            "tag": "c:fluix"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "crooked_crooks:certus_quartz_crook_smithing"
+        "recipe": "crooked_crooks:fluix_crook_smithing"
       }
     }
   },
   "requirements": [
     [
-      "has_certus_quartz",
+      "has_fluix",
       "has_the_recipe"
     ]
   ]

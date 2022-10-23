@@ -15,10 +15,11 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 
-// FIXME - what the heck? Investigate why the REA is not being updated before the EMI plugin
 public class CrookedCrooksEmiPlugin implements EmiPlugin {
 	private static final EmiStack CROOK_ICON = EmiStack.of(CrookedCrooksMod.WOODEN_CROOK_ITEM);
-	public static final EmiRecipeCategory CROOK_RECIPE_CATEGORY = new EmiRecipeCategory(new Identifier("crooked_crooks", "emi_recipe_category"), CROOK_ICON);
+	public static final EmiRecipeCategory CROOK_RECIPE_CATEGORY = new EmiRecipeCategory(
+		new Identifier("crooked_crooks", "emi_recipe_category"), CROOK_ICON
+	);
 
 	@Override
 	public void register(EmiRegistry registry) {

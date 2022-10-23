@@ -1,5 +1,7 @@
 package io.github.ennuil.crooked_crooks;
 
+import java.util.List;
+
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.loader.api.QuiltLoader;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
@@ -13,15 +15,19 @@ import io.github.ennuil.crooked_crooks.events.MultiplyDropsEvent;
 import io.github.ennuil.crooked_crooks.items.CrookItem;
 import io.github.ennuil.crooked_crooks.items.CrookMaterials;
 import net.minecraft.block.Block;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tag.TagKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.World;
 
 public class CrookedCrooksMod implements ModInitializer {
 	// The crook_effective dict, used for blocks which should have its drops multiplied by crooks
@@ -89,6 +95,19 @@ public class CrookedCrooksMod implements ModInitializer {
 			Registry.register(
 				Registry.ITEM, new Identifier("crooked_crooks", "nether_quartz_crook"),
 				new CrookItem(CrookMaterials.NETHER_QUARTZ, 0F, -3F, 0.8F, new Item.Settings().group(ItemGroup.TOOLS)));
+			Registry.register(
+				Registry.ITEM, new Identifier("crooked_crooks", "fluix_crook"),
+				new CrookItem(CrookMaterials.FLUIX, 0F, -3F, 0.96F, new Item.Settings().group(ItemGroup.TOOLS)) {
+					@Override
+					public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
+						tooltip.add(Text.translatable("gui.ae2.IntrinsicEnchant", Enchantments.FORTUNE.getName(1)));
+					}
+
+					@Override
+					public boolean hasGlint(ItemStack stack) {
+						return true;
+					}
+				});
 		}
 
 		if (QuiltLoader.isModLoaded("indrev")) {
@@ -141,7 +160,7 @@ public class CrookedCrooksMod implements ModInitializer {
 		}
 
 		// Register enchantments
-		Registry.register(Registry.ENCHANTMENT, "crooked_crooks:thorns_curse", THORNS_CURSE_ENCHANTMENT);
+		Registry.register(Registry.ENCHANTMENT, new Identifier("crooked_crooks", "thorns_curse"), THORNS_CURSE_ENCHANTMENT);
 
 		// Register the drop-multiplying event
 		MultiplyDropsEvent.registerEvent();

@@ -1,7 +1,7 @@
 // ₢³ (Crooked Crook Creator)
 // Creates a crook from a JSON definition
 
-import * as filepath from "https://deno.land/std@0.136.0/path/mod.ts";
+import * as filepath from "https://deno.land/std@0.160.0/path/mod.ts";
 
 interface CrookDefinition {
     crookId: string;
@@ -84,6 +84,8 @@ interface SmithingRecipe {
     type: string;
     base: {
         item: string;
+    } | {
+        tag: string;
     };
     addition: {
         item: string;
@@ -140,7 +142,19 @@ async function createRecipe(crookDef: CrookDefinition) {
         await Deno.writeTextFile(recipePath, JSON.stringify(recipeJson, null, 2) + "\n");
     } else {
         const recipePath = filepath.resolve(`src/main/resources/data/crooked_crooks/recipes/${crookDef.crookId}_smithing.json`);
-        const recipeBase = crookDef.baseItem !== undefined ? crookDef.baseItem : "crooked_crooks:wooden_crook";
+        const recipeBase = crookDef.baseItem !== undefined
+            ? (crookDef.baseItem.startsWith("#")
+                ? {
+                    tag: crookDef.baseItem.slice(1)
+                }
+                : {
+                    item: crookDef.baseItem
+                }
+            )
+            : {
+                item: "crooked_crooks:wooden_crook"
+            };
+
         const recipeAddition = crookDef.ingredient.startsWith("#")
         ?   {
                 tag: crookDef.ingredient.slice(1)
@@ -150,9 +164,7 @@ async function createRecipe(crookDef: CrookDefinition) {
             };
         const recipeJson: SmithingRecipe = {
             type: "smithing",
-            base: {
-                item: recipeBase
-            },
+            base: recipeBase,
             addition: recipeAddition,
             result: {
                 item: `crooked_crooks:${crookDef.crookId}`

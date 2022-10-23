@@ -1,0 +1,12 @@
+{
+  "type": "smithing",
+  "base": {
+    "tag": "crooked_crooks:quartz_crooks"
+  },
+  "addition": {
+    "tag": "c:fluix"
+  },
+  "result": {
+    "item": "crooked_crooks:fluix_crook"
+  }
+}

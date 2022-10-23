@@ -1,0 +1,8 @@
+{
+    "crookId": "fluix_crook",
+    "modId": "ae2",
+    "baseItem": "#crooked_crooks:quartz_crooks",
+    "ingredient": "#c:fluix",
+    "criteriaName": "has_fluix",
+    "dependsOnItem": true
+}

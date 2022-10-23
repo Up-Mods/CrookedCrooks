@@ -1,6 +1,8 @@
 package io.github.ennuil.crooked_crooks.items;
 
 
+import org.quiltmc.loader.api.QuiltLoader;
+
 import io.github.ennuil.crooked_crooks.CrookedCrooksMod;
 import net.fabricmc.fabric.api.mininglevel.v1.MiningLevelManager;
 import net.minecraft.block.BlockState;
@@ -14,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.stat.Stats;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -61,7 +64,9 @@ public class CrookItem extends MiningToolItem {
 			float crookStrength = this.crookStrength;
 			double mobWeight = CrookedCrooksMod.ENTITY_WEIGHT.get(entity.getType()).orElseGet(() -> entity.getBoundingBox().getAverageSideLength());
 			double weight = (crookStrength / mobWeight) <= 1.0D ? crookStrength / mobWeight : 1.0D;
-			// user.sendMessage(new LiteralText("" + crookStrength / mobWeight + " (" + mobWeight + " ₢" + crookStrength + ")"), true);
+			if (QuiltLoader.isDevelopmentEnvironment()) {
+				user.sendMessage(Text.literal("" + crookStrength / mobWeight + " (" + mobWeight + " ₢" + crookStrength + ")"), true);
+			}
 
 			// Calculates the vector used to pull the mob
 			Vec3d pos = user.getPos().subtract(entity.getPos());
@@ -94,6 +99,7 @@ public class CrookItem extends MiningToolItem {
 
 			return ActionResult.SUCCESS;
 		}
+
 		return ActionResult.PASS;
 	}
 }

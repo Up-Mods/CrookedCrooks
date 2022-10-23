@@ -23,11 +23,11 @@ public class EnchantedBookItemMixin {
     public static ItemStack forEnchantment(EnchantmentLevelEntry info) { return null; }
 
     @Inject(
+		method = "appendStacks(Lnet/minecraft/item/ItemGroup;Lnet/minecraft/util/collection/DefaultedList;)V",
         at = @At(
             value = "FIELD",
             target = "net/minecraft/enchantment/Enchantment.type:Lnet/minecraft/enchantment/EnchantmentTarget;"
         ),
-        method = "appendStacks(Lnet/minecraft/item/ItemGroup;Lnet/minecraft/util/collection/DefaultedList;)V",
         locals = LocalCapture.CAPTURE_FAILHARD
     )
     private void appendThornsCurseBook(ItemGroup group, DefaultedList<ItemStack> stacks, CallbackInfo ci, Iterator<?> var3, Enchantment enchantment) {

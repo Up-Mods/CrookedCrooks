@@ -32,6 +32,10 @@
       "required": false
     },
     {
+      "id": "crooked_crooks:fluix_crook",
+      "required": false
+    },
+    {
       "id": "crooked_crooks:tin_crook",
       "required": false
     },

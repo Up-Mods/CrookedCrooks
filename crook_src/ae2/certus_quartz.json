@@ -2,5 +2,5 @@
     "crookId": "certus_quartz_crook",
     "modId": "ae2",
     "ingredient": "#c:certus_quartz",
-    "criteriaName": "has_nether_quartz"
+    "criteriaName": "has_certus_quartz"
 }
