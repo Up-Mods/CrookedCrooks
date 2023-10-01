@@ -25,7 +25,7 @@ public class CrookDropEfficiencyEmiRecipe implements EmiRecipe {
 	private int maxRowCount;
 
 	public CrookDropEfficiencyEmiRecipe(int multiplier, List<Block> blockList) {
-		this.stackList = blockList.stream().map(block -> EmiStack.of(block)).toList();
+		this.stackList = blockList.stream().map(EmiStack::of).toList();
 		this.multiplier = multiplier;
 		this.rowOffset = 0;
 		this.maxRowCount = 1;
@@ -75,7 +75,7 @@ public class CrookDropEfficiencyEmiRecipe implements EmiRecipe {
 		var client = MinecraftClient.getInstance();
 		var multiplierText = Text.translatable("emi.recipe.crooked_crooks.crook_efficiency.drop_multiplier", multiplier).asOrderedText();
 		int multiplierTextWidth = client.textRenderer.getWidth(multiplierText);
-		int padding = MathHelper.ceil((this.getDisplayWidth() - multiplierTextWidth) / 2);
+		int padding = MathHelper.ceil((this.getDisplayWidth() - multiplierTextWidth) / 2.0F);
 		widgets.addText(multiplierText, padding, 4, 0xFFFFFF, true);
 		int totalRows = MathHelper.ceilDiv(this.stackList.size(), 8);
 		int maxRows = MathHelper.floorDiv(widgets.getHeight(), 18) - 1;
@@ -91,7 +91,7 @@ public class CrookDropEfficiencyEmiRecipe implements EmiRecipe {
 			});
 		}
 		for (int i = 0; i < maxRows * 8; i++) {
-			widgets.add(new DropEfficiencyPageSlotWidget(18 * (i % 8), 18 + 18 * MathHelper.ceil(i / 8), i));
+			widgets.add(new DropEfficiencyPageSlotWidget(18 * (i % 8), 18 + 18 * MathHelper.ceil(i / 8.0F), i));
 		}
 	}
 

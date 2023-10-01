@@ -1,5 +1,6 @@
 package io.github.ennuil.crooked_crooks.mixins;
 
+import io.github.ennuil.crooked_crooks.CrookedCrooksMod;
 import io.github.ennuil.crooked_crooks.enchantments.ThornsCurseEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -42,7 +43,7 @@ public class EnchantmentHelperMixin {
 	@Inject(method = "getLevel", at = @At("RETURN"), cancellable = true)
 	private static void ae2Shenanigans(Enchantment enchantment, ItemStack stack, CallbackInfoReturnable<Integer> cir) {
 		if (cir.getReturnValueI() == 0 && enchantment == Enchantments.FORTUNE) {
-			if (Registries.ITEM.getId(stack.getItem()).equals(new Identifier("crooked_crooks", "fluix_crook"))) {
+			if (Registries.ITEM.getId(stack.getItem()).equals(new Identifier(CrookedCrooksMod.MODID, "fluix_crook"))) {
 				cir.setReturnValue(1);
 			}
 		}

@@ -1,9 +1,5 @@
 package io.github.ennuil.crooked_crooks.emi;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.SortedMap;
-
 import dev.emi.emi.api.EmiPlugin;
 import dev.emi.emi.api.EmiRegistry;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
@@ -15,10 +11,14 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.SortedMap;
+
 public class CrookedCrooksEmiPlugin implements EmiPlugin {
 	private static final EmiStack CROOK_ICON = EmiStack.of(CrookedCrooksMod.WOODEN_CROOK_ITEM);
 	public static final EmiRecipeCategory CROOK_RECIPE_CATEGORY = new EmiRecipeCategory(
-		new Identifier("crooked_crooks", "emi_recipe_category"), CROOK_ICON
+		new Identifier(CrookedCrooksMod.MODID, "emi_recipe_category"), CROOK_ICON
 	);
 
 	@Override
