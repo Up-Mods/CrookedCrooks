@@ -34,8 +34,7 @@ public abstract class RecipeScreenMixin {
 		method = "setPage(III)V",
 		at = @At(
 			value = "INVOKE",
-			// Apache Commons's Compress module? Why not Google's more generic one? Or heck, Java's diamond?
-			target = "Lorg/apache/commons/compress/utils/Lists;newArrayList()Ljava/util/ArrayList;",
+			target = "Lcom/google/common/collect/Lists;newArrayList()Ljava/util/ArrayList;",
 			ordinal = 0
 		),
 		locals = LocalCapture.CAPTURE_FAILHARD,
