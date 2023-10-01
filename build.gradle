@@ -1,7 +1,6 @@
 plugins {
 	id "maven-publish"
 	alias libs.plugins.quilt.loom
-	alias libs.plugins.machete
 }
 
 archivesBaseName = project.archives_base_name
@@ -23,10 +22,8 @@ dependencies {
 	// QSL is not a complete API; You will need Quilted Fabric API to fill in the gaps.
 	// Quilted Fabric API will automatically pull in the correct QSL version.
 	modImplementation libs.quilted.fabric.api
-	modImplementation libs.libcd
-	modImplementation libs.emi
-
-	include libs.libcd
+	modCompileOnly libs.emi
+	modRuntimeOnly libs.emi
 }
 
 processResources {
@@ -63,13 +60,6 @@ jar {
 		rename { "${it}_${archivesBaseName}" }
 	}
 }
-
-machete {
-	// JSON minification isn't effective on this scale and sacrifices readability
-	optimizations.json = false
-}
-// This prevents issues with execution optimizations and therefore, Gradle deprecation warnings
-prepareRemapJar.dependsOn("optimizeOutputsOfJar")
 
 // Configure the maven publication
 publishing {
