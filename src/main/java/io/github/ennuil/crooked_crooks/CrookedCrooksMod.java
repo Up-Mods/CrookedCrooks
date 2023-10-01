@@ -65,18 +65,21 @@ public class CrookedCrooksMod implements ModInitializer {
 	public void onInitialize(ModContainer mod) {
 		List<ItemStack> ITEMS = new ArrayList<>();
 
-		BiConsumer<String, Item> register = (id, item) -> {
+		BiConsumer<String, Item> registerWithoutItemGroup = (id, item) -> {
 			Registry.register(Registries.ITEM, new Identifier(MODID, id), item);
+		};
+		BiConsumer<String, Item> register = (id, item) -> {
+			registerWithoutItemGroup.accept(id, item);
 			ITEMS.add(item.getDefaultStack());
 		};
 
 		// Register all the crooks
-		register.accept("wooden_crook", WOODEN_CROOK_ITEM);
-		register.accept("stone_crook", STONE_CROOK_ITEM);
-		register.accept("iron_crook", IRON_CROOK_ITEM);
-		register.accept("diamond_crook", DIAMOND_CROOK_ITEM);
-		register.accept("golden_crook", GOLDEN_CROOK_ITEM);
-		register.accept("netherite_crook", NETHERITE_CROOK_ITEM);
+		registerWithoutItemGroup.accept("wooden_crook", WOODEN_CROOK_ITEM);
+		registerWithoutItemGroup.accept("stone_crook", STONE_CROOK_ITEM);
+		registerWithoutItemGroup.accept("iron_crook", IRON_CROOK_ITEM);
+		registerWithoutItemGroup.accept("diamond_crook", DIAMOND_CROOK_ITEM);
+		registerWithoutItemGroup.accept("golden_crook", GOLDEN_CROOK_ITEM);
+		registerWithoutItemGroup.accept("netherite_crook", NETHERITE_CROOK_ITEM);
 
 		if (QuiltLoader.isModLoaded("techreborn")) {
 			register.accept("ruby_crook", new CrookItem(CrookMaterials.RUBY, 0F, -3F, 0.9F, new Item.Settings()));
@@ -142,7 +145,17 @@ public class CrookedCrooksMod implements ModInitializer {
 			});
 		}
 
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS_AND_UTILITIES).register(entries -> entries.addBefore(Items.BUCKET, ITEMS));
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS_AND_UTILITIES).register(entries -> {
+			entries.addAfter(Items.WOODEN_HOE, WOODEN_CROOK_ITEM);
+			entries.addAfter(Items.STONE_HOE, STONE_CROOK_ITEM);
+			entries.addAfter(Items.IRON_HOE, IRON_CROOK_ITEM);
+			entries.addAfter(Items.DIAMOND_HOE, DIAMOND_CROOK_ITEM);
+			entries.addAfter(Items.GOLDEN_HOE, GOLDEN_CROOK_ITEM);
+			entries.addAfter(Items.NETHERITE_HOE, NETHERITE_CROOK_ITEM);
+
+			// and all the others
+			entries.addBefore(Items.BUCKET, ITEMS);
+		});
 
 		// Register enchantments
 		Registry.register(Registries.ENCHANTMENT, new Identifier(MODID, "thorns_curse"), THORNS_CURSE_ENCHANTMENT);
