@@ -34,6 +34,30 @@ processResources {
 	}
 }
 
+sourceSets {
+	main {
+		resources {
+			srcDirs += [
+				'src/main/generated'
+			]
+		}
+	}
+}
+
+loom {
+	runs {
+		datagen {
+			inherit server
+			name "Data Generation"
+			vmArg "-Dfabric-api.datagen"
+			vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
+			vmArg "-Dfabric-api.datagen.modid=${project.modid}"
+
+			runDir "build/datagen"
+		}
+	}
+}
+
 tasks.withType(JavaCompile).configureEach {
 	it.options.encoding = "UTF-8"
 	// Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
@@ -59,6 +83,11 @@ jar {
 	from("LICENSE") {
 		rename { "${it}_${archivesBaseName}" }
 	}
+
+	from("src/main/generated") {
+		exclude(".cache/**")
+	}
+	dependsOn(tasks.runDatagen)
 }
 
 // Configure the maven publication

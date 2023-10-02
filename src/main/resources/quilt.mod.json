@@ -16,6 +16,7 @@
 		"entrypoints": {
 			"init": "io.github.ennuil.crooked_crooks.CrookedCrooksMod",
 			"emi": "io.github.ennuil.crooked_crooks.emi.CrookedCrooksEmiPlugin",
+			"fabric-datagen": "io.github.ennuil.crooked_crooks.datagen.CrookedCrooksDatagen"
 		},
 		"depends": [
 			{

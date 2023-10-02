@@ -10,6 +10,7 @@ public class CrookTags {
 
 	// The crooks tag, used to list all the crooks and to apply the multiplier
 	public static final TagKey<Item> CROOKS = tag("crooks");
+	public static final TagKey<Item> QUARTZ_CROOKS = tag("quartz_crooks");
 
 	public static class Common {
 
