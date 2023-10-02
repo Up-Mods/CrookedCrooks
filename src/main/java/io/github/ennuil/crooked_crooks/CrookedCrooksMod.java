@@ -15,8 +15,6 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
@@ -42,8 +40,6 @@ public class CrookedCrooksMod implements ModInitializer {
 	// The mob_weight dict, used to override the automatically calculated weights for each mob.
 	public static final RegistryEntryAttachment<EntityType<?>, Double> ENTITY_WEIGHT =
 		RegistryEntryAttachment.doubleBuilder(Registries.ENTITY_TYPE, new Identifier(MODID, "entity_weight")).build();
-	// The crooks tag, used to list all the crooks and to apply the multiplier
-	public static final TagKey<Item> CROOKS = TagKey.of(RegistryKeys.ITEM, new Identifier(MODID, "crooks"));
 
 	// The crook items, which are going to be registered
 	// Only Vanilla crooks are guaranteed to be registered every single time, so we have constants for them!

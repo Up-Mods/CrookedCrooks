@@ -1,6 +1,7 @@
 package io.github.ennuil.crooked_crooks.events;
 
 import io.github.ennuil.crooked_crooks.CrookedCrooksMod;
+import io.github.ennuil.crooked_crooks.items.CrookTags;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -12,7 +13,7 @@ public class MultiplyDropsEvent {
 			if (player.isCreative()) return;
 
 			var equippedStack = player.getMainHandStack();
-			if (equippedStack.isIn(CrookedCrooksMod.CROOKS)) {
+			if (equippedStack.isIn(CrookTags.CROOKS)) {
 				if (equippedStack.isSuitableFor(state) && !EnchantmentHelper.hasSilkTouch(equippedStack)) {
 					int multiplier = CrookedCrooksMod.CROOK_EFFECTIVE.get(state.getBlock()).orElse(0);
 					for (int i = 1; i < multiplier; i++) {

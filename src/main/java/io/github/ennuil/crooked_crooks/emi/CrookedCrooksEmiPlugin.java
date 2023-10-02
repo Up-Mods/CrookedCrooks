@@ -6,6 +6,7 @@ import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.stack.EmiIngredient;
 import dev.emi.emi.api.stack.EmiStack;
 import io.github.ennuil.crooked_crooks.CrookedCrooksMod;
+import io.github.ennuil.crooked_crooks.items.CrookTags;
 import it.unimi.dsi.fastutil.ints.Int2ReferenceAVLTreeMap;
 import net.minecraft.block.Block;
 import net.minecraft.item.Items;
@@ -24,7 +25,7 @@ public class CrookedCrooksEmiPlugin implements EmiPlugin {
 	@Override
 	public void register(EmiRegistry registry) {
 		registry.addCategory(CROOK_RECIPE_CATEGORY);
-		registry.addWorkstation(CROOK_RECIPE_CATEGORY, EmiIngredient.of(CrookedCrooksMod.CROOKS));
+		registry.addWorkstation(CROOK_RECIPE_CATEGORY, EmiIngredient.of(CrookTags.CROOKS));
 
 		SortedMap<Integer, List<Block>> reverseMap = new Int2ReferenceAVLTreeMap<>();
 
