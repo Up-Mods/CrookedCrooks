@@ -16,24 +16,17 @@
 		"entrypoints": {
 			"init": "io.github.ennuil.crooked_crooks.CrookedCrooksMod",
 			"emi": "io.github.ennuil.crooked_crooks.emi.CrookedCrooksEmiPlugin",
-			"libcd:conditions": "io.github.ennuil.crooked_crooks.CrookedCrooksConditions"
 		},
 		"depends": [
 			{
-				"id": "quilt_loader",
-				"versions": ">=0.17.0-"
+				"id": "quilt_loader"
 			},
 			{
-				"id": "quilted_fabric_api",
-				"versions": ">=4.0.0-"
+				"id": "quilted_fabric_api"
 			},
 			{
 				"id": "minecraft",
-				"versions": ">=1.19.2"
-			},
-			{
-				"id": "libcd",
-				"versions": ">=4.0.0"
+				"versions": "=1.20.1"
 			}
 		]
 	},

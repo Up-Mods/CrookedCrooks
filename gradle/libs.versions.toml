@@ -5,7 +5,6 @@ quilt_mappings = "1.20.1+build.23"
 quilt_loader = "0.20.2"
 
 quilted_fabric_api = "7.3.0+0.89.0-1.20.1"
-libcd = "946618669f"
 emi = "1.0.20+1.20.1"
 
 [libraries]
@@ -14,7 +13,6 @@ quilt_mappings = { module = "org.quiltmc:quilt-mappings", version.ref = "quilt_m
 quilt_loader = { module = "org.quiltmc:quilt-loader", version.ref = "quilt_loader" }
 
 quilted_fabric_api = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api", version.ref = "quilted_fabric_api" }
-libcd = { module = "com.github.EnnuiL:LibCD", version.ref = "libcd" }
 emi = { module = "dev.emi:emi-fabric", version.ref = "emi" }
 
 [plugins]
