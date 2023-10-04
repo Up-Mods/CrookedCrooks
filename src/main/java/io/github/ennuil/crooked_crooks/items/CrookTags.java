@@ -1,6 +1,7 @@
 package io.github.ennuil.crooked_crooks.items;
 
 import io.github.ennuil.crooked_crooks.CrookedCrooksMod;
+import net.fabricmc.fabric.api.tag.convention.v1.ConventionalItemTags;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
@@ -17,15 +18,22 @@ public class CrookTags {
 		public static final TagKey<Item> RUBIES = tag("rubies");
 		public static final TagKey<Item> SAPPHIRES = tag("sapphires");
 		public static final TagKey<Item> PERIDOTS = tag("peridots");
+		public static final TagKey<Item> DIAMONDS = ConventionalItemTags.DIAMONDS;
 		public static final TagKey<Item> CERTUS_QUARTZ = tag("certus_quartz");
 		public static final TagKey<Item> QUARTZ = tag("quartz");
 		public static final TagKey<Item> FLUIX = tag("fluix");
 		public static final TagKey<Item> TIN_INGOTS = tag("tin_ingots");
-		public static final TagKey<Item> COPPER_INGOTS = tag("copper_ingots");
+		public static final TagKey<Item> IRON_NUGGETS = tag("iron_nuggets");
+		public static final TagKey<Item> GOLD_NUGGETS = tag("gold_nuggets");
+		public static final TagKey<Item> COPPER_INGOTS = ConventionalItemTags.COPPER_INGOTS;
 		public static final TagKey<Item> BRONZE_INGOTS = tag("bronze_ingots");
+		public static final TagKey<Item> BRONZE_NUGGETS = tag("bronze_nuggets");
 		public static final TagKey<Item> STEEL_INGOTS = tag("steel_ingots");
+		public static final TagKey<Item> STEEL_NUGGETS = tag("steel_nuggets");
 		public static final TagKey<Item> LEAD_INGOTS = tag("lead_ingots");
-		public static final TagKey<Item> NETHERITE_INGOTS = tag("netherite_ingots");
+		public static final TagKey<Item> LEAD_NUGGETS = tag("lead_nuggets");
+		public static final TagKey<Item> NETHERITE_INGOTS = ConventionalItemTags.NETHERITE_INGOTS;
+		public static final TagKey<Item> WOODEN_STICKS = tag("wooden_sticks");
 
 		private static TagKey<Item> tag(String path) {
 			return TagKey.of(RegistryKeys.ITEM, new Identifier("c", path));

@@ -9,5 +9,6 @@ public class CrookedCrooksDatagen implements DataGeneratorEntrypoint {
 		var pack = generator.createPack();
 
 		pack.addProvider(CrookedCrooksTagGenerator::new);
+		pack.addProvider(CrookedCrooksRecipeGenerator::new);
 	}
 }

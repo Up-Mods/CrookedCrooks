@@ -4,6 +4,7 @@ import io.github.ennuil.crooked_crooks.CrookedCrooksMod;
 import io.github.ennuil.crooked_crooks.items.CrookTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.item.Items;
 import net.minecraft.registry.HolderLookup;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
@@ -53,5 +54,13 @@ public class CrookedCrooksTagGenerator extends FabricTagProvider.ItemTagProvider
 		getOrCreateTagBuilder(CrookTags.Common.PERIDOTS)
 			.addOptional(new Identifier("techreborn", "peridot_gem"));
 
+		getOrCreateTagBuilder(CrookTags.Common.WOODEN_STICKS)
+			.add(Items.STICK);
+
+		getOrCreateTagBuilder(CrookTags.Common.IRON_NUGGETS)
+			.add(Items.IRON_NUGGET);
+
+		getOrCreateTagBuilder(CrookTags.Common.GOLD_NUGGETS)
+			.add(Items.GOLD_NUGGET);
 	}
 }
