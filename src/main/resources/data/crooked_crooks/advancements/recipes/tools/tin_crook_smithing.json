@@ -1,17 +1,17 @@
 {
-  "parent": "crooked_crooks:recipes/root",
+  "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "crooked_crooks:sapphire_crook_smithing"
+      "crooked_crooks:tin_crook_smithing"
     ]
   },
   "criteria": {
-    "has_sapphire": {
+    "has_tin": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "c:sapphires"
+            "tag": "c:tin_ingots"
           }
         ]
       }
@@ -19,14 +19,22 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "crooked_crooks:sapphire_crook_smithing"
+        "recipe": "crooked_crooks:tin_crook_smithing"
       }
     }
   },
   "requirements": [
     [
-      "has_sapphire",
+      "has_tin",
       "has_the_recipe"
     ]
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "indrev"
+      ]
+    }
   ]
 }

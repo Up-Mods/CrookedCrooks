@@ -1,17 +1,17 @@
 {
-  "parent": "crooked_crooks:recipes/root",
+  "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "crooked_crooks:ruby_crook_smithing"
+      "crooked_crooks:tr_bronze_crook_smithing"
     ]
   },
   "criteria": {
-    "has_ruby": {
+    "has_bronze": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "c:rubies"
+            "tag": "c:bronze_ingots"
           }
         ]
       }
@@ -19,14 +19,22 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "crooked_crooks:ruby_crook_smithing"
+        "recipe": "crooked_crooks:tr_bronze_crook_smithing"
       }
     }
   },
   "requirements": [
     [
-      "has_ruby",
+      "has_bronze",
       "has_the_recipe"
     ]
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "techreborn"
+      ]
+    }
   ]
 }

@@ -1,17 +1,17 @@
 {
-  "parent": "crooked_crooks:recipes/root",
+  "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "crooked_crooks:nether_quartz_crook_smithing"
+      "crooked_crooks:steel_crook_smithing"
     ]
   },
   "criteria": {
-    "has_nether_quartz": {
+    "has_steel": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "c:quartz"
+            "tag": "c:steel_ingots"
           }
         ]
       }
@@ -19,14 +19,22 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "crooked_crooks:nether_quartz_crook_smithing"
+        "recipe": "crooked_crooks:steel_crook_smithing"
       }
     }
   },
   "requirements": [
     [
-      "has_nether_quartz",
+      "has_steel",
       "has_the_recipe"
     ]
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "indrev"
+      ]
+    }
   ]
 }

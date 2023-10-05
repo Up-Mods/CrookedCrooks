@@ -1,5 +1,5 @@
 {
-  "parent": "crooked_crooks:recipes/root",
+  "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
       "crooked_crooks:certus_quartz_crook_smithing"
@@ -28,5 +28,13 @@
       "has_certus_quartz",
       "has_the_recipe"
     ]
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "ae2"
+      ]
+    }
   ]
 }
