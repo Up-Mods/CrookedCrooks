@@ -8,7 +8,6 @@ import dev.emi.emi.api.stack.EmiIngredient;
 import dev.emi.emi.api.stack.EmiStack;
 import dev.emi.emi.api.widget.WidgetHolder;
 import io.github.ennuil.crooked_crooks.CrookedCrooksMod;
-import io.github.ennuil.crooked_crooks.items.CrookTags;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
@@ -16,13 +15,14 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class CrookDropEfficiencyEmiRecipe extends EmiIngredientRecipe {
-	private final EmiIngredient tagIngredient = EmiIngredient.of(CrookTags.CROOKS, 1);
-	private final List<EmiStack> stacks;
+	private final EmiIngredient displayIngredient;
 	private final int multiplier;
+	private final List<EmiStack> stacks;
 
-	public CrookDropEfficiencyEmiRecipe(int multiplier, List<EmiStack> inputs) {
-		this.stacks = inputs;
+	public CrookDropEfficiencyEmiRecipe(EmiIngredient displayIngredient, int multiplier, List<EmiStack> stacks) {
+        this.displayIngredient = displayIngredient;
 		this.multiplier = multiplier;
+		this.stacks = stacks;
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class CrookDropEfficiencyEmiRecipe extends EmiIngredientRecipe {
 
 	@Override
 	protected EmiIngredient getIngredient() {
-		return tagIngredient;
+		return displayIngredient;
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public class CrookDropEfficiencyEmiRecipe extends EmiIngredientRecipe {
 
 	@Override
 	protected EmiRecipe getRecipeContext(EmiStack stack, int offset) {
-		return new EmiResolutionRecipe(tagIngredient, stack);
+		return new EmiResolutionRecipe(displayIngredient, stack);
 	}
 
 	@Override

@@ -34,6 +34,7 @@ public class CrookedCrooksEmiPlugin implements EmiPlugin {
 			}
 		}
 
-		reverseMap.forEach((multiplier, items) -> registry.addRecipe(new CrookDropEfficiencyEmiRecipe(multiplier, items)));
+		var tag = EmiIngredient.of(CrookTags.CROOKS, 1);
+		reverseMap.forEach((multiplier, items) -> registry.addRecipe(new CrookDropEfficiencyEmiRecipe(tag, multiplier, items)));
 	}
 }
