@@ -8,8 +8,6 @@ import dev.emi.emi.api.stack.EmiStack;
 import io.github.ennuil.crooked_crooks.CrookedCrooksMod;
 import io.github.ennuil.crooked_crooks.items.CrookTags;
 import it.unimi.dsi.fastutil.ints.Int2ReferenceAVLTreeMap;
-import net.minecraft.block.Block;
-import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
@@ -27,22 +25,15 @@ public class CrookedCrooksEmiPlugin implements EmiPlugin {
 		registry.addCategory(CROOK_RECIPE_CATEGORY);
 		registry.addWorkstation(CROOK_RECIPE_CATEGORY, EmiIngredient.of(CrookTags.CROOKS));
 
-		SortedMap<Integer, List<Block>> reverseMap = new Int2ReferenceAVLTreeMap<>();
+		SortedMap<Integer, List<EmiStack>> reverseMap = new Int2ReferenceAVLTreeMap<>();
 
 		for (var entry : CrookedCrooksMod.CROOK_EFFECTIVE) {
-			if (entry.entry().asItem() != Items.AIR) {
-				if (reverseMap.containsKey(entry.value())) {
-					reverseMap.get(entry.value()).add(entry.entry());
-				} else {
-					List<Block> list = new ArrayList<>();
-					list.add(entry.entry());
-					reverseMap.put(entry.value(), list);
-				}
+			var stack = EmiStack.of(entry.entry());
+			if (!stack.isEmpty()) {
+				reverseMap.computeIfAbsent(entry.value(), k -> new ArrayList<>()).add(stack);
 			}
 		}
 
-		reverseMap.forEach((multiplier, blocks) -> {
-			registry.addRecipe(new CrookDropEfficiencyEmiRecipe(multiplier, blocks));
-		});
+		reverseMap.forEach((multiplier, items) -> registry.addRecipe(new CrookDropEfficiencyEmiRecipe(multiplier, items)));
 	}
 }
