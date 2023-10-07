@@ -1,7 +1,0 @@
-{
-  "when": [
-    {
-      "libcd:item_exists": "crooked_crooks:rose_gold_crook"
-    }
-  ]
-}

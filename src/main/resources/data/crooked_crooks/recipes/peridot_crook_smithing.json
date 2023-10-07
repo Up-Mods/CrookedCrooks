@@ -1,5 +1,5 @@
 {
-  "type": "smithing",
+  "type": "minecraft:smithing_transform",
   "base": {
     "item": "crooked_crooks:wooden_crook"
   },
@@ -8,5 +8,14 @@
   },
   "result": {
     "item": "crooked_crooks:peridot_crook"
-  }
+  },
+  "template": [],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "techreborn"
+      ]
+    }
+  ]
 }
