@@ -4,12 +4,14 @@
     "tag": "crooked_crooks:quartz_crooks"
   },
   "addition": {
-    "tag": "c:fluix"
+    "item": "ae2:fluix_block"
   },
   "result": {
     "item": "crooked_crooks:fluix_crook"
   },
-  "template": [],
+  "template": {
+    "item": "ae2:fluix_upgrade_smithing_template"
+  },
   "fabric:load_conditions": [
     {
       "condition": "fabric:registry_contains",
