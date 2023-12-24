@@ -3,11 +3,11 @@ plugins {
 	alias libs.plugins.quilt.loom
 }
 
-archivesBaseName = project.archives_base_name
+base.archivesName = project.mod_id
 version = "${project.version}+${libs.versions.minecraft.get()}"
 group = project.maven_group
 
-//FIXME workaround for quilt-loom bug
+// FIXME - Workaround for Quilt Loom bug
 project.configurations.configureEach {
 	exclude(group: "net.fabricmc", module: "fabric-loader")
 	exclude(group: "net.fabricmc.fabric-api")
@@ -16,6 +16,15 @@ project.configurations.configureEach {
 repositories {
 	maven { url "https://maven.terraformersmc.com/releases/" }
 	maven { url "https://jitpack.io" }
+}
+
+loom {
+	mods {
+		"crooked_crooks" {
+			// Tell Loom about each source set used by your mod here. This ensures that your mod's classes are properly transformed by Loader.
+			sourceSet("main")
+		}
+	}
 }
 
 // All the dependencies are declared at gradle/libs.version.toml and referenced with "libs.<id>"
@@ -27,8 +36,13 @@ dependencies {
 
 	// QSL is not a complete API; You will need Quilted Fabric API to fill in the gaps.
 	// Quilted Fabric API will automatically pull in the correct QSL version.
-	modImplementation libs.quilted.fabric.api
-	modRuntimeOnly libs.quilted.fabric.api.deprecated
+	modImplementation(libs.quilted.fabric.api) {
+		exclude(group: "org.quiltmc", module: "quilt-loader")
+	}
+	// I despise this hecker, but EMI requires it..
+	modRuntimeOnly(libs.quilted.fabric.api.deprecated) {
+		exclude(group: "org.quiltmc", module: "quilt-loader")
+	}
 
 	modCompileOnly libs.emi
 	modRuntimeOnly libs.emi
@@ -59,7 +73,7 @@ loom {
 			name "Data Generation"
 			vmArg "-Dfabric-api.datagen"
 			vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
-			vmArg "-Dfabric-api.datagen.modid=${project.modid}"
+			vmArg "-Dfabric-api.datagen.modid=${project.mod_id}"
 
 			runDir "build/datagen"
 		}
@@ -91,12 +105,8 @@ jar {
 	from("LICENSE") {
 		rename { "${it}_${archivesBaseName}" }
 	}
-
-	from("src/main/generated") {
-		exclude(".cache/**")
-	}
-	dependsOn(tasks.runDatagen)
 }
+tasks.jar.dependsOn(tasks.runDatagen)
 
 // Configure the maven publication
 publishing {

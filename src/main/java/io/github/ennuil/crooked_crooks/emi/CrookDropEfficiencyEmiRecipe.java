@@ -32,7 +32,7 @@ public class CrookDropEfficiencyEmiRecipe extends EmiIngredientRecipe {
 
 	@Override
 	public @Nullable Identifier getId() {
-		return new Identifier(CrookedCrooksMod.MODID, "emi/crook_drop_efficiency/" + multiplier);
+		return new Identifier(CrookedCrooksMod.MOD_ID, "emi/crook_drop_efficiency/" + multiplier);
 	}
 
 	@Override

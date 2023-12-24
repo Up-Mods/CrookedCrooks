@@ -43,7 +43,7 @@ public class EnchantmentHelperMixin {
 	@Inject(method = "getLevel", at = @At("RETURN"), cancellable = true)
 	private static void ae2Shenanigans(Enchantment enchantment, ItemStack stack, CallbackInfoReturnable<Integer> cir) {
 		if (cir.getReturnValueI() == 0 && enchantment == Enchantments.FORTUNE) {
-			if (Registries.ITEM.getId(stack.getItem()).equals(new Identifier(CrookedCrooksMod.MODID, "fluix_crook"))) {
+			if (Registries.ITEM.getId(stack.getItem()).equals(new Identifier(CrookedCrooksMod.MOD_ID, "fluix_crook"))) {
 				cir.setReturnValue(1);
 			}
 		}

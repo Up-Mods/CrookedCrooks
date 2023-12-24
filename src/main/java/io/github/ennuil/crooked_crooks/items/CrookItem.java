@@ -1,6 +1,5 @@
 package io.github.ennuil.crooked_crooks.items;
 
-
 import io.github.ennuil.crooked_crooks.CrookedCrooksMod;
 import net.fabricmc.fabric.api.mininglevel.v1.MiningLevelManager;
 import net.minecraft.block.BlockState;

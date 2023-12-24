@@ -17,7 +17,7 @@ import java.util.SortedMap;
 public class CrookedCrooksEmiPlugin implements EmiPlugin {
 	private static final EmiStack CROOK_ICON = EmiStack.of(CrookedCrooksMod.WOODEN_CROOK_ITEM);
 	public static final EmiRecipeCategory CROOK_RECIPE_CATEGORY = new EmiRecipeCategory(
-		new Identifier(CrookedCrooksMod.MODID, "emi_recipe_category"), CROOK_ICON
+		new Identifier(CrookedCrooksMod.MOD_ID, "emi_recipe_category"), CROOK_ICON
 	);
 
 	@Override

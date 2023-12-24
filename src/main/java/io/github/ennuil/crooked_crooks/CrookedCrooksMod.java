@@ -32,14 +32,14 @@ import java.util.function.BiConsumer;
 
 public class CrookedCrooksMod implements ModInitializer {
 
-	public static final String MODID = "crooked_crooks";
+	public static final String MOD_ID = "crooked_crooks";
 
 	// The crook_effective dict, used for blocks which should have its drops multiplied by crooks
 	public static final RegistryEntryAttachment<Block, Integer> CROOK_EFFECTIVE =
-		RegistryEntryAttachment.intBuilder(Registries.BLOCK, new Identifier(MODID, "crook_effective")).build();
+		RegistryEntryAttachment.intBuilder(Registries.BLOCK, new Identifier(MOD_ID, "crook_effective")).build();
 	// The mob_weight dict, used to override the automatically calculated weights for each mob.
 	public static final RegistryEntryAttachment<EntityType<?>, Double> ENTITY_WEIGHT =
-		RegistryEntryAttachment.doubleBuilder(Registries.ENTITY_TYPE, new Identifier(MODID, "entity_weight")).build();
+		RegistryEntryAttachment.doubleBuilder(Registries.ENTITY_TYPE, new Identifier(MOD_ID, "entity_weight")).build();
 
 	// The crook items, which are going to be registered
 	// Only Vanilla crooks are guaranteed to be registered every single time, so we have constants for them!
@@ -62,7 +62,7 @@ public class CrookedCrooksMod implements ModInitializer {
 		List<ItemStack> ITEMS = new ArrayList<>();
 
 		BiConsumer<String, Item> registerWithoutItemGroup = (id, item) -> {
-			Registry.register(Registries.ITEM, new Identifier(MODID, id), item);
+			Registry.register(Registries.ITEM, new Identifier(MOD_ID, id), item);
 		};
 		BiConsumer<String, Item> register = (id, item) -> {
 			registerWithoutItemGroup.accept(id, item);
@@ -85,7 +85,7 @@ public class CrookedCrooksMod implements ModInitializer {
 
 			if (QuiltLoader.isModLoaded("indrev")) {
 				ResourceLoader.registerBuiltinResourcePack(
-					new Identifier(MODID, "use_tr_bronze_crooks"),
+					new Identifier(MOD_ID, "use_tr_bronze_crooks"),
 					mod,
 					ResourcePackActivationType.NORMAL,
 					Text.translatable("resource_pack.use_tr_bronze_crooks"));
@@ -131,11 +131,11 @@ public class CrookedCrooksMod implements ModInitializer {
 			RegistryMonitor.create(Registries.ITEM).forAll(ctx -> {
 				if (ctx.id().equals(ROSE_GOLD_HOE_ITEM)) {
 					Item item = new CrookItem(CrookMaterials.ROSE_GOLD, 0F, -3F, 1.3F, new Item.Settings());
-					ctx.register(new Identifier(MODID, "rose_gold_crook"), item);
+					ctx.register(new Identifier(MOD_ID, "rose_gold_crook"), item);
 					ITEMS.add(item.getDefaultStack());
 				} else if (ctx.id().equals(GILDED_NETHERITE_HOE_ITEM)) {
 					Item item = new CrookItem(CrookMaterials.GILDED_NETHERITE, 0F, -3F, 1.3F, new Item.Settings().fireproof());
-					ctx.register(new Identifier(MODID, "gilded_netherite_crook"), item);
+					ctx.register(new Identifier(MOD_ID, "gilded_netherite_crook"), item);
 					ITEMS.add(item.getDefaultStack());
 				}
 			});
@@ -154,7 +154,7 @@ public class CrookedCrooksMod implements ModInitializer {
 		});
 
 		// Register enchantments
-		Registry.register(Registries.ENCHANTMENT, new Identifier(MODID, "thorns_curse"), THORNS_CURSE_ENCHANTMENT);
+		Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, "thorns_curse"), THORNS_CURSE_ENCHANTMENT);
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> entries.addStack(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(THORNS_CURSE_ENCHANTMENT, THORNS_CURSE_ENCHANTMENT.getMaxLevel()))));
 
 		// Register the drop-multiplying event

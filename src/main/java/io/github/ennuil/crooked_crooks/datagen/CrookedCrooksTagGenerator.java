@@ -12,14 +12,13 @@ import net.minecraft.util.Identifier;
 import java.util.concurrent.CompletableFuture;
 
 public class CrookedCrooksTagGenerator extends FabricTagProvider.ItemTagProvider {
-
 	public CrookedCrooksTagGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
 		super(output, completableFuture);
 	}
 
 	@Override
 	protected void configure(HolderLookup.Provider arg) {
-		getOrCreateTagBuilder(CrookTags.CROOKS)
+		this.getOrCreateTagBuilder(CrookTags.CROOKS)
 			.add(
 				CrookedCrooksMod.WOODEN_CROOK_ITEM,
 				CrookedCrooksMod.STONE_CROOK_ITEM,
@@ -28,39 +27,36 @@ public class CrookedCrooksTagGenerator extends FabricTagProvider.ItemTagProvider
 				CrookedCrooksMod.GOLDEN_CROOK_ITEM,
 				CrookedCrooksMod.NETHERITE_CROOK_ITEM
 			)
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "tr_bronze_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "ruby_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "sapphire_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "peridot_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "certus_quartz_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "nether_quartz_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "fluix_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "tin_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "copper_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "steel_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "lead_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "ir_bronze_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "silver_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "rose_gold_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "gilded_netherite_crook"));
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "tr_bronze_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "ruby_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "sapphire_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "peridot_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "certus_quartz_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "nether_quartz_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "fluix_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "tin_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "copper_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "steel_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "lead_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "ir_bronze_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "silver_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "rose_gold_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "gilded_netherite_crook"));
 
-		getOrCreateTagBuilder(CrookTags.QUARTZ_CROOKS)
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "nether_quartz_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MODID, "certus_quartz_crook"));
+		this.getOrCreateTagBuilder(CrookTags.QUARTZ_CROOKS)
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "nether_quartz_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "certus_quartz_crook"));
 
-		getOrCreateTagBuilder(ItemTags.PIGLIN_LOVED)
+		this.getOrCreateTagBuilder(ItemTags.PIGLIN_LOVED)
 			.add(CrookedCrooksMod.GOLDEN_CROOK_ITEM);
 
-		getOrCreateTagBuilder(CrookTags.Common.PERIDOTS)
+		this.getOrCreateTagBuilder(CrookTags.Common.PERIDOTS)
 			.addOptional(new Identifier("techreborn", "peridot_gem"));
 
-		getOrCreateTagBuilder(CrookTags.Common.WOODEN_STICKS)
-			.add(Items.STICK);
-
-		getOrCreateTagBuilder(CrookTags.Common.IRON_NUGGETS)
+		this.getOrCreateTagBuilder(CrookTags.Common.IRON_NUGGETS)
 			.add(Items.IRON_NUGGET);
 
-		getOrCreateTagBuilder(CrookTags.Common.GOLD_NUGGETS)
+		this.getOrCreateTagBuilder(CrookTags.Common.GOLD_NUGGETS)
 			.add(Items.GOLD_NUGGET);
 	}
 }

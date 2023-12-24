@@ -20,7 +20,7 @@ public class CrookTags {
 		public static final TagKey<Item> PERIDOTS = tag("peridots");
 		public static final TagKey<Item> DIAMONDS = ConventionalItemTags.DIAMONDS;
 		public static final TagKey<Item> CERTUS_QUARTZ = tag("certus_quartz");
-		public static final TagKey<Item> QUARTZ = tag("quartz");
+		public static final TagKey<Item> QUARTZ = ConventionalItemTags.QUARTZ;
 		public static final TagKey<Item> FLUIX = tag("fluix");
 		public static final TagKey<Item> TIN_INGOTS = tag("tin_ingots");
 		public static final TagKey<Item> IRON_NUGGETS = tag("iron_nuggets");
@@ -33,7 +33,6 @@ public class CrookTags {
 		public static final TagKey<Item> LEAD_INGOTS = tag("lead_ingots");
 		public static final TagKey<Item> LEAD_NUGGETS = tag("lead_nuggets");
 		public static final TagKey<Item> NETHERITE_INGOTS = ConventionalItemTags.NETHERITE_INGOTS;
-		public static final TagKey<Item> WOODEN_STICKS = tag("wooden_sticks");
 
 		private static TagKey<Item> tag(String path) {
 			return TagKey.of(RegistryKeys.ITEM, new Identifier("c", path));
@@ -41,6 +40,6 @@ public class CrookTags {
 	}
 
 	private static TagKey<Item> tag(String path) {
-		return TagKey.of(RegistryKeys.ITEM, new Identifier(CrookedCrooksMod.MODID, path));
+		return TagKey.of(RegistryKeys.ITEM, new Identifier(CrookedCrooksMod.MOD_ID, path));
 	}
 }
