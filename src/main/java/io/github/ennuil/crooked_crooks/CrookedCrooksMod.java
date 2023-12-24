@@ -31,7 +31,6 @@ import java.util.List;
 import java.util.function.BiConsumer;
 
 public class CrookedCrooksMod implements ModInitializer {
-
 	public static final String MOD_ID = "crooked_crooks";
 
 	// The crook_effective dict, used for blocks which should have its drops multiplied by crooks
