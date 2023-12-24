@@ -117,14 +117,6 @@ public class CrookedCrooksMod implements ModInitializer {
 			register.accept("silver_crook", new CrookItem(CrookMaterials.SILVER, 0F, -3F, 0.8F, new Item.Settings()));
 		}
 
-		/*
-		if (QuiltLoader.isModLoaded("betterend")) {
-			register.accept("thallasium_crook", new CrookItem(CrookMaterials.THALLASIUM, 0F, -3F, 0.8F, new Item.Settings()));
-			register.accept("terminite_crook", new CrookItem(CrookMaterials.TERMINITE, 0F, -3F, 1.0F, new Item.Settings()));
-			register.accept("aeternium_crook", new CrookItem(CrookMaterials.AETERNIUM, 0F, -3F, 1.3F, new Item.Settings()));
-		}
-		*/
-
 		// Additional Additions has config options for disabling certain items
 		// Currently, the tools aren't affected by them, but future-proofing is a good idea
 		if (QuiltLoader.isModLoaded("additionaladditions")) {

@@ -40,13 +40,6 @@ public enum CrookMaterials implements ToolMaterial {
 	LEAD(2, 900, 3.0F, 2.0F, 8, () -> Ingredient.ofTag(CrookTags.Common.LEAD_INGOTS)),
 	INDREV_BRONZE(2, 500, 3.5F, 2.5F, 12, () -> Ingredient.ofTag(CrookTags.Common.BRONZE_INGOTS)),
 	SILVER(2, 500, 5.0F, 1.0F, 24, () -> Ingredient.ofTag(CrookTags.Common.LEAD_INGOTS)),
-	/*
-	// Better End Materials
-	THALLASIUM(MiningLevels.IRON, 320, 7.0F, 1.5F, 12, () -> Ingredient.ofItems(Registries.ITEM.get(new Identifier("betterend:thallasium_ingot")))),
-	TERMINITE(MiningLevels.DIAMOND, 1230, 8.5F, 3.0F, 14, () -> Ingredient.ofItems(Registries.ITEM.get(new Identifier("betterend:terminite_ingot")))),
-	// Why must you cause pain and suffering for me ;-;
-	AETERNIUM(5, 2196, 10.0F, 4.5F, 18, () -> Ingredient.ofItems(Registries.ITEM.get(new Identifier("betterend:aeternium_ingot")))),
-	*/
 	// Additional Additions Materials
 	ROSE_GOLD(2, 900, 9.0F, 3.0F, 17, () -> Ingredient.ofTag(CrookTags.Common.COPPER_INGOTS)),
 	GILDED_NETHERITE(4, 2000, 9.0F, 4.0F, 24, () -> Ingredient.ofTag(CrookTags.Common.NETHERITE_INGOTS));
