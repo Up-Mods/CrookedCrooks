@@ -7,6 +7,9 @@ classes/
 # Quilt Loom
 run/
 
+# Fabric Data Generation
+src/main/generated/
+
 # Eclipse
 *.launch
 
@@ -28,4 +31,3 @@ workspace/
 
 # macOS
 *.DS_Store
-src/main/generated/
