@@ -1,16 +1,30 @@
 plugins {
 	id "maven-publish"
 	alias libs.plugins.quilt.loom
-	alias libs.plugins.machete
 }
 
-archivesBaseName = project.archives_base_name
+base.archivesName = project.mod_id
 version = "${project.version}+${libs.versions.minecraft.get()}"
 group = project.maven_group
+
+// FIXME - Workaround for Quilt Loom bug
+project.configurations.configureEach {
+	exclude(group: "net.fabricmc", module: "fabric-loader")
+	exclude(group: "net.fabricmc.fabric-api")
+}
 
 repositories {
 	maven { url "https://maven.terraformersmc.com/releases/" }
 	maven { url "https://jitpack.io" }
+}
+
+loom {
+	mods {
+		"crooked_crooks" {
+			// Tell Loom about each source set used by your mod here. This ensures that your mod's classes are properly transformed by Loader.
+			sourceSet("main")
+		}
+	}
 }
 
 // All the dependencies are declared at gradle/libs.version.toml and referenced with "libs.<id>"
@@ -22,11 +36,16 @@ dependencies {
 
 	// QSL is not a complete API; You will need Quilted Fabric API to fill in the gaps.
 	// Quilted Fabric API will automatically pull in the correct QSL version.
-	modImplementation libs.quilted.fabric.api
-	modImplementation libs.libcd
-	modImplementation libs.emi
+	modImplementation(libs.quilted.fabric.api) {
+		exclude(group: "org.quiltmc", module: "quilt-loader")
+	}
+	// I despise this hecker, but EMI requires it..
+	modRuntimeOnly(libs.quilted.fabric.api.deprecated) {
+		exclude(group: "org.quiltmc", module: "quilt-loader")
+	}
 
-	include libs.libcd
+	modCompileOnly libs.emi
+	modRuntimeOnly libs.emi
 }
 
 processResources {
@@ -37,10 +56,34 @@ processResources {
 	}
 }
 
+sourceSets {
+	main {
+		resources {
+			srcDirs += [
+				'src/main/generated'
+			]
+		}
+	}
+}
+
+loom {
+	runs {
+		datagen {
+			inherit server
+			name "Data Generation"
+			vmArg "-Dfabric-api.datagen"
+			vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
+			vmArg "-Dfabric-api.datagen.modid=${project.mod_id}"
+
+			runDir "build/datagen"
+		}
+	}
+}
+
 tasks.withType(JavaCompile).configureEach {
 	it.options.encoding = "UTF-8"
 	// Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
-	it.options.release = 17
+	it.options.release.set(17)
 }
 
 java {
@@ -63,13 +106,7 @@ jar {
 		rename { "${it}_${archivesBaseName}" }
 	}
 }
-
-machete {
-	// JSON minification isn't effective on this scale and sacrifices readability
-	optimizations.json = false
-}
-// This prevents issues with execution optimizations and therefore, Gradle deprecation warnings
-prepareRemapJar.dependsOn("optimizeOutputsOfJar")
+tasks.jar.dependsOn(tasks.runDatagen)
 
 // Configure the maven publication
 publishing {

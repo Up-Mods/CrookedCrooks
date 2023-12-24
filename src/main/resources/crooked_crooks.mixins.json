@@ -3,9 +3,7 @@
   "package": "io.github.ennuil.crooked_crooks.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "EnchantedBookItemMixin",
-    "EnchantmentHelperMixin",
-    "RecipeScreenMixin"
+    "EnchantmentHelperMixin"
   ],
   "injectors": {
     "defaultRequire": 1

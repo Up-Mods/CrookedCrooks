@@ -8,7 +8,8 @@
 			"name": "Crooked Crooks",
 			"description": "Adds crooks for all the vanilla materials (and some modded ones). They multiply drops from leaves and grasses and they pull mobs!",
 			"contributors": {
-				"Ennui Langeweile": "Owner"
+				"Ennui Langeweile": "Owner",
+				"Up": "Developer"
 			},
 			"icon": "assets/crooked_crooks/icon.png"
 		},
@@ -16,7 +17,7 @@
 		"entrypoints": {
 			"init": "io.github.ennuil.crooked_crooks.CrookedCrooksMod",
 			"emi": "io.github.ennuil.crooked_crooks.emi.CrookedCrooksEmiPlugin",
-			"libcd:conditions": "io.github.ennuil.crooked_crooks.CrookedCrooksConditions"
+			"fabric-datagen": "io.github.ennuil.crooked_crooks.datagen.CrookedCrooksDatagen"
 		},
 		"depends": [
 			{
@@ -25,15 +26,11 @@
 			},
 			{
 				"id": "quilted_fabric_api",
-				"versions": ">=4.0.0-"
+				"versions": ">=7.0.0-"
 			},
 			{
 				"id": "minecraft",
-				"versions": ">=1.19.2"
-			},
-			{
-				"id": "libcd",
-				"versions": ">=4.0.0"
+				"versions": "=1.20.1"
 			}
 		]
 	},

@@ -1,15 +1,11 @@
 package io.github.ennuil.crooked_crooks.items;
 
-
-import org.quiltmc.loader.api.QuiltLoader;
-
 import io.github.ennuil.crooked_crooks.CrookedCrooksMod;
 import net.fabricmc.fabric.api.mininglevel.v1.MiningLevelManager;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -22,6 +18,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import org.quiltmc.loader.api.QuiltLoader;
 
 public class CrookItem extends MiningToolItem {
 	public float crookStrength;
@@ -63,7 +60,7 @@ public class CrookItem extends MiningToolItem {
 			// This calculates the weight of the pull. If it's 1.0D, it means that it's a full power pull
 			float crookStrength = this.crookStrength;
 			double mobWeight = CrookedCrooksMod.ENTITY_WEIGHT.get(entity.getType()).orElseGet(() -> entity.getBoundingBox().getAverageSideLength());
-			double weight = (crookStrength / mobWeight) <= 1.0D ? crookStrength / mobWeight : 1.0D;
+			double weight = Math.min(crookStrength / mobWeight, 1.0D);
 			if (QuiltLoader.isDevelopmentEnvironment()) {
 				user.sendMessage(Text.literal("" + crookStrength / mobWeight + " (" + mobWeight + " ₢" + crookStrength + ")"), true);
 			}
@@ -84,7 +81,7 @@ public class CrookItem extends MiningToolItem {
 			if (EnchantmentHelper.getLevel(CrookedCrooksMod.THORNS_CURSE_ENCHANTMENT, stack) > 0) {
 				entity.setAttacker(user);
 				entity.setAttacking(user);
-				entity.damage(DamageSource.GENERIC, this.getAttackDamage() * user.getAttackCooldownProgress(0.5F));
+				entity.damage(entity.getDamageSources().generic(), this.getAttackDamage() * user.getAttackCooldownProgress(0.5F));
 				user.resetLastAttackedTicks();
 			}
 

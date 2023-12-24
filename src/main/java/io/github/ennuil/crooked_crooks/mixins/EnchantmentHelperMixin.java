@@ -1,14 +1,6 @@
 package io.github.ennuil.crooked_crooks.mixins;
 
-import java.util.Iterator;
-import java.util.List;
-
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
-
+import io.github.ennuil.crooked_crooks.CrookedCrooksMod;
 import io.github.ennuil.crooked_crooks.enchantments.ThornsCurseEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -16,8 +8,16 @@ import net.minecraft.enchantment.EnchantmentLevelEntry;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
+
+import java.util.Iterator;
+import java.util.List;
 
 @Mixin(EnchantmentHelper.class)
 public class EnchantmentHelperMixin {
@@ -43,7 +43,7 @@ public class EnchantmentHelperMixin {
 	@Inject(method = "getLevel", at = @At("RETURN"), cancellable = true)
 	private static void ae2Shenanigans(Enchantment enchantment, ItemStack stack, CallbackInfoReturnable<Integer> cir) {
 		if (cir.getReturnValueI() == 0 && enchantment == Enchantments.FORTUNE) {
-			if (Registry.ITEM.getId(stack.getItem()).equals(new Identifier("crooked_crooks", "fluix_crook"))) {
+			if (Registries.ITEM.getId(stack.getItem()).equals(new Identifier(CrookedCrooksMod.MOD_ID, "fluix_crook"))) {
 				cir.setReturnValue(1);
 			}
 		}

@@ -12,12 +12,6 @@
 	"item.crooked_crooks.certus_quartz_crook": "Cajado de quartzo certus",
 	"item.crooked_crooks.nether_quartz_crook": "Cajado de quartzo do Nether",
 	"item.crooked_crooks.fluix_crook": "Cajado de fluix",
-	"item.crooked_crooks.tin_crook": "Cajado de estanho",
-	"item.crooked_crooks.copper_crook": "Cajado de cobre",
-	"item.crooked_crooks.steel_crook": "Cajado de aço",
-	"item.crooked_crooks.lead_crook": "Cajado de chumbo",
-	"item.crooked_crooks.ir_bronze_crook": "Cajado de bronze",
-	"item.crooked_crooks.silver_crook": "Cajado de prata",
 	"item.crooked_crooks.rose_gold_crook": "Cajado de ouro rosa",
 	"item.crooked_crooks.gilded_netherite_crook": "Cajado de netherita dourada",
 	"tag.crooked_crooks.crooks": "Cajados",
@@ -25,7 +19,6 @@
 	"tag.c.peridots": "Peridotos",
 	"enchantment.crooked_crooks.thorns_curse": "Maldição da perfuração",
 	"enchantment.crooked_crooks.thorns_curse.desc": "Faz com que o cajado cause dano ao puxar um mob.",
-	"resource_pack.use_tr_bronze_crooks": "Usar cajados de bronze do TR",
 	"emi.category.crooked_crooks.emi_recipe_category": "Eficiência de drops do cajado",
 	"emi.recipe.crooked_crooks.crook_efficiency.drop_multiplier": "%sx"
 }
