@@ -27,19 +27,13 @@ public class CrookedCrooksTagGenerator extends FabricTagProvider.ItemTagProvider
 				CrookedCrooksMod.GOLDEN_CROOK_ITEM,
 				CrookedCrooksMod.NETHERITE_CROOK_ITEM
 			)
-			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "tr_bronze_crook"))
+			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "bronze_crook"))
 			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "ruby_crook"))
 			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "sapphire_crook"))
 			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "peridot_crook"))
 			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "certus_quartz_crook"))
 			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "nether_quartz_crook"))
 			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "fluix_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "tin_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "copper_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "steel_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "lead_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "ir_bronze_crook"))
-			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "silver_crook"))
 			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "rose_gold_crook"))
 			.addOptional(new Identifier(CrookedCrooksMod.MOD_ID, "gilded_netherite_crook"));
 

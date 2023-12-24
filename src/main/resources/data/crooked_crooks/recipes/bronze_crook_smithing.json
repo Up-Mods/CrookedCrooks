@@ -7,7 +7,7 @@
     "tag": "c:bronze_ingots"
   },
   "result": {
-    "item": "crooked_crooks:tr_bronze_crook"
+    "item": "crooked_crooks:bronze_crook"
   },
   "template": [],
   "fabric:load_conditions": [

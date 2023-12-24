@@ -80,15 +80,7 @@ public class CrookedCrooksMod implements ModInitializer {
 			register.accept("ruby_crook", new CrookItem(CrookMaterials.RUBY, 0F, -3F, 0.9F, new Item.Settings()));
 			register.accept("sapphire_crook", new CrookItem(CrookMaterials.SAPPHIRE, 0F, -3F, 1.0F, new Item.Settings()));
 			register.accept("peridot_crook", new CrookItem(CrookMaterials.PERIDOT, 0F, -3F, 0.875F, new Item.Settings()));
-			register.accept("tr_bronze_crook", new CrookItem(CrookMaterials.TECH_REBORN_BRONZE, 0F, -3F, 0.85F, new Item.Settings()));
-
-			if (QuiltLoader.isModLoaded("indrev")) {
-				ResourceLoader.registerBuiltinResourcePack(
-					new Identifier(MOD_ID, "use_tr_bronze_crooks"),
-					mod,
-					ResourcePackActivationType.NORMAL,
-					Text.translatable("resource_pack.use_tr_bronze_crooks"));
-			}
+			register.accept("bronze_crook", new CrookItem(CrookMaterials.BRONZE, 0F, -3F, 0.85F, new Item.Settings()));
 		}
 
 		if (QuiltLoader.isModLoaded("ae2")) {
@@ -105,15 +97,6 @@ public class CrookedCrooksMod implements ModInitializer {
 					return true;
 				}
 			});
-		}
-
-		if (QuiltLoader.isModLoaded("indrev")) {
-			register.accept("tin_crook", new CrookItem(CrookMaterials.TIN, 0F, -3F, 0.5F, new Item.Settings()));
-			register.accept("copper_crook", new CrookItem(CrookMaterials.COPPER, 0F, -3F, 0.8F, new Item.Settings()));
-			register.accept("steel_crook", new CrookItem(CrookMaterials.STEEL, 0F, -3F, 0.9F, new Item.Settings()));
-			register.accept("lead_crook", new CrookItem(CrookMaterials.LEAD, 0F, -3F, 0.75F, new Item.Settings()));
-			register.accept("ir_bronze_crook", new CrookItem(CrookMaterials.INDREV_BRONZE, 0F, -3F, 0.85F, new Item.Settings()));
-			register.accept("silver_crook", new CrookItem(CrookMaterials.SILVER, 0F, -3F, 0.8F, new Item.Settings()));
 		}
 
 		// Additional Additions has config options for disabling certain items

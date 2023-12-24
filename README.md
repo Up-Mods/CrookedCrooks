@@ -2,7 +2,7 @@
 
 # Crooked Crooks
 
-Crooked Crooks is a mod that adds crooks, a tool which can pull mobs and multiply the drops from leaves and grasses, currently has crooks for all vanilla materials and materials added by [Tech Reborn](https://www.curseforge.com/minecraft/mc-mods/techreborn), [Applied Energistics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2), [Industrial Revolution](https://www.curseforge.com/minecraft/mc-mods/industrial-revolution) and [Additional Additions](https://www.curseforge.com/minecraft/mc-mods/additional-additions). Inspired by the crook from the Ex Nihilo mod family. Depends on the [Quilt Standard Libraries](https://modrinth.com/mod/qsl). A port of [LibCD](https://github.com/EnnuiL/LibCD) is bundled in the JAR file.
+Crooked Crooks is a mod that adds crooks, a tool which can pull mobs and multiply the drops from leaves and grasses, currently has crooks for all vanilla materials and materials added by [Tech Reborn](https://www.curseforge.com/minecraft/mc-mods/techreborn), [Applied Energistics 2](https://modrinth.com/mod/ae2) and [Additional Additions](https://modrinth.com/mod/addadd). Inspired by the crook from the Ex Nihilo mod family. Depends on the [Quilt Standard Libraries](https://modrinth.com/mod/qsl).
 
 ## Download
 
