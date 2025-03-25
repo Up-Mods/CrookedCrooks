@@ -6,7 +6,8 @@ plugins {
 base.archivesName = "crooked_crooks-neo"
 
 neoForge {
-	version = libs.versions.neoforge
+	version = libs.versions.neoforge.get()
+
 	parchment {
 		minecraftVersion = libs.versions.minecraft
 		mappingsVersion = libs.versions.parchment
