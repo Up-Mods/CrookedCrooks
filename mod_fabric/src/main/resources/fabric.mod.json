@@ -8,9 +8,9 @@
 		"Ennui Langeweile"
 	],
 	"contact": {
-		"homepage": "https://modrinth.com/mod/ennuis_bigger_inventories",
-		"issues": "https://github.com/EnnuiL/ennuis_bigger_inventories/issues",
-		"sources": "https://github.com/EnnuiL/ennuis_bigger_inventories"
+		"homepage": "https://modrinth.com/mod/crooked-crooks",
+		"issues": "https://github.com/Up-Mods/CrookedCrooks/issues",
+		"sources": "https://github.com/Up-Mods/CrookedCrooks"
 	},
 	"icon": "assets/crooked_crooks/icon.png",
 	"environment": "*",
