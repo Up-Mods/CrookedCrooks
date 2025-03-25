@@ -17,16 +17,16 @@ import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.animal.Sheep;
+import net.minecraft.world.entity.animal.sheep.Sheep;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
+import net.minecraft.world.item.component.Weapon;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
@@ -43,6 +43,7 @@ public class CrookItem extends Item {
 		this.crookStrength = crookStrength;
 	}
 
+	// TODO - Mimic the ongoing migration to separate methods for setting the properties
 	public static Item.Properties applyProperties(Item.Properties properties, TagKey<Block> mineableBlocks, float attackDamage, float attackSpeed, ToolMaterial material) {
 		var holderGetter = BuiltInRegistries.acquireBootstrapRegistrationLookup(BuiltInRegistries.BLOCK);
 		return properties.durability(material.durability())
@@ -52,8 +53,9 @@ public class CrookItem extends Item {
 				new Tool(List.of(
 					Tool.Rule.deniesDrops(holderGetter.getOrThrow(material.incorrectBlocksForDrops())),
 					Tool.Rule.minesAndDrops(holderGetter.getOrThrow(mineableBlocks), material.speed())
-				), 1.0F, 1))
-			.attributes(createAttributes(attackDamage + material.attackDamageBonus(), attackSpeed));
+				), 1.0F, 1, true))
+			.attributes(createAttributes(attackDamage + material.attackDamageBonus(), attackSpeed))
+			.component(DataComponents.WEAPON, new Weapon(2, 0.0F));
 	}
 
 	public static ItemAttributeModifiers createAttributes(float attackDamage, float attackSpeed) {
@@ -63,11 +65,6 @@ public class CrookItem extends Item {
 			.add(Attributes.BLOCK_INTERACTION_RANGE, new AttributeModifier(BASE_BLOCK_REACH, 3.0F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
 			.add(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(BASE_ENTITY_REACH, 3.0F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
 			.build();
-	}
-
-	@Override
-	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-		return true;
 	}
 
 	@Override

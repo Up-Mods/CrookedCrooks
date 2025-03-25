@@ -1,16 +1,16 @@
 # The latest versions are available at https://quiltmc.org/en/usage/latest-versions/
 [versions]
-minecraft = "1.21.4"
+minecraft = "1.21.5"
 parchment = "2024.12.22"
 
 fabric_loom = "1.10.5"
 fabric_loader = "0.16.10"
-moddevgradle = "2.0.78"
-neoforge = "21.4.111-beta"
+moddevgradle = "2.0.79"
+neoforge = "21.5.0-beta"
 
-fabric_api = "0.118.5+1.21.4"
+fabric_api = "0.119.5+1.21.5"
 
-modmenu = "13.0.3"
+modmenu = "14.0.0-rc.1"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
