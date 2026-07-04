@@ -24,12 +24,12 @@ public class HerdGoal extends Goal {
 	}
 
 	private boolean shouldFollow(LivingEntity entity) {
-		return entity.hasEffect(Portals.getShepherdsTouchEffect());
+		return entity.hasEffect(Portals.INSTANCE.getShepherdsTouchEffect());
 	}
 
 	@Override
 	public boolean canUse() {
-		this.player = getServerLevel(this.mob).getNearestPlayer(this.targetingConditions.range(this.mob.getAttributeValue(Portals.getHerdingRange())), this.mob);
+		this.player = getServerLevel(this.mob).getNearestPlayer(this.targetingConditions.range(this.mob.getAttributeValue(Portals.INSTANCE.getHerdingRange())), this.mob);
 		return this.player != null;
 	}
 

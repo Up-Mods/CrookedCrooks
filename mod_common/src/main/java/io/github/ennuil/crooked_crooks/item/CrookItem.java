@@ -6,7 +6,7 @@ import io.github.ennuil.crooked_crooks.utils.Portals;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
@@ -33,8 +33,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class CrookItem extends Item {
-	public static final ResourceLocation BASE_BLOCK_REACH = ResourceLocation.withDefaultNamespace("base_block_reach");
-	public static final ResourceLocation BASE_ENTITY_REACH = ResourceLocation.withDefaultNamespace("base_entity_reach");
+	// TODO namespace!
+	public static final Identifier BASE_BLOCK_REACH = Identifier.withDefaultNamespace("base_block_reach");
+	public static final Identifier BASE_ENTITY_REACH = Identifier.withDefaultNamespace("base_entity_reach");
 
 	private final float crookStrength;
 
@@ -80,7 +81,7 @@ public class CrookItem extends Item {
 
 			if (SatireConfig.getConfig().shepherdsTouch() && interactionTarget instanceof Sheep) {
 				// 7 seconds * 20 ticks = 140 ticks
-				player.addEffect(new MobEffectInstance(Portals.getShepherdsTouchEffect(), 7 * 20), interactionTarget);
+				player.addEffect(new MobEffectInstance(Portals.INSTANCE.getShepherdsTouchEffect(), 7 * 20), interactionTarget);
 			}
 
 			var pos = interactionTarget.position().vectorTo(player.position()).normalize();
@@ -110,7 +111,7 @@ public class CrookItem extends Item {
 		if (tool == null) {
 			return false;
 		} else {
-			if (!level.isClientSide && (state.getDestroySpeed(level, pos) != 0.0F || state.is(ModBlockTags.MINEABLE_WITH_CROOK)) && tool.damagePerBlock() > 0) {
+			if (!level.isClientSide() && (state.getDestroySpeed(level, pos) != 0.0F || state.is(ModBlockTags.MINEABLE_WITH_CROOK)) && tool.damagePerBlock() > 0) {
 				stack.hurtAndBreak(tool.damagePerBlock(), miningEntity, EquipmentSlot.MAINHAND);
 			}
 

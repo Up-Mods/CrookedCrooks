@@ -1,18 +1,31 @@
 {
 	"schemaVersion": 1,
-	"id": "crooked_crooks",
+	"id": "${mod_id}",
 	"version": "${version}",
-	"name": "Crooked Crooks",
-	"description": "Adds its own take on crooks. They multiply drops from leaves and grass, herd sheep and pull mobs!",
+	"name": "${mod_display_name}",
+	"description": "${mod_description}",
 	"authors": [
 		"Ennui Langeweile"
 	],
+	"contributors": [
+		{
+			"name": "Up",
+			"contact": {
+				"homepage": "https://upcraft.dev",
+				"github": "https://github.com/UpcraftLP",
+				"bsky": "https://bsky.app/profile/did:plc:77uzn2lx2zhtdgr5zfvzumji",
+				"curseforge": "https://www.curseforge.com/members/upcraftlp",
+				"modrinth": "https://modrinth.com/user/Up"
+			}
+		}
+	],
 	"contact": {
-		"homepage": "https://modrinth.com/mod/crooked-crooks",
-		"issues": "https://github.com/Up-Mods/CrookedCrooks/issues",
-		"sources": "https://github.com/Up-Mods/CrookedCrooks"
+		"homepage": "${homepage_url}",
+		"issues": "${issues_url}",
+		"sources": "${sources_url}"
 	},
-	"icon": "assets/crooked_crooks/icon.png",
+	"license": "${license_url}",
+	"icon": "icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": ["io.github.ennuil.crooked_crooks.ModInit"],
@@ -23,15 +36,17 @@
 		"crooked_crooks.mixins.json",
 		"crooked_crooks_fabric.mixins.json"
 	],
+	"accessWidener": "${mod_id}.classtweaker",
 	"depends": {
-		"fabricloader": ">=0.16.10",
-		"minecraft": "=1.21.5",
-		"fabric-api": ">=0.119.5"
+		"fabricloader": ">=${fabric_loader_version}",
+		"minecraft": "=${minecraft_version}",
+		"java": ">=${java_version}",
+		"fabric-api": "*"
 	},
 	"custom": {
 		"mc-publish": {
-			"modrinth": "DG76dVRB",
-			"curseforge": "393714",
+			"modrinth": "${modrinth_id}",
+			"curseforge": "${curseforge_id}",
 			"loaders": [
 				"fabric",
 				"quilt"
@@ -39,6 +54,11 @@
 			"dependencies": [
 				"fabric-api(required){curseforge:306612}{modrinth:P7dR8mSH}"
 			]
+		},
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "${discord_url}"
+			}
 		}
 	}
 }

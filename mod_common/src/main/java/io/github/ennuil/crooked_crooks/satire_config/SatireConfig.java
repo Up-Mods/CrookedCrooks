@@ -1,8 +1,8 @@
 package io.github.ennuil.crooked_crooks.satire_config;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.Util;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.util.Util;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 

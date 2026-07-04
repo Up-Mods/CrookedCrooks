@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "*"
+license = "${license_url}"
+issueTrackerURL = "${issues_url}"
+sourcesUrl = "${sources_url}"
+
+[[mixins]]
+config = "crooked_crooks.mixins.json"
+
+[[mixins]]
+config = "crooked_crooks_norge.mixins.json"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${version}"
+displayName = "${mod_display_name}"
+logoFile = "icon.png"
+authors = "Ennui Langeweile and Up"
+description = '''
+${mod_description}
+'''
+
+[dependencies]
+"${mod_id}" = [
+	{ modId = "neoforge", type = "required", versionRange = "[${neoforge_version},)", ordering = "NONE", side = "BOTH" },
+	{ modId = "minecraft", type = "required", versionRange = "[${minecraft_version}]", ordering = "NONE", side = "BOTH" },
+]
+
+[features.${mod_id}]
+javaVersion="[${java_version},)"
+
+[mc-publish]
+curseforge = "${curseforge_id}"
+modrinth = "${modrinth_id}"
+loaders = ["neoforge"]

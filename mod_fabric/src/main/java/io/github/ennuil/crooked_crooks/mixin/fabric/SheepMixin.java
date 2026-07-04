@@ -18,6 +18,6 @@ public abstract class SheepMixin extends Animal {
 
 	@ModifyReturnValue(method = "createAttributes", at = @At("RETURN"))
 	private static AttributeSupplier.Builder addCustomAttribute(AttributeSupplier.Builder original) {
-		return original.add(Portals.getHerdingRange(), 20.0F);
+		return original.add(Portals.INSTANCE.getHerdingRange(), 20.0F);
 	}
 }
