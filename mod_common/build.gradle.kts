@@ -1,32 +1,47 @@
+@file:Suppress("UnstableApiUsage")
+
+import dev.upcraft.gradle.multiloader.applyMcGradleConventions
+
 plugins {
-	id("mod_conventions_common")
-	alias(libs.plugins.fabric.loom)
+	id("dev.upcraft.gradle.multiloader.multiloader-common")
+	id("net.fabricmc.fabric-loom-companion")
+	id("net.neoforged.moddev")
 }
+applyMcGradleConventions("common")
+
+neoForge.neoFormVersion = libs.versions.neoform.get()
 
 dependencies {
-	minecraft(libs.minecraft)
+	compileOnly(libs.bundles.mixin)
+	compileOnly(libs.jetbrains.annotations)
+	compileOnly(libs.autoservice.annotations)
 
-	mappings(loom.layered {
-		officialMojangMappings()
-		parchment(libs.parchment)
-	})
-	modImplementation(libs.fabric.loader)
+	testCompileOnly(libs.junit.api)
+	testCompileOnly(libs.neoforge.testframework)
 }
 
-loom {
-	mods {
-		register("crooked_crooks") {
-			sourceSet("main")
-		}
-	}
+neoForge {
+	validateAccessTransformers.set(true)
+//	accessTransformers {
+//		val atFile = file("src/main/resources/META-INF/accesstransformer.cfg")
+//		from(atFile)
+//		publish(atFile)
+//	}
 
-	mixin {
-		useLegacyMixinAp = false
-	}
+//	interfaceInjectionData {
+//		val interfacesFile = file("src/main/resources/META-INF/interfaces.json")
+//		from(interfacesFile)
+//		publish(interfacesFile)
+//	}
+}
 
-	fabricApi {
-		configureDataGeneration {
-			client = true
-		}
-	}
+val commonJava = configurations.consumable("commonJava")
+val commonResources = configurations.consumable("commonResources")
+
+val testmodCommonResources = configurations.consumable("testmodCommonResources")
+val testmodCommonJava = configurations.consumable("testmodCommonJava")
+
+artifacts {
+	add(commonJava.name, sourceSets["main"].java.sourceDirectories.singleFile)
+	add(commonResources.name, sourceSets["main"].resources.sourceDirectories.singleFile)
 }
