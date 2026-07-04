@@ -14,6 +14,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - name: Extract Git Ref
+        run: |
+          shaShort=$(git rev-parse --short ${{ github.sha }})
+          echo "COMMIT_SHA_SHORT=$shaShort" >> $GITHUB_ENV
+          echo "TAG=${{ github.ref_name }}-$shaShort" >> $GITHUB_ENV
       - name: Set up JDK ${{ env.JAVA_VERSION }}
         uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5.4.0
         with:
