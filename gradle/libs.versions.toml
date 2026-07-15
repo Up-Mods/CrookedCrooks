@@ -10,16 +10,16 @@ neoform = "26.1.2-1"
 
 # NeoForge
 # https://projects.neoforged.net/neoforged/neoforge
-neoforge = "26.1.2.75"
+neoforge = "26.1.2.80"
 # https://projects.neoforged.net/neoforged/fancymodloader
 # MUST match the version that neoforge uses! https://github.com/neoforged/NeoForge/blob/26.1.x/gradle.properties
-fancymodloader = "11.0.13"
+fancymodloader = "11.0.15"
 
 # Fabric
 # https://fabricmc.net/develop
-fabric_loom = "1.17.13" # https://maven.fabricmc.net/net/fabricmc/fabric-loom/net.fabricmc.fabric-loom.gradle.plugin/
+fabric_loom = "1.17.14" # https://maven.fabricmc.net/net/fabricmc/fabric-loom/net.fabricmc.fabric-loom.gradle.plugin/
 fabric_loader = "0.19.3"
-fabric_api = "0.154.0+26.1.2"
+fabric_api = "0.154.2+26.1.2"
 
 # https://maven.covers1624.net/service/rest/repository/browse/maven-hosted/net/covers1624/DevLogin/
 devlogin = "0.1.0.5"
@@ -32,13 +32,12 @@ mixin_extras = "0.5.4"
 asm = "9.9.1"
 
 # Other dependencies
-appdirs = "1.5.0"
 autoservice = "1.1.1"
 junit = "6.1.0"
 
 # Mods
 # https://modrinth.com/mod/modmenu/versions
-modmenu = "18.0.0-beta.1"
+modmenu = "18.0.0"
 
 [libraries]
 # NeoForge
