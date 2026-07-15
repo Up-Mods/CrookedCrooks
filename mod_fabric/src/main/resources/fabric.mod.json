@@ -41,7 +41,8 @@
 		"fabricloader": ">=${fabric_loader_version}",
 		"minecraft": "=${minecraft_version}",
 		"java": ">=${java_version}",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"sparkweave": "*"
 	},
 	"custom": {
 		"mc-publish": {
@@ -52,7 +53,8 @@
 				"quilt"
 			],
 			"dependencies": [
-				"fabric-api(required){curseforge:306612}{modrinth:P7dR8mSH}"
+				"fabric-api(required){curseforge:306612}{modrinth:P7dR8mSH}",
+				"sparkweave(required){curseforge:911456}{modrinth:nf68xfAw}"
 			]
 		},
 		"modmenu": {

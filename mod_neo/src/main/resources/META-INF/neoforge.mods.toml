@@ -24,6 +24,7 @@ ${mod_description}
 "${mod_id}" = [
 	{ modId = "neoforge", versionRange = "[${neoforge_version},)" },
 	{ modId = "minecraft", versionRange = "[${minecraft_version}]" },
+	{ modId = "sparkweave", ordering = "AFTER", referralUrl = "https://modrinth.com/mod/nf68xfAw", mc-publish = { curseforge = "911456", modrinth = "nf68xfAw" } },
 ]
 
 [features.${mod_id}]

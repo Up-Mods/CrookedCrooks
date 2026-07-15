@@ -17,6 +17,13 @@ println("Minecraft: $minecraftVersion")
 val javaVersion = libs.findVersion("java").orElseThrow().toString().toInt()
 println("Java: $javaVersion")
 
+// FIXME workaround for appdirs transitively requiring newer JNA but we are locked due to MC
+libs.findLibrary("jna").ifPresent {
+	configurations.configureEach {
+		resolutionStrategy.force(it)
+	}
+}
+
 repositories {
 	mavenCentral()
 

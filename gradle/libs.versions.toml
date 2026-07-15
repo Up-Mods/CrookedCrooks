@@ -30,12 +30,16 @@ jetbrains_annotations = "26.1.0"
 mixin = "0.17.3+mixin.0.8.7"
 mixin_extras = "0.5.4"
 asm = "9.9.1"
+jna = "5.17.0"
 
 # Other dependencies
 autoservice = "1.1.1"
 junit = "6.1.0"
 
 # Mods
+# https://modrinth.com/mod/sparkweave/versions
+sparkweave = "0.600.0-alpha.3"
+
 # https://modrinth.com/mod/modmenu/versions
 modmenu = "18.0.0"
 
@@ -60,6 +64,7 @@ asm_commons = { module = "org.ow2.asm:asm-commons", version.ref = "asm" }
 asm_tree = { module = "org.ow2.asm:asm-tree", version.ref = "asm" }
 asm_util = { module = "org.ow2.asm:asm-util", version.ref = "asm" }
 jetbrains_annotations = { module = "org.jetbrains:annotations", version.ref = "jetbrains_annotations" }
+jna = { module = "net.java.dev.jna:jna-platform", version.ref = "jna" }
 
 # Other dependencies
 autoservice = { module = "com.google.auto.service:auto-service", version.ref = "autoservice" }
@@ -69,6 +74,10 @@ junit_launcher = { module = "org.junit.platform:junit-platform-launcher" }
 junit_engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
 
 # Mods
+sparkweave = { module = "dev.upcraft.sparkweave:Sparkweave-Common", version.ref = "sparkweave" }
+sparkweave_fabric = { module = "dev.upcraft.sparkweave:Sparkweave-Fabric", version.ref = "sparkweave" }
+sparkweave_neoforge = { module = "dev.upcraft.sparkweave:Sparkweave-NeoForge", version.ref = "sparkweave" }
+
 modmenu_fabric = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }
 
 [bundles]

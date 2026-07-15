@@ -37,6 +37,8 @@ dependencies {
 	implementation(libs.fabric.loader)
 	implementation(libs.fabric.api)
 
+	implementation(libs.sparkweave.fabric)
+
 	compileOnly(libs.modmenu.fabric) {
 		isTransitive = false
 	}

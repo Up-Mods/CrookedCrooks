@@ -16,6 +16,10 @@ dependencies {
 	compileOnly(libs.jetbrains.annotations)
 	compileOnly(libs.autoservice.annotations)
 
+	compileOnly(libs.sparkweave)
+	interfaceInjectionData(libs.sparkweave)
+	accessTransformers(libs.sparkweave)
+
 	testCompileOnly(libs.junit.api)
 	testCompileOnly(libs.neoforge.testframework)
 }

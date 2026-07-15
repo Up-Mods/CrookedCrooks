@@ -23,6 +23,10 @@ dependencies {
 	compileOnly(libs.autoservice.annotations)
 	annotationProcessor(libs.autoservice)
 
+	implementation(libs.sparkweave.neoforge)
+	interfaceInjectionData(libs.sparkweave)
+	accessTransformers(libs.sparkweave)
+
 	testImplementation(libs.neoforge.testframework)
 }
 
