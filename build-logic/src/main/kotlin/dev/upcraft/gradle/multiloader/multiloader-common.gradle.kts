@@ -32,7 +32,9 @@ repositories {
 		name = "Up-Mods"
 	}
 
-	maven(uri("https://maven.terraformersmc.com/releases")) {
+	// FIXME currently unavailable, using backup
+	// maven(uri("https://maven.terraformersmc.com/releases")) {
+	maven(uri("https://maven.gnomecraft.net/releases")) {
 		name = "TerraformersMC"
 	}
 }
