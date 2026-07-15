@@ -28,7 +28,9 @@ repositories {
 		name = "NeoForge"
 	}
 
-	maven(uri("https://maven.uuid.gg/releases"))
+	maven(uri("https://maven.uuid.gg/releases")) {
+		name = "Up-Mods"
+	}
 
 	maven(uri("https://maven.terraformersmc.com/releases")) {
 		name = "TerraformersMC"
