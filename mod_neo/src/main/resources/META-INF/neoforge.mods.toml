@@ -22,8 +22,8 @@ ${mod_description}
 
 [dependencies]
 "${mod_id}" = [
-	{ modId = "neoforge", type = "required", versionRange = "[${neoforge_version},)", ordering = "NONE", side = "BOTH" },
-	{ modId = "minecraft", type = "required", versionRange = "[${minecraft_version}]", ordering = "NONE", side = "BOTH" },
+	{ modId = "neoforge", versionRange = "[${neoforge_version},)" },
+	{ modId = "minecraft", versionRange = "[${minecraft_version}]" },
 ]
 
 [features.${mod_id}]
