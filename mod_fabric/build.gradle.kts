@@ -87,13 +87,13 @@ loom {
 		}
 
 		configureEach {
-//			appendProjectPathToConfigName = false
+			appendProjectPathToDisplayName = false
 			systemProperties.put("mixin.debug", "true")
 
 			// register as Gradle runs instead of IDEA runs
 			// https://github.com/FabricMC/fabric-loom/issues/1349
 			generateRunConfig = false
-			rootProject.idea.project.settings.runConfigurations.create<org.jetbrains.gradle.ext.Gradle>(name) {
+			rootProject.idea.project.settings.runConfigurations.create<org.jetbrains.gradle.ext.Gradle>(displayName.get()) {
 				taskNames = listOf(LoomTasks.getRunConfigTaskName(this@configureEach))
 				setProject(project)
 			}
