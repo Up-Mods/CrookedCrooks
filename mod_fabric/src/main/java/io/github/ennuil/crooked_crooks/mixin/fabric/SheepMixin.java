@@ -1,7 +1,7 @@
 package io.github.ennuil.crooked_crooks.mixin.fabric;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
-import io.github.ennuil.crooked_crooks.utils.Portals;
+import io.github.ennuil.crooked_crooks.init.CrookedAttributes;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.animal.Animal;
@@ -18,6 +18,6 @@ public abstract class SheepMixin extends Animal {
 
 	@ModifyReturnValue(method = "createAttributes", at = @At("RETURN"))
 	private static AttributeSupplier.Builder addCustomAttribute(AttributeSupplier.Builder original) {
-		return original.add(Portals.INSTANCE.getHerdingRange(), 20.0F);
+		return original.add(CrookedAttributes.HERDING_RANGE.holder(), 20.0F);
 	}
 }

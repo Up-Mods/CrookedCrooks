@@ -16,7 +16,7 @@ public abstract class SheepMixin extends Animal {
 		super(entityType, level);
 	}
 
-	@Inject(method = "registerGoals", at = @At("TAIL"))
+	@Inject(method = "registerGoals", at = @At("RETURN"))
 	private void registerHerdGoal(CallbackInfo ci) {
 		this.goalSelector.addGoal(3, new HerdGoal(this, 1.25));
 	}

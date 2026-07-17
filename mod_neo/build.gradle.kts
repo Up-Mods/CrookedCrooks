@@ -75,8 +75,9 @@ neoForge {
 			clientData()
 			gameDirectory = file("run/data")
 
+			systemProperty("sparkweave.datagen.mods", modId)
 			programArguments.addAll(
-				"--mod", modId,
+				"--mod", "sparkweave",
 				"--all",
 				"--flat",
 				"--output", file("src/main/generated").absolutePath,

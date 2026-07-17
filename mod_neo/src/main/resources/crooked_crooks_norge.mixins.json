@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "io.github.ennuil.crooked_crooks.mixin.norge",
+  "package": "io.github.ennuil.crooked_crooks.neo.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "IAttributeExtensionMixin",

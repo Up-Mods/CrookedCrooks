@@ -1,8 +1,8 @@
 package io.github.ennuil.crooked_crooks.item;
 
-import io.github.ennuil.crooked_crooks.block.ModBlockTags;
+import io.github.ennuil.crooked_crooks.data.CrookedTags;
+import io.github.ennuil.crooked_crooks.init.CrookedMobEffects;
 import io.github.ennuil.crooked_crooks.satire_config.SatireConfig;
-import io.github.ennuil.crooked_crooks.utils.Portals;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -40,7 +40,7 @@ public class CrookItem extends Item {
 	private final float crookStrength;
 
 	public CrookItem(ToolMaterial material, float attackDamage, float attackSpeed, float crookStrength, Properties properties) {
-		super(applyProperties(properties, ModBlockTags.MINEABLE_WITH_CROOK, attackDamage, attackSpeed, material));
+		super(applyProperties(properties, CrookedTags.Blocks.MINEABLE_WITH_CROOK, attackDamage, attackSpeed, material));
 		this.crookStrength = crookStrength;
 	}
 
@@ -81,7 +81,7 @@ public class CrookItem extends Item {
 
 			if (SatireConfig.getConfig().shepherdsTouch() && interactionTarget instanceof Sheep) {
 				// 7 seconds * 20 ticks = 140 ticks
-				player.addEffect(new MobEffectInstance(Portals.INSTANCE.getShepherdsTouchEffect(), 7 * 20), interactionTarget);
+				player.addEffect(new MobEffectInstance(CrookedMobEffects.SHEPHERDS_TOUCH.holder(), 7 * 20), interactionTarget);
 			}
 
 			var pos = interactionTarget.position().vectorTo(player.position()).normalize();
@@ -111,7 +111,7 @@ public class CrookItem extends Item {
 		if (tool == null) {
 			return false;
 		} else {
-			if (!level.isClientSide() && (state.getDestroySpeed(level, pos) != 0.0F || state.is(ModBlockTags.MINEABLE_WITH_CROOK)) && tool.damagePerBlock() > 0) {
+			if (!level.isClientSide() && (state.getDestroySpeed(level, pos) != 0.0F || state.is(CrookedTags.Blocks.MINEABLE_WITH_CROOK)) && tool.damagePerBlock() > 0) {
 				stack.hurtAndBreak(tool.damagePerBlock(), miningEntity, EquipmentSlot.MAINHAND);
 			}
 

@@ -1,28 +1,19 @@
 package io.github.ennuil.crooked_crooks;
 
-import io.github.ennuil.crooked_crooks.entity.ModAttributes;
-import io.github.ennuil.crooked_crooks.entity.effects.ModMobEffects;
-import io.github.ennuil.crooked_crooks.item.ModItems;
-import io.github.ennuil.crooked_crooks.satire_config.SatireConfig;
+import io.github.ennuil.crooked_crooks.init.CrookedItems;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 
-public class ModInit implements ModInitializer {
+public class ModInit implements ModInitializer { // TODO move
 	@Override
 	public void onInitialize() {
-		SatireConfig.setConfigPath(FabricLoader.getInstance().getConfigDir().resolve("crooked_crooks"));
-		SatireConfig.init();
-		ModItems.init();
-		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> {
-			entries.addAfter(Items.WOODEN_HOE, ModItems.WOODEN_CROOK);
-			entries.addAfter(Items.STONE_HOE, ModItems.STONE_CROOK);
-			entries.addAfter(Items.IRON_HOE, ModItems.IRON_CROOK);
-			entries.addBefore(Items.BUCKET, ModItems.BONE_CROOK);
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> {
+			entries.insertAfter(Items.WOODEN_HOE, CrookedItems.WOODEN_CROOK.get());
+			entries.insertAfter(Items.STONE_HOE, CrookedItems.STONE_CROOK.get());
+			entries.insertAfter(Items.IRON_HOE, CrookedItems.IRON_CROOK.get());
+			entries.insertBefore(Items.BUCKET, CrookedItems.BONE_CROOK.get());
 		});
-		ModAttributes.init();
-		ModMobEffects.init();
 	}
 }

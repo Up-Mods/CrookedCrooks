@@ -78,14 +78,16 @@ loom {
 			runDirectory = file("run/server")
 		}
 
-		create("datagen") {
-			client()
+		fabricApi.configureDataGeneration {
+			client = true
+			modId = "sparkweave"
+			strictValidation = true // neoforge '--all' sets '--validate' to true as well
+		}
+
+		named("datagen") {
 			displayName = "Fabric Data"
 
-			systemProperties.put("fabric-api.datagen", "true")
-			systemProperties.put("fabric-api.datagen.strict-validation", "true") // '--all' sets '--validate' to true as well
-			systemProperties.put("fabric-api.datagen.output-dir", file("src/main/generated").absolutePath)
-			runDirectory = file("build/datagen")
+			systemProperties.put("sparkewave.datagen.mods", modId)
 		}
 
 		configureEach {

@@ -1,6 +1,7 @@
 package io.github.ennuil.crooked_crooks.entity;
 
-import io.github.ennuil.crooked_crooks.utils.Portals;
+import io.github.ennuil.crooked_crooks.init.CrookedAttributes;
+import io.github.ennuil.crooked_crooks.init.CrookedMobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -24,12 +25,12 @@ public class HerdGoal extends Goal {
 	}
 
 	private boolean shouldFollow(LivingEntity entity) {
-		return entity.hasEffect(Portals.INSTANCE.getShepherdsTouchEffect());
+		return entity.hasEffect(CrookedMobEffects.SHEPHERDS_TOUCH.holder());
 	}
 
 	@Override
 	public boolean canUse() {
-		this.player = getServerLevel(this.mob).getNearestPlayer(this.targetingConditions.range(this.mob.getAttributeValue(Portals.INSTANCE.getHerdingRange())), this.mob);
+		this.player = getServerLevel(this.mob).getNearestPlayer(this.targetingConditions.range(this.mob.getAttributeValue(CrookedAttributes.HERDING_RANGE.holder())), this.mob);
 		return this.player != null;
 	}
 
