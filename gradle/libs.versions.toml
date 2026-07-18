@@ -38,7 +38,7 @@ junit = "6.1.0"
 
 # Mods
 # https://modrinth.com/mod/sparkweave/versions
-sparkweave = "0.600.0-alpha.7"
+sparkweave = "0.600.0-alpha.9"
 
 # https://modrinth.com/mod/modmenu/versions
 modmenu = "18.0.0"

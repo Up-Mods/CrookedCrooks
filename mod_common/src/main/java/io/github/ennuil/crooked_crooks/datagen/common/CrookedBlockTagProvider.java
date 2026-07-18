@@ -19,7 +19,7 @@ public class CrookedBlockTagProvider extends SparkweaveBlockTagProvider {
 	@Override
 	protected void addTags(HolderLookup.Provider provider) {
 		tag(CrookedTags.Blocks.MINEABLE_WITH_CROOK, "Mineable with Crook")
-			.addTag(BlockTags.LEAVES)
+			.addExistingTag(BlockTags.LEAVES)
 			.add(Blocks.SHORT_GRASS)
 			.add(Blocks.SHORT_DRY_GRASS)
 			.add(Blocks.TALL_GRASS)

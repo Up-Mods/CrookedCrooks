@@ -10,6 +10,7 @@ import io.github.ennuil.crooked_crooks.datagen.common.CrookedRecipeProvider;
 
 @AutoService(DataGenerationEntryPoint.class)
 public class CrookedDatagenerator implements DataGenerationEntryPoint {
+
 	@Override
 	public void generate(DataGenerationContext ctx) {
 		var pack = ctx.getDefaultPack();

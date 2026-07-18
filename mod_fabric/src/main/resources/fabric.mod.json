@@ -28,8 +28,6 @@
 	"icon": "icon.png",
 	"environment": "*",
 	"entrypoints": {
-		"main": ["io.github.ennuil.crooked_crooks.ModInit"],
-		"fabric-datagen": ["io.github.ennuil.crooked_crooks.datagen.ModDatagenInit"],
 		"modmenu": ["io.github.ennuil.crooked_crooks.compat.modmenu.ModModMenuCompat"]
 	},
 	"mixins": [

@@ -5,12 +5,13 @@
       {
         "model": {
           "type": "minecraft:model",
-          "model": "crooked_crooks:item/wooden_crook"
+          "model": "crooked_crooks:item/stone_crook"
         },
         "when": [
           "gui",
           "ground",
-          "fixed"
+          "fixed",
+          "on_shelf"
         ]
       }
     ],
@@ -18,11 +19,11 @@
       "type": "minecraft:condition",
       "on_false": {
         "type": "minecraft:model",
-        "model": "crooked_crooks:item/wooden_crook_long"
+        "model": "crooked_crooks:item/stone_crook_long"
       },
       "on_true": {
         "type": "minecraft:model",
-        "model": "crooked_crooks:item/wooden_crook"
+        "model": "crooked_crooks:item/stone_crook"
       },
       "property": "minecraft:using_item"
     },

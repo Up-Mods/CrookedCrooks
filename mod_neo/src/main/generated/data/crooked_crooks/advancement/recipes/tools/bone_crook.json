@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rods/wooden": {
+    "has_bone_tool_materials": {
       "conditions": {
         "items": [
           {
-            "items": "#c:rods/wooden"
+            "items": "#crooked_crooks:bone_tool_materials"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "crooked_crooks:wooden_crook"
+        "recipe": "crooked_crooks:bone_crook"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_rods/wooden"
+      "has_bone_tool_materials"
     ]
   ],
   "rewards": {
     "recipes": [
-      "crooked_crooks:wooden_crook"
+      "crooked_crooks:bone_crook"
     ]
   }
 }

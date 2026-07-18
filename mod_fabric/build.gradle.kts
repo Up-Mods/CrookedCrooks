@@ -87,7 +87,7 @@ loom {
 		named("datagen") {
 			displayName = "Fabric Data"
 
-			systemProperties.put("sparkewave.datagen.mods", modId)
+			systemProperties.put("sparkweave.datagen.mods", modId)
 		}
 
 		configureEach {
@@ -104,5 +104,3 @@ loom {
 		}
 	}
 }
-
-sourceSets["main"].resources { srcDir("src/main/generated") }
