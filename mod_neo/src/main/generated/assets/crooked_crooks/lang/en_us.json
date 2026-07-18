@@ -1,0 +1,12 @@
+{
+  "attribute.crooked_crooks.name.herding_range": "Crook Herding Range",
+  "effect.crooked_crooks.shepherds_touch": "Shepherd's Touch",
+  "item.crooked_crooks.bone_crook": "Bone Crook",
+  "item.crooked_crooks.iron_crook": "Iron Crook",
+  "item.crooked_crooks.stone_crook": "Stone Crook",
+  "item.crooked_crooks.wooden_crook": "Wooden Crook",
+  "tag.block.crooked_crooks.mineable_with_crook": "Mineable with Crook",
+  "tag.block.crooked_crooks.multiple_drops_when_crooked": "Multiple Drops when mined with Crook",
+  "tag.item.crooked_crooks.bone_tool_materials": "Bone Tool Materials",
+  "tag.item.crooked_crooks.crooks": "Crooks"
+}
