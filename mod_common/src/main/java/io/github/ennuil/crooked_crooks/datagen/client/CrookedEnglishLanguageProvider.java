@@ -25,15 +25,15 @@ public class CrookedEnglishLanguageProvider extends SparkweaveLanguageProvider {
 		builder.item(CrookedItems.STONE_CROOK, "Stone Crook");
 		builder.item(CrookedItems.IRON_CROOK, "Iron Crook");
 
-		TL.attribute(builder, CrookedAttributes.HERDING_RANGE, "Crook Herding Range");
+		builder.attribute(CrookedAttributes.HERDING_RANGE, "Crook Herding Range");
 
-		TL.mobEffect(builder, CrookedMobEffects.SHEPHERDS_TOUCH, "Shepherd's Touch");
+		builder.mobEffect(CrookedMobEffects.SHEPHERDS_TOUCH, "Shepherd's Touch");
 
 		// FIXME en_us tags will be redundant once implemented in Sparkweave tag generator
-		TL.tag(builder, CrookedTags.Items.CROOKS, "Crooks");
-		TL.tag(builder, CrookedTags.Items.BONE_TOOL_MATERIALS, "Bone Tool Materials");
+		builder.tag(CrookedTags.Items.CROOKS, "Crooks");
+		builder.tag(CrookedTags.Items.BONE_TOOL_MATERIALS, "Bone Tool Materials");
 
-		TL.tag(builder, CrookedTags.Blocks.MINEABLE_WITH_CROOK, "Mineable with Crook");
-		TL.tag(builder, CrookedTags.Blocks.MULTIPLE_DROOPS_WHEN_CROOKED, "Multiple Drops when mined with Crook");
+		builder.tag(CrookedTags.Blocks.MINEABLE_WITH_CROOK, "Mineable with Crook");
+		builder.tag(CrookedTags.Blocks.MULTIPLE_DROOPS_WHEN_CROOKED, "Multiple Drops when mined with Crook");
 	}
 }
