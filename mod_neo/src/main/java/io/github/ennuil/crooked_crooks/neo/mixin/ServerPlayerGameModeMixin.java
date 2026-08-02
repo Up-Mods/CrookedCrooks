@@ -2,7 +2,7 @@ package io.github.ennuil.crooked_crooks.neo.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import io.github.ennuil.crooked_crooks.data.CrookedTags;
-import io.github.ennuil.crooked_crooks.neo.data_maps.ModBlockDataMaps;
+import io.github.ennuil.crooked_crooks.neo.data_maps.CrookedDataMaps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
@@ -38,12 +38,12 @@ public abstract class ServerPlayerGameModeMixin {
 	)
 	private void multiplyDrops(BlockPos pos, CallbackInfoReturnable<Boolean> cir, @Local(ordinal = 0) BlockEntity blockEntity, @Local Block block, @Local(ordinal = 0) ItemStack stack, @Local(ordinal = 1) ItemStack stackCopy, @Local(ordinal = 1) BlockState destroyedState) {
 		if (stack.is(CrookedTags.Items.CROOKS)) {
-			var data = destroyedState.getData(ModBlockDataMaps.MULTIPLIES_DROPS);
+			var data = destroyedState.getData(CrookedDataMaps.MULTIPLIES_DROPS);
 			if (data != null) {
 				var lookup = this.level.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
 
 				if (stack.getEnchantmentLevel(lookup.getOrThrow(Enchantments.SILK_TOUCH)) == 0) {
-					for (int i = 0; i < data.dropMultiplier() - 1; i++) {
+					for (int i = 0; i < data.bonusRolls() - 1; i++) {
 						Block.dropResources(destroyedState, this.level, pos, blockEntity, this.player, stackCopy);
 					}
 				}

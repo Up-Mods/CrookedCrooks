@@ -5,10 +5,10 @@ issueTrackerURL = "${issues_url}"
 sourcesUrl = "${sources_url}"
 
 [[mixins]]
-config = "crooked_crooks.mixins.json"
+config = "${mod_id}.mixins.json"
 
 [[mixins]]
-config = "crooked_crooks_norge.mixins.json"
+config = "${mod_id}_neo.mixins.json"
 
 [[mods]]
 modId = "${mod_id}"

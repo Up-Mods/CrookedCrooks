@@ -1,0 +1,9 @@
+{
+  "type": "crooked_crooks:crooks",
+  "conditions": [
+    {
+      "condition": "neoforge:can_item_perform_ability",
+      "ability": "crooked_crooks:crook"
+    }
+  ]
+}

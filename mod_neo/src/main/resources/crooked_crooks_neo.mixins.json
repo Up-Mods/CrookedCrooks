@@ -4,6 +4,7 @@
   "package": "io.github.ennuil.crooked_crooks.neo.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "CrookItemMixin",
     "IAttributeExtensionMixin",
     "ServerPlayerGameModeMixin"
   ],

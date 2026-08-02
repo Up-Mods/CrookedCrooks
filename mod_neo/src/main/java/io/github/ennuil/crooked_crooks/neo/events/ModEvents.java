@@ -1,9 +1,9 @@
 package io.github.ennuil.crooked_crooks.neo.events;
 
-import io.github.ennuil.crooked_crooks.neo.data_maps.ModBlockDataMaps;
 import io.github.ennuil.crooked_crooks.CrookedCrooks;
 import io.github.ennuil.crooked_crooks.init.CrookedAttributes;
 import io.github.ennuil.crooked_crooks.init.CrookedItems;
+import io.github.ennuil.crooked_crooks.neo.data_maps.CrookedDataMaps;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -18,7 +18,7 @@ import net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent;
 public class ModEvents {
 	@SubscribeEvent
 	public static void registerDataMaps(RegisterDataMapTypesEvent event) {
-		event.register(ModBlockDataMaps.MULTIPLIES_DROPS);
+		event.register(CrookedDataMaps.MULTIPLIES_DROPS);
 	}
 
 	@SubscribeEvent

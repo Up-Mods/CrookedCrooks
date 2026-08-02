@@ -31,8 +31,8 @@
 		"modmenu": ["io.github.ennuil.crooked_crooks.compat.modmenu.ModModMenuCompat"]
 	},
 	"mixins": [
-		"crooked_crooks.mixins.json",
-		"crooked_crooks_fabric.mixins.json"
+		"${mod_id}.mixins.json",
+		"${mod_id}_fabric.mixins.json"
 	],
 	"accessWidener": "${mod_id}.classtweaker",
 	"depends": {
